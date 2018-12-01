@@ -1,0 +1,274 @@
+/* Table styling */
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+table {
+    width: 100%;
+}
+table, th, td {
+    margin-top: 70px;
+    border: 1px solid black;
+    border-collapse: collapse;
+    text-align: center;
+}
+#table1{
+    margin-top: 30px;
+    border: 1px solid black;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+/*Welcome text for Teacher and Student*/
+.welcome{
+    text-align: center;
+}
+
+.search{
+    text-align: center;
+}
+
+#searchBox{
+    height: 35px;
+    width: 220px;
+}
+
+#techInfo{
+    text-align: center;
+}
+
+td {
+    padding: 9px;
+    text-align: center;
+    background-color:#e0f0ff;
+
+}
+
+th{
+    width: 10px;
+    padding: 9px;
+    text-align: center;
+    font-weight: bolder;
+    background-color: #b8dbff;
+}
+td:hover {background-color: #ffb870;}
+.tablecap
+{
+    font-weight: bold;
+    font-size: 19px;
+    padding: 9px 9px 9px 9px;
+    border-style: solid solid none solid;
+    border-width: 1px;
+    background-color:#8fc7ff;
+}
+
+/* Navigation bar styling */
+
+#home
+{
+    margin-left:60px;
+}
+
+#create
+{
+    margin-left:80px;
+}
+
+#logout
+{
+    float: right;
+    margin-right:60px;
+}
+
+#contact
+{
+    float: right;
+    margin-right: 80px;
+}
+
+#results
+{
+    margin-left: 80px;
+}
+
+#studProfile
+{
+    margin-left: 80px;
+}
+
+.smallLogo {
+    text-align: center;
+    float: left;
+}
+
+/* Login and Register Styling */
+
+#studentRadio
+{
+    margin-right:20px;
+    margin-left: 45px;
+}
+
+#teacherRadio
+{
+    margin-left:20px;
+}
+
+#loginButton{
+    border-radius: 12px;
+    font-size: 17px;
+    font-weight: bolder;
+    color: white;
+    cursor: pointer;
+    background-color: #80d4ff;
+    margin-top: 10px;
+    padding: 15px;
+    width: 230px;
+}
+
+#passwordValidityTxt{
+    margin-top: 10px;
+    margin-left: 8px;
+    position:absolute;
+    font-size: 25px;
+}
+
+#registerSubmit{
+    border-radius: 12px;
+    font-size: 17px;
+    cursor: pointer;
+    background-color: #80d4ff;
+    padding: 15px;
+    width: 230px;
+}
+.login {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.loginContainer {
+    border-style: solid;
+    border-width: 5px;
+    padding-top: 30px;
+    padding-right: 27px;
+    padding-left: 30px;
+    padding-bottom: 30px;
+    border-color: #DCDCDC;
+    border-radius: 25px;
+    background-color: #f3f3f2;
+}
+
+.registerButton{
+    text-align: center;
+}
+
+input {
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+
+}
+
+input:hover {background-color: #fffaf5;}
+
+/*Question Mark Tooltip Icon */
+.fa{
+    margin-left: 35px;
+    color: gray;
+    position: relative;
+    display: block;
+}
+
+/*Tooltip text */
+.fa .tooltipText {
+    visibility: hidden;
+    width: 210px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 5px;
+    position: absolute;
+    z-index: 1;
+    top: -33px;
+    left: 180%;
+    opacity: 0;
+    transition: opacity 1.5s;
+    margin-left: 15px;
+    line-height:1.6;
+}
+
+/*Tooltip fade out*/
+.fa .tooltipText::after {
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    margin-top: -5px;
+    border-width: 7px;
+    border-style: solid;
+    border-color: transparent black transparent transparent;
+    content: " ";
+}
+
+/*Tooltip hover animation*/
+.fa:hover .tooltipText {
+    visibility: visible;
+    opacity: 0.5;
+}
+
+/*Positioning tooltip arrow*/
+#faPassword .tooltipText{
+    top: -58px;
+
+}
+
+#faRadioButton .tooltipText{
+    top: -20px;
+
+}
+
+/*Positioning tooltip icon*/
+#password{
+    margin-left:49px;
+}
+
+#tooltipField{
+    margin-left:49px;
+}
+
+/* Create Quiz Style */
+
+.quizDate{
+    margin-left: 10px;
+    display: inline-block;
+}
+
+.dateCaption
+{
+    display: inline;
+    margin-right: 8px;
+}
+
+.createContainer{
+    border-style: solid;
+    border-width: 3px;
+    padding-top: 30px;
+    padding-right: 27px;
+    padding-left: 30px;
+    padding-bottom: 30px;
+    border-color: #8fabff;
+    border-radius: 25px;
+    background-color: #e0e8ff;
+    font-weight: bolder;
+    text-align: center;
+    margin: 15px 30px 25px 30px;
+}
+
+.createDate
+{
+    display: inline;
+    margin-right: 10px;
+}
