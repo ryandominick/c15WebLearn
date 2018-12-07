@@ -68,9 +68,6 @@ class CreateQuizController extends Controller
               array($mcQuestion[$i],$mcCorrectAnswer[$i],$mcIncorrectAnswer1[$i],$mcIncorrectAnswer2[$i],$mcIncorrectAnswer3[$i])
             );
         }
-
-
-
     }
 
     /**

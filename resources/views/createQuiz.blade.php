@@ -38,12 +38,13 @@
 </nav>
 <h2>Please enter the following information:</h2>
 <br>
-<form method="post" action="/createquiz">
+<form method="post" action="/createquiz" id="quizInfo">
+    @csrf
     <div class="createContainer">
 
 
         <label class="quizDetails">
-            Module Code:
+           <h3>Module Code:</h3>
         </label>
         <input class="createQuizDetails" id="quizModulePosition" type="text" placeholder="(e.g. CO434)" size="10" name="moduleCode"
                required />
@@ -71,21 +72,18 @@
 
         <label class="createQuizDetails">
             <input id="quizTimerInput" type="number" placeholder="Please enter duration" name="timer" required />
-            <p id='timerValidityTxt'> </p>
+            <span id='timerValidityTxt'> </span>
         </label>
-
     </div>
-
-
 </form>
 <form method="post" id="createQuizForm" action="/createQuiz">
-
+    @csrf
 </form>
 
 <button class="addQuestions" id="addMCQuestions">Add Multiple Choice Question</button>
 <button class="addQuestions" id="addInputQuestions">Add Input Question</button>
 
-<button id="submitQuizButton" type="submit" onsubmit="" value="Submit">Submit Quiz!</button>
+<button id="submitQuizButton" type="submit" onclick="return submitAll()" value="Submit">Submit Quiz!</button>
 
 </body>
 
