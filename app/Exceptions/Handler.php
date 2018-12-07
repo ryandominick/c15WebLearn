@@ -3,6 +3,7 @@
 namespace App\Exceptions;
 
 use Exception;
+use Illuminate\Auth\AuthenticationException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 
 class Handler extends ExceptionHandler
@@ -13,7 +14,12 @@ class Handler extends ExceptionHandler
      * @var array
      */
     protected $dontReport = [
-        //
+//        \Illuminate\Auth\AuthenticationException::class,
+//        \Illuminate\Auth\Access\AuthorizationException::class,
+//        \Symfony\Component\HttpKernel\Exception\HttpException::class,
+//        \Illuminate\Database\Eloquent\ModelNotFoundException::class,
+//        \Illuminate\Session\TokenMismatchException::class,
+//        \Illuminate\Validation\ValidationException::class,
     ];
 
     /**
@@ -48,4 +54,34 @@ class Handler extends ExceptionHandler
     {
         return parent::render($request, $exception);
     }
+
+    /**
+     *make an unauthenticated response from an exception
+     *
+     * @param \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Auth\AuthenticationException $exception
+     *
+     * @return \Illuminate\Http\Response
+     */
+    protected function unauthenticated($request, AuthenticationException $exception)
+    {
+        //----------------------------------------------------------------------------------------------
+
+            // checks if request client wants json response
+                if($request->expectsJson()){
+                    return response()->json(['error' => 'Unauthenticated.'], 401);
+                }
+
+        //type of login NEEDS CHANGING LATER
+        $guard = array_get($exception->guards(),0);
+        if($guard === 'student'){
+            $login = 'student/login';
+        }else {
+            $login = 'teacher/login';
+        }
+        return redirect()->guest($login);
+
+
+        }
+//-------------------------------------------------------------------------------------------------
 }

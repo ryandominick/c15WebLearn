@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\StudentRegistration;
-use App\Models\TeacherRegistration;
+use App\Models\Student;
+use App\Models\Teacher;
 use Illuminate\Http\Request;
 
 class RegController extends Controller
@@ -45,12 +45,12 @@ class RegController extends Controller
             $password = $request['password'];
 
             if($userType === "student") {
-                StudentRegistration::register($firstName, $lastName, $Email, $password);
+                Student::register($firstName, $lastName, $Email, $password);
                 return redirect('/login');
             }
             elseif ($userType === "teacher"){
                 if ($key === $correctKey) {
-                    TeacherRegistration::register($firstName, $lastName, $Email, $password);
+                    Teacher::register($firstName, $lastName, $Email, $password);
                     return redirect('/login');
                 }
                 else{

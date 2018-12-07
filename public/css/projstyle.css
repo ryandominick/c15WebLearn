@@ -1,185 +1,194 @@
 /* Table styling */
 * {
-    font-family: 'Montserrat', sans-serif;
+font-family: 'Montserrat', sans-serif;
 }
 table {
-    width: 100%;
+width: 100%;
 }
 table, th, td {
-    margin-top: 70px;
-    border: 1px solid black;
-    border-collapse: collapse;
-    text-align: center;
+margin-top: 70px;
+border: 1px solid black;
+border-collapse: collapse;
+text-align: center;
 }
 #table1{
-    margin-top: 30px;
-    border: 1px solid black;
-    border-collapse: collapse;
-    text-align: center;
+margin-top: 30px;
+border: 1px solid black;
+border-collapse: collapse;
+text-align: center;
 }
 
 /*Welcome text for Teacher and Student*/
 .welcome{
-    text-align: center;
+text-align: center;
 }
 
 .search{
-    text-align: center;
+text-align: center;
 }
 
 #searchBox{
-    height: 35px;
-    width: 220px;
+height: 35px;
+width: 220px;
 }
 
 #techInfo{
-    text-align: center;
+text-align: center;
 }
 
 td {
-    padding: 9px;
-    text-align: center;
-    background-color:#e0f0ff;
+padding: 9px;
+text-align: center;
+background-color:#e0f0ff;
 
 }
 
 th{
-    width: 10px;
-    padding: 9px;
-    text-align: center;
-    font-weight: bolder;
-    background-color: #b8dbff;
+width: 10px;
+padding: 9px;
+text-align: center;
+font-weight: bolder;
+background-color: #b8dbff;
 }
-td:hover {background-color: #ffb870;}
+tr:hover td{background-color: #ffb870;}
 .tablecap
 {
-    font-weight: bold;
-    font-size: 19px;
-    padding: 9px 9px 9px 9px;
-    border-style: solid solid none solid;
-    border-width: 1px;
-    background-color:#8fc7ff;
+font-weight: bold;
+font-size: 19px;
+padding: 9px 9px 9px 9px;
+border-style: solid solid none solid;
+border-width: 1px;
+background-color:#8fc7ff;
 }
 
 /* Navigation bar styling */
 
 #home
 {
-    margin-left:60px;
+margin-left:60px;
 }
 
 #create
 {
-    margin-left:80px;
+margin-left:80px;
 }
 
 #logout
 {
-    float: right;
-    margin-right:60px;
+float: right;
+margin-right:60px;
 }
 
 #contact
 {
-    float: right;
-    margin-right: 80px;
+float: right;
+margin-right: 80px;
 }
 
 #results
 {
-    margin-left: 80px;
+margin-left: 80px;
 }
 
 #studProfile
 {
-    margin-left: 80px;
+margin-left: 80px;
 }
 
 .smallLogo {
-    text-align: center;
-    float: left;
+text-align: center;
+margin-top: left;
 }
 
 /* Login and Register Styling */
 
 #studentRadio
 {
-    margin-right:20px;
-    margin-left: 45px;
+margin-right:20px;
+margin-left: 45px;
 }
 
 #teacherRadio
 {
-    margin-left:20px;
+margin-left:20px;
 }
 
 #loginButton{
-    border-radius: 12px;
-    font-size: 17px;
-    font-weight: bolder;
-    color: white;
-    cursor: pointer;
-    background-color: #80d4ff;
-    margin-top: 10px;
-    padding: 15px;
-    width: 230px;
+border-radius: 12px;
+font-size: 17px;
+font-weight: bolder;
+color: white;
+cursor: pointer;
+background-color: #80d4ff;
+margin-top: 10px;
+padding: 15px;
+width: 230px;
 }
 
 #passwordValidityTxt{
-    margin-top: 10px;
-    margin-left: 8px;
-    position:absolute;
-    font-size: 25px;
+	margin-top: 10px;
+	margin-left: 8px;
+	position:absolute;
+	font-size: 25px;
 }
 
 #registerSubmit{
-    border-radius: 12px;
-    font-size: 17px;
-    cursor: pointer;
-    background-color: #80d4ff;
-    padding: 15px;
-    width: 230px;
+border-radius: 12px;
+font-size: 17px;
+cursor: pointer;
+background-color: #80d4ff;
+padding: 15px;
+width: 230px;
 }
 .login {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+text-align: center;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+text-align: center;
+min-height: 100vh;
 }
 
 .loginContainer {
-    border-style: solid;
-    border-width: 5px;
-    padding-top: 30px;
-    padding-right: 27px;
-    padding-left: 30px;
-    padding-bottom: 30px;
-    border-color: #DCDCDC;
-    border-radius: 25px;
-    background-color: #f3f3f2;
+border-style: solid;
+border-width: 5px;
+padding-top: 30px;
+padding-right: 27px;
+padding-left: 30px;
+padding-bottom: 30px;
+border-color: #DCDCDC;
+border-radius: 25px;
+background-color: #f3f3f2;
 }
 
 .registerButton{
-    text-align: center;
+text-align: center;
 }
 
 input {
-    padding: 12px 20px;
-    margin: 8px 0;
-    box-sizing: border-box;
+padding: 12px 20px;
+margin: 8px 0;
+box-sizing: border-box;
 
 }
 
 input:hover {background-color: #fffaf5;}
 
+/*show password icon stlye*/
+#eyeIcon{
+    position: absolute;
+    right: 800px;
+    margin-top: 22px;
+    margin-right: 5px;
+}
+
 /*Question Mark Tooltip Icon */
 .fa{
-    margin-left: 35px;
-    color: gray;
-    position: relative;
-    display: block;
+margin-left: 35px;
+color: gray;
+position: relative;
+display: block;
 }
 
 /*Tooltip text */
@@ -193,12 +202,12 @@ input:hover {background-color: #fffaf5;}
     padding: 5px 5px;
     position: absolute;
     z-index: 1;
-    top: -33px;
+	top: -33px;
     left: 180%;
-    opacity: 0;
+	opacity: 0;
     transition: opacity 1.5s;
-    margin-left: 15px;
-    line-height:1.6;
+	margin-left: 15px;
+	line-height:1.6;
 }
 
 /*Tooltip fade out*/
@@ -207,10 +216,10 @@ input:hover {background-color: #fffaf5;}
     top: 50%;
     right: 100%;
     margin-top: -5px;
-    border-width: 7px;
+	border-width: 7px;
     border-style: solid;
     border-color: transparent black transparent transparent;
-    content: " ";
+	content: " ";
 }
 
 /*Tooltip hover animation*/
@@ -221,54 +230,175 @@ input:hover {background-color: #fffaf5;}
 
 /*Positioning tooltip arrow*/
 #faPassword .tooltipText{
-    top: -58px;
-
+	top: -58px;
+	
 }
 
 #faRadioButton .tooltipText{
-    top: -20px;
+	top: -20px;
+	
+}
 
+#faPassword .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s
 }
 
 /*Positioning tooltip icon*/
 #password{
-    margin-left:49px;
+	margin-left:49px;
 }
 
 #tooltipField{
-    margin-left:49px;
+	margin-left:49px;
 }
 
 /* Create Quiz Style */
 
 .quizDate{
-    margin-left: 10px;
-    display: inline-block;
+margin-left: 10px;
+display: inline-block;
 }
 
 .dateCaption
 {
-    display: inline;
-    margin-right: 8px;
+display: inline;
 }
 
 .createContainer{
-    border-style: solid;
-    border-width: 3px;
-    padding-top: 30px;
-    padding-right: 27px;
-    padding-left: 30px;
-    padding-bottom: 30px;
-    border-color: #8fabff;
-    border-radius: 25px;
-    background-color: #e0e8ff;
-    font-weight: bolder;
-    text-align: center;
-    margin: 15px 30px 25px 30px;
+border-style: solid;
+border-width: 3px;
+padding-top: 30px;
+padding-left: 30px;
+padding-bottom: 30px;
+border-color: #8fabff;
+border-radius: 25px;
+background-color: #e0e8ff;
+text-align: left;
+margin: 25px 450px 25px 450px;
 }
 
-.createDate
-{
-    display: inline;
-    margin-right: 10px;
+
+.quizDetails {
+margin-left: 10px;
+display: inline-block;
+}
+
+.createQuizDetails{
+display: inline;
+}
+
+#endDateCaption{
+	margin-left:15px;
+}
+
+#quizModulePosition{
+	margin-left: 44px;
+}
+#quizTimerInput{
+	margin-left: 19px;
+}
+#quizTitlePosition{
+	margin-left: 81px;
+}
+#quizStartDatePosition {
+	margin-left: 72px;
+}
+#quizEndDatePosition {
+	margin-left: 72px;
+}
+
+.mcQuestion {
+    margin-left: 60px;
+    border-radius: 6px;
+    border: 2px solid   rgb(145, 145, 145);
+    outline:none;
+}
+
+.mcCorrectAnswer {
+    margin-left: 60px;
+    border-radius: 6px;
+    border: 2px solid   rgb(60, 150, 65);
+    outline:none;
+}
+
+.mcIncorrectAnswer {
+    margin-left: 60px;
+    border-radius: 6px;
+    border: 2px solid   rgb(150, 60, 60);
+    outline:none;
+}
+
+.QuestionContainer{
+    border-style: inset;
+    border-color: #faf06c;
+    border-radius: 25px;
+    border-width: 3px;
+    background-color: rgb(255, 244, 179);
+    padding: 10px 0px 10px 0px;
+
+}
+
+.inputQuestion {
+    margin-left: 60px;
+    border-radius: 6px;
+    border: 2px solid   rgb(145, 145, 145);
+    outline:none;
+}
+
+.inputAnswer {
+    margin-left: 60px;
+    border-radius: 6px;
+    border: 2px solid   rgb(60, 150, 65);
+    outline:none;
+}
+
+
+.addQuestions{
+    cursor: pointer;
+    color: white;
+    background-color: #485d9e;
+    border-radius: 8px;
+    border-color:  #8fabff;
+    padding: 10px 10px 10px 10px;
+    font-weight: bold;
+    margin-top: 25px;
+    font-size: 18px;
+    margin-left: 50px;
+    outline: none;
+}
+
+.questionCaption{
+    margin-left: 35px;
+}
+
+#deleteQuestion{
+    float: right;
+    cursor: pointer;
+    color: rgb(255, 0, 0);
+    background-color: #ffeb33;
+    border-radius: 8px;
+    border-color:  #c9b500;
+    padding: 10px 10px 10px 10px;
+    font-weight: bold;
+    margin-top: 25px;
+    font-size: 18px;
+    margin-right: 50px;
+    outline: none;
+}
+
+#submitQuizButton{
+  margin:auto;
+  display:block;
+  cursor: pointer;
+  color: white;
+  background-color: #3cb43c;
+  border-radius: 8px;
+  border-color:  #a7ffb2;
+  padding: 10px 10px 10px 10px;
+  font-weight: bold;
+  font-size: 18px;
+  outline: none;
+  display:none;
 }

@@ -17,6 +17,13 @@ return [
         'guard' => 'web',
         'passwords' => 'users',
     ],
+    //Student authentication - guard applies default middleware
+//    'Student' => [
+//        'driver' => 'eloquent',
+//        'model' => App\Models\Student::class,
+//    ],
+
+
 
     /*
     |--------------------------------------------------------------------------
@@ -45,6 +52,22 @@ return [
             'driver' => 'token',
             'provider' => 'users',
         ],
+        'student' => [
+            'driver' => 'session',
+            'provider' => 'Student',
+        ],
+        'student-api' => [
+            'driver' => 'token',
+            'provider' => 'Student',
+        ],
+        'teacher' => [
+            'driver' => 'session',
+            'provider' => 'Teacher',
+        ],
+        'teacher-api' => [
+            'driver' => 'token',
+            'provider' => 'Teacher',
+        ],
     ],
 
     /*
@@ -70,10 +93,14 @@ return [
             'model' => App\User::class,
         ],
 
-        // 'users' => [
-        //     'driver' => 'database',
-        //     'table' => 'users',
-        // ],
+         'Student' => [
+             'driver' => 'eloquent',
+             'model' => App\Models\Student::class,
+         ],
+        'Teacher' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Teacher::class,
+        ],
     ],
 
     /*
@@ -97,6 +124,15 @@ return [
             'table' => 'password_resets',
             'expire' => 60,
         ],
+        'Student' => [
+            'provider' => 'Student',
+            'table' => 'password_resets',
+            'expire' => 60,
+        ],
+        'Teacher' => [
+            'provider' => 'Teacher',
+            'table' => 'password_resets',
+            'expire' => 60,
+        ],
     ],
-
 ];

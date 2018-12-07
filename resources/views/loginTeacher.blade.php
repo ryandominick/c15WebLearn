@@ -14,24 +14,24 @@
     </div>
 
     <div class="loginContainer">
-    <form method="POST" action="/student/login">
-        @csrf
+        <form method="POST" action="/teacher/login">
+            @csrf
             <label for="email">
-            <input type ="email" name="email" placeholder = "Enter your University email address" size="35" id="email" name="email" required>
+                <input type ="email" name="email" placeholder = "Enter your University email address" size="35" id="email" name="email" required>
             </label>
             <br>
             <label for="password">
-            <input type ="password" placeholder = "Please enter your password" id="password" name="password" size="35" required>
+                <input type ="password" placeholder = "Please enter your password" id="password" name="password" size="35" required>
             </label>
             <br>
             <button id="loginButton" type="submit" value="Submit">Log me in!</button>
-    </form>
+        </form>
 
-    <br><br>
-    <a id="registerLink" href="/reg">Don't have an account? Click here</a>
+        <br><br>
+        <a id="registerLink" href="/reg">Don't have an account? Click here</a>
     </div>
 </div>
 
- </body>
+</body>
 </html>
 
