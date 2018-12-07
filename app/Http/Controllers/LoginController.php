@@ -30,7 +30,7 @@ class LoginController extends Controller
 
          }else if(intval($teacherData = $teacher->validateTeacher($email)) > 0 ){
              //if(Hash::check($password, $teacherData[0]->teaPassword)){
-             if(password_verify($password, $teacherData[0]->teapassword)){
+             if(password_verify($password, $teacherData[0]->teaPassword)){
                  $this->storeSession($request, $teacherData[0]->teacherID, $teacherData[0]->firstName, $teacherData[0]->lastName, 'T');
                  return view('teacherHomepage')->with('firstname', $request->session()->get('firstname'));
              }
@@ -40,6 +40,14 @@ class LoginController extends Controller
 
 
         //$request->session()->regenerate();
+    }
+
+    public function logout(){
+        session_start();
+        session_unset();
+        session_destroy();
+
+        return redirect('/login');
     }
 
 

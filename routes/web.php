@@ -15,6 +15,12 @@ Route::get('/', function () {
 });
 Route::post('/authenticate', 'LoginController@store')->middleware('loginAuth');
 
+
+Route::get('/studentHome', function(){
+    return view('studentHomepage');
+
+});
+
 Route::get('/welcome', function () {
     return view('welcome');
 });
@@ -23,5 +29,10 @@ Route::get('/login', function(){
     return view('login');
 });
 
+
+Route::get('/logout', 'LoginController@logout');
+
 Route::resource('reg', 'RegController');
+
+Route::resource('createquiz', 'CreateQuizController');
 

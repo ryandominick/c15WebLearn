@@ -5,7 +5,7 @@
     <title>GradiQuiz Registration</title>
     <link rel="stylesheet" type="text/css" href="/css/projstyle.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-    <script type="text/javascript" src="/js/projscript.js"></script>
+    <script type="text/javascript" src="/js/registration.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -40,6 +40,7 @@
         <label for="password">
         <input id="password" type ="password" placeholder = "Password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" size="35" onkeyup='checkPassword();' required>
         </label>
+        <i class="fa fa-eye" id="eyeIcon"></i>
         <div id="faPassword" class="fa">&#xf128;
             <span class="tooltipText">Password Strength Requirements: <strong>minimum 8 characters, at least 1 capital letter, lowercase letter and number.</strong></span>
         </div>

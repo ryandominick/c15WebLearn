@@ -14,10 +14,10 @@ class TeacherRegistration
     public static function register($firstName, $lastName, $Email, $teaPassword)
     {
 
-        $Password = Hash::make($teaPassword);
+        $hashPass = password_hash($teaPassword, PASSWORD_DEFAULT);
         //if(self::checkExists($Email) == false) {
             DB::insert('insert into teacher(firstName, lastName, teaEmail, teaPassword) values (:firstName, :lastName, :teaEmail, :teaPassword)',
-                [':firstName' => $firstName, ':lastName' => $lastName, ':teaEmail' => $Email, ':teaPassword' => $Password]);
+                [':firstName' => $firstName, ':lastName' => $lastName, ':teaEmail' => $Email, ':teaPassword' => $hashPass]);
 
         //}
     }
