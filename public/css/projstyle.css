@@ -116,7 +116,6 @@ td:hover {
     margin-top: 10px;
     padding: 15px;
     width: 230px;
-    color: white;
 }
 #passwordValidityTxt{
     margin-top: 10px;
@@ -144,16 +143,12 @@ td:hover {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: center;
     min-height: 100vh;
 }
 .loginContainer {
     border-style: solid;
     border-width: 5px;
-    padding-top: 30px;
-    padding-right: 27px;
-    padding-left: 30px;
-    padding-bottom: 30px;
+    padding: 30px 27px 30px 30px;
     border-color: #DCDCDC;
     border-radius: 25px;
     background-color: #f3f3f2;
@@ -324,9 +319,38 @@ input {
     border-radius: 25px;
     border-width: 3px;
     background-color: rgb(255, 244, 179);
-    padding: 10px 0px 10px 0px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 
 }
+
+.takeQuestionContainer {
+    border-style: inset;
+    border-color: #9cadff;
+    border-radius: 25px;
+    border-width: 3px;
+    background-color: rgb(194, 208, 255);
+    padding-top:10px;
+    padding-bottom: 20px;
+}
+
+/*Type of question caption*/
+.questionTypeTitle{
+    margin-left: 15px;
+    font-weight: lighter;
+    font-size: 20px;
+}
+
+/*Quiz question title*/
+.questionTitle{
+    margin-left: 35px;
+}
+
+.answerContainer{
+    margin-left: 50px;
+}
+
+/*create input question container*/
 .inputQuestion {
     margin-left: 60px;
     border-radius: 6px;
@@ -381,7 +405,6 @@ input {
     font-weight: bold;
     font-size: 18px;
     outline: none;
-    display:none;
 }
 /* Popup background */
 .modal {

@@ -36,3 +36,7 @@ Route::resource('reg', 'RegController');
 
 Route::resource('createquiz', 'CreateQuizController');
 
+Route::get('/takequiz', function() {
+   return view ('takeQuiz');
+});
+
