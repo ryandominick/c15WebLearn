@@ -7,27 +7,8 @@
     <link rel="stylesheet" type="text/css" href="/css/projstyle.css">
     <script type="text/javascript" src="/js/createQuiz.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-
 </head>
-
 <body>
-
-<script>
-    // var timeMax = 15;
-    // var timeMin = 3;
-    // timerHelp;
-    // function timerLimit(){
-    // var time = document.getElementById("quizTimerPosition").value;
-
-
-    //     if (time < timeMin || time > timeMax){
-    //         timerHelp = "Timer not valid (min:3) (max:15)";
-    //     } else {
-    //         //do nothing
-    //     }
-    //     document.getElementById("timerValidityTxt").innerHTML = timerHelp;
-    // }
-</script>
 <div class="smallLogo">
     <img src="/images/GradiQuiz_Logo.png" style="height: 90px;" alt="logo" />
 </div>

@@ -32,11 +32,16 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    document.getElementById("deleteQuestion").addEventListener("click", deleteQuestions);
-    function deleteQuestions() {
-        var item = document.getElementsById("QuestionContainer");
-        item.parentNode.removeChild(item);
-    }
+    // document.getElementById("deleteQuestion").addEventListener("click", deleteQuestions);
+    // function deleteQuestions() {
+    //     // var element = document.getElementsByClassName("questionContainer");
+    //     // element.classList.remove("questionContainer");
+    //     // var elem = document.querySelector(".questionContainer");
+    //     // elem.parentNode.removeChild(elem)
+    //     // document.getElementById('questionContainer').parentNode.removeChild(document.getElementById('questionContainer'));
+    //     // var item = document.getElementsById("QuestionContainer");
+    //     // item.remove(item.selectedIndex);
+    // }
 
     function showSubmitQuiz() {
         document.getElementById("submitQuizButton").style.display = "block";

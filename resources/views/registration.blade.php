@@ -10,9 +10,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-<div class="login">
+<div class="startContainer">
     <div class="logo">
-        <img src="/images/GradiQuiz_Logo.jpg" alt="logo" />
+        <img src="/images/GradiQuiz_Logo.png" alt="logo" />
     </div>
 
     <form method = "post" action="/reg">
@@ -38,9 +38,11 @@
         <br>
 
         <label for="password">
-        <input id="password" type ="password" placeholder = "Password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" size="35" onkeyup='checkPassword();' required>
+        <input id="password" type ="password" placeholder = "Password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" size="35"  required>
         </label>
+        <div id = "eyeIconContainer">
         <i class="fa fa-eye" id="eyeIcon"></i>
+        </div>
         <div id="faPassword" class="fa">&#xf128;
             <span class="tooltipText">Password Strength Requirements: <strong>minimum 8 characters, at least 1 capital letter, lowercase letter and number.</strong></span>
         </div>
@@ -80,3 +82,4 @@
     </form>
 </div>
 </body>
+</html>

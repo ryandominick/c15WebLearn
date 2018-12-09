@@ -148,7 +148,10 @@ td:hover {
 .loginContainer {
     border-style: solid;
     border-width: 5px;
-    padding: 30px 27px 30px 30px;
+    padding-top: 30px;
+    padding-right: 27px;
+    padding-left: 30px;
+    padding-bottom: 30px;
     border-color: #DCDCDC;
     border-radius: 25px;
     background-color: #f3f3f2;
@@ -330,7 +333,7 @@ input {
     border-radius: 25px;
     border-width: 3px;
     background-color: rgb(194, 208, 255);
-    padding-top:10px;
+    padding-top: 10px;
     padding-bottom: 20px;
 }
 
@@ -395,7 +398,6 @@ input {
 }
 #submitQuizButton{
     margin:auto;
-    display:block;
     cursor: pointer;
     color: white;
     background-color: #3cb43c;
@@ -405,6 +407,7 @@ input {
     font-weight: bold;
     font-size: 18px;
     outline: none;
+    display:none;
 }
 /* Popup background */
 .modal {

@@ -8,7 +8,7 @@
 </head>
 <body>
 <div class="smallLogo">
-    <img src="images/GradiQuiz_Logo.jpg" style="height: 90px;" alt="logo"/>
+    <img src="images/GradiQuiz_Logo.png" style="height: 90px;" alt="logo"/>
 </div>
 <hr>
 <nav class="navigation">
