@@ -27,7 +27,7 @@ class Teacher extends Authenticatable
 
         $Password = Hash::make($teaPassword);
         //if(self::checkExists($Email) == false) {
-        DB::insert('insert into teacher(firstName, lastName, email, password) values (:firstName, :lastName, :teaEmail, :teaPassword)',
+        DB::insert('insert into Teacher(firstName, lastName, email, password) values (:firstName, :lastName, :teaEmail, :teaPassword)',
             [':firstName' => $firstName, ':lastName' => $lastName, ':teaEmail' => $Email, ':teaPassword' => $Password]);
 
         //}
@@ -35,7 +35,7 @@ class Teacher extends Authenticatable
 
     public static function checkExists($Email){
 
-        $count = DB::select('select count(teaEmail) from teacher where teaEmail = :teaEmail', [':teaEmail' => $Email]);
+        $count = DB::select('select count(teaEmail) from Teacher where teaEmail = :teaEmail', [':teaEmail' => $Email]);
 
         if($count == 0){
 

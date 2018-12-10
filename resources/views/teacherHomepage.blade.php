@@ -15,8 +15,8 @@
 <nav class="navigation">
     <a id="home" href="teacherHomepage.blade.php">Home</a>
     <a id="create" href="/html/">Create Quizzes</a>
-    <a id="logout" href="/logout">Log out</a>
     <a id="contact" href="contact.html">Contact Us</a>
+    <a id="logout" href="/teacher/logout">Log out</a>
 </nav>
 <hr>
 <br>

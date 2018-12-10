@@ -6,12 +6,12 @@ function showHidePass() {
 
     if(passwordClicked === false) {
         //If button is clicked, change to 'text' type to see what password is
-        getLoginInput.setAttribute("type", "text");
+        getLoginInput.setAttribute("type", "password");
         passwordClicked = true;
 
     } else if (passwordClicked === true) {
         //If button is clicked again, change from 'text' type to 'password'
-        getLoginInput.setAttribute("type", "password");
+        getLoginInput.setAttribute("type", "text");
         passwordClicked = false;
     }
 }
