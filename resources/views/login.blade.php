@@ -4,34 +4,45 @@
     <title>Login</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="/css/projstyle.css">
+    <script type="text/javascript" src="/js/login.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 </head>
 <body>
 
-<div class="login">
-    <div class="logo">
-        <img src="/images/GradiQuiz_Logo.jpg" alt="logo" />
+<div class="startContainer">
+    <div class="bigLogo">
+        <img src="/images/GradiQuiz_Logo.png" width="600px" height="180px" alt="logo"/>
     </div>
 
-    <div class="loginContainer">
-    <form method="POST" action="/student/login">
+    <form method="POST" action = "/student/login">
         @csrf
-            <label for="email">
-            <input type ="email" name="email" placeholder = "Enter your University email address" size="35" id="email" name="email" required>
+        <div class="loginContainer">
+            <label id="studentRadioLogin">
+                <input id="stuRadio" type="radio" onclick="disableInput()" value="student" name="userType" required />Student
+            </label>
+
+            <label for ="teacherRadioLogin">
+                <input id="teaRadio" onclick="disableInput()" type="radio" value="teacher" name="userType" required />Teacher
             </label>
             <br>
-            <label for="password">
-            <input type ="password" placeholder = "Please enter your password" id="password" name="password" size="35" required>
+            <label for = "email">
+                <input type ="email" placeholder = "Enter your University email address" size="35" name="email" required>
             </label>
             <br>
-            <button id="loginButton" type="submit" value="Submit">Log me in!</button>
+            <label for = "password">
+                <input type ="password" id="passwordClicked" placeholder = "Please enter your password" name="password" size="35" required>
+            </label>
+            <br>
+            <label for = "showPass" onclick="showHidePass()">Show Password
+                <input type ="checkbox">
+                <br>
+                <button id="loginButton" type="submit" value="Submit">Log me in!</button>
+            </label>
+        </div>
     </form>
-
     <br><br>
-    <a id="registerLink" href="/reg">Don't have an account? Click here</a>
-    </div>
+    <a id="registerLink" href="Registration.html">Don't have an account? Click here</a><br>
+    <a id="forgotPassword" href="/meme.html">Forgot your password? Click here</a>
 </div>
-
- </body>
+</body>
 </html>
-

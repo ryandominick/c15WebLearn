@@ -6,6 +6,7 @@ namespace App\Models;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class Student extends Authenticatable
 {
@@ -34,9 +35,9 @@ class Student extends Authenticatable
     public static function register($firstName, $lastName, $Email, $stupassword)
     {
 
-        $hashPass = password_hash($stupassword, PASSWORD_DEFAULT);
+        $hashPass = Hash::make($stupassword);
         //if(self::checkExists($Email) == false) {
-        DB::insert('insert into Student(firstName, lastName, stuEmail, stupassword) values (:firstName, :lastName, :stuEmail, :stupassword)',
+        DB::insert('insert into Student(firstName, lastName, email, password) values (:firstName, :lastName, :stuEmail, :stupassword)',
             [':firstName' => $firstName, ':lastName' => $lastName, ':stuEmail' => $Email, ':stupassword' => $hashPass]);
         //}
 

@@ -46,12 +46,12 @@ class RegController extends Controller
 
             if($userType === "student") {
                 Student::register($firstName, $lastName, $Email, $password);
-                return redirect('/login');
+                return redirect('/student/login');
             }
             elseif ($userType === "teacher"){
                 if ($key === $correctKey) {
                     Teacher::register($firstName, $lastName, $Email, $password);
-                    return redirect('/login');
+                    return redirect('/teacher/login');
                 }
                 else{
 

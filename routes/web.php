@@ -27,6 +27,8 @@ Route::get('/filter', function(){
     return view('myResults');
 });
 
+Route::resource('createquiz', 'CreateQuizController');
+
 //Route::get('student/login', 'Auth\StudentLoginController@showLoginForm');
 
 
