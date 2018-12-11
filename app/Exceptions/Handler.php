@@ -73,12 +73,15 @@ class Handler extends ExceptionHandler
                 }
 
         //type of login NEEDS CHANGING LATER
-        $guard = array_get($exception->guards(),0);
-        if($guard === 'student'){
-            $login = 'student/login';
-        }else {
-            $login = 'teacher/login';
-        }
+//        $guard = array_get($exception->guards(),0);
+//        if($guard === 'student'){
+//            $login = 'student/login';
+//        }else {
+//            $login = 'teacher/login';
+//        }
+
+        $login = "/login";
+
         return redirect()->guest($login);
 
 
