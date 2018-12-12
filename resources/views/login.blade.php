@@ -18,11 +18,11 @@
 
         <div class="loginContainer">
             <label for="userType">
-                <input id="stuRadio" type="radio" value="student" name="userType"  required checked="checked"/>Student
+                <input id="stuRadio" type="radio" value="student" name="userType"  required checked="checked">Student
             </label>
 
             <label for ="userType">
-                <input id="teaRadio"  type="radio" value="teacher" name="userType"  required />Teacher
+                <input id="teaRadio"  type="radio" value="teacher" name="userType"  required >Teacher
             </label>
             <form method="POST" action ="/student/login" id="loginForm">
                 @csrf
@@ -35,8 +35,8 @@
                 <input type ="password" id="passwordClicked" placeholder = "Please enter your password" name="password" size="35" required>
             </label>
             <br>
-                <button id="loginButton" type="submit" value="Submit">Log me in!</button>
-            </form>
+                <button class="buttons" type="submit" value="Submit">Log me in!</button>
+    </form>
             <label for = "showPass" >Show Password
                 <input type ="checkbox"name="checkbox" id="checkbox1">
                 <br>

@@ -23,7 +23,7 @@
 
 Route::resource('reg', 'RegController');
 
-Route::get('/filter', function(){
+Route::get('/teacher/filter', function(){
     return view('myResults');
 });
 
