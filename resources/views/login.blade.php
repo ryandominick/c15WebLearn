@@ -36,7 +36,7 @@
             </label>
             <br>
                 <button id="loginButton" type="submit" value="Submit">Log me in!</button>
-    </form>
+            </form>
             <label for = "showPass" >Show Password
                 <input type ="checkbox"name="checkbox" id="checkbox1">
                 <br>
