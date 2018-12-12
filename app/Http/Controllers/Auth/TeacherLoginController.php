@@ -42,7 +42,7 @@ class TeacherLoginController extends Controller
 
     public function showLoginForm()
     {
-        return view('loginTeacher');
+        return view('login');
     }
 
     public function teacherLogin(Request $request)
