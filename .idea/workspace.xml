@@ -45,14 +45,14 @@
           <entry key="env" value="3" />
           <entry key="gitignore" value="13" />
           <entry key="js" value="444" />
-          <entry key="php" value="605" />
+          <entry key="php" value="659" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Blade" value="266" />
           <entry key="JavaScript" value="444" />
-          <entry key="PHP" value="339" />
+          <entry key="PHP" value="393" />
           <entry key="PLAIN_TEXT" value="16" />
         </counts>
       </usages-collector>
@@ -89,8 +89,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CreateQuizController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="42" column="4" selection-start-line="42" selection-start-column="4" selection-end-line="42" selection-end-column="4" />
+            <state relative-caret-position="349">
+              <caret line="60" column="26" lean-forward="true" selection-start-line="60" selection-start-column="26" selection-end-line="60" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -506,16 +506,15 @@
       <workItem from="1544360345885" duration="6908000" />
       <workItem from="1544457541654" duration="4255000" />
       <workItem from="1544524620063" duration="13939000" />
-      <workItem from="1544609757379" duration="1854000" />
+      <workItem from="1544609757379" duration="2106000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="130545000" />
+    <option name="totallyTimeSpent" value="130797000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21215352" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -821,8 +820,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CreateQuizController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="42" column="4" selection-start-line="42" selection-start-column="4" selection-end-line="42" selection-end-column="4" />
+        <state relative-caret-position="349">
+          <caret line="60" column="26" lean-forward="true" selection-start-line="60" selection-start-column="26" selection-end-line="60" selection-end-column="26" />
         </state>
       </provider>
     </entry>
