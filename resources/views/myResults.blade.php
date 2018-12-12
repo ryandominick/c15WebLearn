@@ -4,16 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <title>Results Page</title>
-    <link rel="stylesheet" type="text/css" href="css/projstyle.css">
+    <link rel="stylesheet" type="text/css" href="/css/projstyle.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 </head>
 
 <body>
     <div class="smallLogo">
-        <img src="images/GradiQuiz_Logo.jpg" style="height: 90px;" alt="logo" />
+        <img src="/images/GradiQuiz_Logo.jpg" style="height: 90px;" alt="logo" />
     </div>
     <hr>
-    <nav class="navigation">
+        <nav class="navigation">
         <a id="home" href="StudentHomepage.html">Home</a>
         <a id="studProfile" href="StudentProfile.html">My Profile</a>
         <a id="contact" href="contact.html">Contact Us</a>
@@ -21,9 +21,13 @@
     </nav>
     <hr>
     <br>
-    <h2>[insert student name], your results are displayed below.</h2>
+    <div id="userBar">
+
+        <label for="searchInput"><input type="search" id="searchText" name="searchInput"></label>
+        <input type="button" id="searchButton" class="buttons" value="search">
+    </div>
     <table>
-        <caption class="tablecap">My Results</caption>
+        <caption class="tablecap">Results</caption>
         <tr>
             <th>Module Code</th>
             <th>Module Name</th>
