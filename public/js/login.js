@@ -1,5 +1,4 @@
-
-document.addEventListener("DOMContentLoaded", function (event) {
+document.addEventListener("DOMContentLoaded", function () {
 
 //Set default value for if password is clicked
 
