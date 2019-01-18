@@ -47,6 +47,7 @@ class TeacherLoginController extends Controller
 
     public function teacherLogin(Request $request)
     {
+
         // Validate form data
         $this->validate($request,[
             'email' => 'required|email',
@@ -57,6 +58,7 @@ class TeacherLoginController extends Controller
            // return redirect()->intended(route('teacher.home'));
             return redirect()->route('teacher.home');
         }
+
         return redirect()->back()->WithInput($request->only('email', 'remember'));
 
     }
