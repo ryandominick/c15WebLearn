@@ -45,7 +45,7 @@
 
 
     <br><br>
-    <a id="registerLink" href="Registration.html">Don't have an account? Click here</a><br>
+    <a id="registerLink" href="reg">Don't have an account? Click here</a><br>
     <a id="forgotPassword" href="/meme.html">Forgot your password? Click here</a>
 </div>
 </body>
