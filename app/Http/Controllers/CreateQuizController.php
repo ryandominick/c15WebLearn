@@ -35,41 +35,46 @@ class CreateQuizController extends Controller
      */
     public function store(Request $request)
     {
-        return $request->all();
+        //$mcCount = count(Input::get('mcQuestion'));
+        //echo $mcCount;
 
-//        //retrieve teacher ID from Session
-//        //$studentID = $_SESSION["id"];
-//        //assign to variable
-//
-//        //ignore module code for now
-//
-//
-//        //add quizTitle,quizstart,quizend,quizstatus,duration,module code,teacherID to teachquiz table
-//        $quizTitle = $request ['quizTitle'];
-//        $quizDateStart = $request ['quizDateStart'];
-//        $quizDateEnd = $request ['quizDateEnd'];
-//        $quizDuration = $request ['timer'];
-//        $quizStatus = "active";
-//        if($quizDateStart > time()){
-//
-//            $quizStatus = "queued";
-//        };
-//        //----Multiple Choice Questions----//
-//    //retrieve arrays of question inputs, and set a count for the amount
-//        $mcCount = count(Input::get('mcQuestion'));
-//        $mcQuestion = Input::get('mcQuestion');
-//        $mcCorrectAnswer = Input::get('mcCorrectAnswer');
-//        $mcIncorrectAnswer1 = Input::get('mcIncorrectAnswer1');
-//        $mcIncorrectAnswer2 = Input::get('mcIncorrectAnswer1');
-//        $mcIncorrectAnswer3 = Input::get('mcIncorrectAnswer1');
-//        //add question arrays to respective question tables
-//        //return $mcQuestions;
-//        $mcQuestions = array();
-//        for($i=0;$i<$mcCount;$i++){
-//            $mcQuestions(
-//              array($mcQuestion[$i],$mcCorrectAnswer[$i],$mcIncorrectAnswer1[$i],$mcIncorrectAnswer2[$i],$mcIncorrectAnswer3[$i])
-//            );
-//        }
+
+
+        //return $request->all();
+
+        //retrieve teacher ID from Session
+        //PLACEHOLDER
+        $teacherID = 1;
+        //ignore module code for now
+
+
+        //add quizTitle,quizstart,quizend,quizstatus,duration,module code,teacherID to teachquiz table
+        $quizTitle = $request ['quizTitle'];
+        $quizDateStart = $request ['quizDateStart'];
+        $quizDateEnd = $request ['quizDateEnd'];
+        $quizDuration = $request ['timer'];
+        $quizStatus = "active";
+        if($quizDateStart > time()){
+
+            $quizStatus = "queued";
+        };
+        return $quizTitle;
+        //----Multiple Choice Questions----//
+    //retrieve arrays of question inputs, and set a count for the amount
+        $mcCount = count(Input::get('mcQuestion'));
+        $mcQuestion = Input::get('mcQuestion');
+        $mcCorrectAnswer = Input::get('mcCorrectAnswer');
+        $mcIncorrectAnswer1 = Input::get('mcIncorrectAnswer1');
+        $mcIncorrectAnswer2 = Input::get('mcIncorrectAnswer1');
+        $mcIncorrectAnswer3 = Input::get('mcIncorrectAnswer1');
+        //add question arrays to respective question tables
+        //return $mcQuestions;
+        $mcQuestions = array();
+        for($i=0;$i<$mcCount;$i++){
+            $mcQuestions(
+              array($mcQuestion[$i],$mcCorrectAnswer[$i],$mcIncorrectAnswer1[$i],$mcIncorrectAnswer2[$i],$mcIncorrectAnswer3[$i])
+            );
+        }
     }
 
     /**

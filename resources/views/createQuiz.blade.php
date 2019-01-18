@@ -56,10 +56,17 @@
             <span id='timerValidityTxt'> </span>
         </label>
     </div>
+    <div class = "questionContainer" id="questionSection">
+
+
+    </div>
+    {{--<button id="submitQuizButton" typ   e="submit" onclick="return submitAll()" value="Submit">Submit Quiz!</button>--}}
 </form>
-<form method="post" id="createQuizForm" action="/createQuiz">
-    @csrf
-</form>
+
+{{--<form method="post" id="createQuizForm" action="/createquiz">--}}
+    {{--@csrf--}}
+
+{{--</form>--}}
 
 <button class="addQuestions" id="addMCQuestions">Add Multiple Choice Question</button>
 <button class="addQuestions" id="addInputQuestions">Add Input Question</button>
