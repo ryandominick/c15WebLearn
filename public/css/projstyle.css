@@ -456,3 +456,7 @@ input {
 .searchBox{
     text-align: center;
 }
+.floatRight{
+    float: right;
+    color: red;
+}
