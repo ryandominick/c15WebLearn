@@ -47,6 +47,7 @@ class StudentLoginController extends Controller
         ]);
 
         if(Auth::guard('student')->attempt(['email'=> $request->email, 'password' => $request->password], $request->remember)){
+
             return redirect()->route('student.home');
         }
         return redirect()->back()->WithInput($request->only('email', 'remember'));
