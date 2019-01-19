@@ -24,7 +24,7 @@
             <label for ="userType">
                 <input id="teaRadio"  type="radio" value="teacher" name="userType"  required >Teacher
             </label>
-            <form method="POST" action ="/teacher/login" id="loginForm">
+            <form method="POST" action ="/student/login" id="loginForm">
                 @csrf
             <br>
             <label for = "email">
