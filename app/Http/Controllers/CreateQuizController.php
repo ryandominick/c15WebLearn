@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
+use App\Models\Quiz;
 
 class CreateQuizController extends Controller
 {
@@ -48,6 +49,11 @@ class CreateQuizController extends Controller
         //ignore module code for now
 
 
+        //quiz ID
+            $quizID = Quiz::findQuizID();
+
+            return $quizID["max(quizID)"];
+            //return $quizIDString;
         //add quizTitle,quizstart,quizend,quizstatus,duration,module code,teacherID to teachquiz table
         $quizTitle = $request ['quizTitle'];
         $quizDateStart = $request ['quizDateStart'];
@@ -58,24 +64,33 @@ class CreateQuizController extends Controller
 
             $quizStatus = "queued";
         };
-        return $quizTitle;
+        //return $quizTitle;
         //----Multiple Choice Questions----//
     //retrieve arrays of question inputs, and set a count for the amount
         $mcCount = count(Input::get('mcQuestion'));
         $mcQuestion = Input::get('mcQuestion');
-        $mcCorrectAnswer = Input::get('mcCorrectAnswer');
+        $mcCorrectAns = Input::get('mcCorrectAnswer');
         $mcIncorrectAnswer1 = Input::get('mcIncorrectAnswer1');
-        $mcIncorrectAnswer2 = Input::get('mcIncorrectAnswer1');
-        $mcIncorrectAnswer3 = Input::get('mcIncorrectAnswer1');
-        //add question arrays to respective question tables
-        //return $mcQuestions;
-        $mcQuestions = array();
-        for($i=0;$i<$mcCount;$i++){
-            $mcQuestions(
-              array($mcQuestion[$i],$mcCorrectAnswer[$i],$mcIncorrectAnswer1[$i],$mcIncorrectAnswer2[$i],$mcIncorrectAnswer3[$i])
-            );
+        $mcIncorrectAnswer2 = Input::get('mcIncorrectAnswer2');
+        $mcIncorrectAnswer3 = Input::get('mcIncorrectAnswer3');
+        for($i = 0; $i < $mcCount; $i++){
+            Quiz::addQuestionMC($mcQuestion[$i], $mcCorrectAns[$i], $mcIncorrectAnswer1[$i], $mcIncorrectAnswer2[$i], $mcIncorrectAnswer3[$i]);
         }
-    }
+
+        //----Input Questions----//
+
+        $inputCount = count(Input::get('inputQuestion'));
+        $inputQuestion = Input::get('inputQuestion');
+        $inputAnswer = Input::get('inputAnswer');
+
+        for ($i = 0; $i < $inputCount; $i++) {
+
+            Quiz::addQuestionInput($inputQuestion[$i], $inputAnswer[$i]);
+
+        }
+        //return $mcCount;
+        }
+
 
     /**
      * Display the specified resource.
