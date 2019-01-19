@@ -3,7 +3,8 @@
     font-family: 'Montserrat', sans-serif;
 }
 table {
-    width: 100%;
+    width:100%;
+    table-layout: fixed;
 }
 table, th, td {
     margin-top: 70px;
@@ -133,14 +134,7 @@ th {
     top: 26.8em;
     left: 920px;
 }
-#registerSubmit{
-    border-radius: 12px;
-    font-size: 17px;
-    cursor: pointer;
-    background-color: #80d4ff;
-    padding: 15px;
-    width: 230px;
-}
+
 .startContainer {
     text-align: center;
     display: flex;
@@ -160,9 +154,7 @@ th {
     border-radius: 25px;
     background-color: #f3f3f2;
 }
-.registerButton{
-    text-align: center;
-}
+
 input {
     padding: 12px 20px;
     margin: 8px 0;
@@ -246,11 +238,12 @@ input {
     margin-right: 4px;
 }
 
-#faPassword{
-    left: 325px;
-    top: -40px;
-}
 /*Positioning tooltip icon*/
+
+#faPassword{
+    top: -40px;
+    left: 195px;
+}
 
 #tooltipField{
     margin-left:49px;
@@ -455,4 +448,8 @@ input {
 }
 .searchBox{
     text-align: center;
+}
+.floatRight{
+    float: right;
+    color: red;
 }
