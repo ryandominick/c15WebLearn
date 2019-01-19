@@ -21,7 +21,7 @@
 <hr>
 <br>
 <h2 class="welcome"></h2>
-<table style="width:100%">
+<table>
     <caption class="tablecap">Current Quizzes</caption>
 
     <tr>
