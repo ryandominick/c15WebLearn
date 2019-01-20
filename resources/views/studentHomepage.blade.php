@@ -13,8 +13,8 @@
 <hr>
 <nav class="navigation">
     <a id="home" href="/studentHome">Home</a>
-    <a id="studProfile" href="StudentProfile.html">My Profile</a>
-    <a id="results" href="MyResults.html">My results</a>
+    <a id="studProfile" href="StudentSearch">My Profile</a>
+    <a id="studentSearch" href="/student/search">Search Quizzes</a>
     <a id="contact" href="contact.html">Contact Us</a>
     <a id="logout" href="/student/logout">Logout</a>
 </nav>

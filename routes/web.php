@@ -23,9 +23,10 @@
 
 Route::resource('reg', 'RegController');
 
-Route::get('/teacher/filter', function(){
-    return view('myResults');
-});
+Route::get('/student/search', 'StudentSearchController@index');
+Route::post('/student/search/query', 'StudentSearchController@query');
+
+
 
 Route::resource('createquiz', 'CreateQuizController');
 
@@ -34,6 +35,8 @@ Route::resource('createquiz', 'CreateQuizController');
 
 //Route::prefix('/student')->group(function(){
     // ->name() allows for route alias
+
+// Authentication Routes
 
     Route::get('/login', 'Auth\StudentLoginController@showLoginForm')->middleware('guest:teacher', 'guest:student');
 
