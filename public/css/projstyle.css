@@ -266,14 +266,15 @@ input {
 }
 
 .createContainer{
-    border-style: solid;
+    border-style: outset;
     border-width: 3px;
     padding-top: 30px;
     padding-left: 30px;
     padding-bottom: 30px;
-    border-color: #8fabff;
+    border-color: #3f37b8;
     border-radius: 25px;
-    background-color: #e0e8ff;
+    background-color: #5c97fc;
+    background-image: linear-gradient(to right, #9394e9, #b0a5ff, #5c97fc);
     text-align: left;
     margin: 25px 450px 25px 450px;
 }
@@ -322,13 +323,16 @@ input {
 }
 .QuestionContainer{
     border-style: inset;
-    border-color: #faf06c;
+    border-color: #686ecc;
     border-radius: 25px;
     border-width: 3px;
-    background-color: rgb(255, 244, 179);
+    background-image:  url("/images/arches.png"), linear-gradient(to right, #91a8dd, #b0b6da);
     padding-top: 10px;
     padding-bottom: 10px;
-
+    color: #3f4047;
+    font-size: 18px;
+    margin-right: 50px;
+    margin-left: 50px;
 }
 
 .takeQuestionContainer {
@@ -389,17 +393,24 @@ input {
 #deleteQuestion{
     float: right;
     cursor: pointer;
-    color: rgb(255, 0, 0);
-    background-color: #ffeb33;
+    background-color: #d20000;
     border-radius: 8px;
-    border-color:  #c9b500;
+    border-color: #8c0400;
     padding: 10px 10px 10px 10px;
     font-weight: bold;
     margin-top: 25px;
-    font-size: 18px;
+    font-size: 25px;
+    color: white;
     margin-right: 50px;
     outline: none;
 }
+
+.fa-trash{
+    color: white;
+    font-size: 30px;
+    margin-left: 15px;
+}
+
 #submitQuizButton{
     margin:auto;
     cursor: pointer;
