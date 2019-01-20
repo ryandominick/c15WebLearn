@@ -52,18 +52,23 @@ class CreateQuizController extends Controller
         //quiz ID
             $quizID = Quiz::findQuizID();
 
-            return $quizID["max(quizID)"];
+            $newID = $quizID["max(quizID)"] + 1;
             //return $quizIDString;
         //add quizTitle,quizstart,quizend,quizstatus,duration,module code,teacherID to teachquiz table
         $quizTitle = $request ['quizTitle'];
         $quizDateStart = $request ['quizDateStart'];
         $quizDateEnd = $request ['quizDateEnd'];
         $quizDuration = $request ['timer'];
+        $moduleCode = $request ['moduleCode'];
         $quizStatus = "active";
+
         if($quizDateStart > time()){
 
             $quizStatus = "queued";
         };
+
+        Quiz::addDetails($newID, $quizTitle, $quizDateStart, $quizDateEnd, $quizStatus, $quizDuration, $moduleCode, $teacherID);
+
         //return $quizTitle;
         //----Multiple Choice Questions----//
     //retrieve arrays of question inputs, and set a count for the amount
