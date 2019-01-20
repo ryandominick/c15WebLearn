@@ -2,6 +2,10 @@
 * {
     font-family: 'Montserrat', sans-serif;
 }
+
+body {
+    background-image: url("/images/stripes-light.png");
+}
 table {
     width:100%;
     table-layout: fixed;
@@ -159,6 +163,9 @@ input {
     padding: 12px 20px;
     margin: 8px 0;
     box-sizing: border-box;
+    border-width: 0px 0px 2px 0px;
+    border-color:  darkgray;
+    outline: none;
 }
 
 /*show password icon stlye*/
