@@ -471,3 +471,46 @@ input {
     float: right;
     color: red;
 }
+
+#loginButton {
+    border-radius: 12px;
+    font-size: 17px;
+    font-weight: bolder;
+    color: white;
+    cursor: pointer;
+    background-color: #2D1B7E;
+    margin-top: 10px;
+    padding: 15px;
+    width: 230px;
+}
+
+#loginButton span{
+    display: inline-block;
+    transition: 0.3s;
+    position: relative;
+}
+
+.fa-key{
+   color: white;
+   left: -20px;
+}
+
+#loginButton span:after{
+    position: absolute;
+    content: '\00bb';
+    transition: 0.3s;
+    top: 0;
+    right: -15px;
+    padding-left: 50px;
+    margin-right: 15px;
+    opacity: 0;
+}
+
+#loginButton:hover span{
+    padding-right: 50px;
+}
+
+#loginButton:hover span:after{
+    right: 0;
+    opacity: 5;
+}

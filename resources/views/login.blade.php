@@ -6,6 +6,7 @@
     <link rel="stylesheet" type="text/css" href="/css/projstyle.css">
     <script type="text/javascript" src="/js/login.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 
@@ -35,7 +36,7 @@
                 <input type ="password" id="passwordClicked" placeholder = "Please enter your password" name="password" size="35" required>
             </label>
             <br>
-                <button class="buttons" type="submit" value="Submit">Log me in!</button>
+                <button id="loginButton" type="submit" value="Submit"><span>Log me in! </span><i class="fa fa-key"></i></button>
     </form>
             <label for = "showPass" >Show Password
                 <input type ="checkbox"name="checkbox" id="checkbox1">
