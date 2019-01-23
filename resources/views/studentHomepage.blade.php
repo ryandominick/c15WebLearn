@@ -12,7 +12,7 @@
 </div>
 <hr>
 <nav class="navigation">
-    <a id="home" href="/student/home">Home</a>
+    <a id="home" href="/student/home ">Home</a>
     <a id="studProfile" href="/StudentProfile.html">My Profile</a>
     <a id="results" href="MyResults.html">My results</a>
     <a class="floatRight" href="contact.html">Contact Us</a>
