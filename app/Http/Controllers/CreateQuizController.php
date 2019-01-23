@@ -53,8 +53,10 @@ class CreateQuizController extends Controller
             $quizID = Quiz::findQuizID();
 
             $newID = $quizID["max(quizID)"] + 1;
+
             //return $quizIDString;
         //add quizTitle,quizstart,quizend,quizstatus,duration,module code,teacherID to teachquiz table
+
         $quizTitle = $request ['quizTitle'];
         $quizDateStart = $request ['quizDateStart'];
         $quizDateEnd = $request ['quizDateEnd'];
@@ -78,8 +80,11 @@ class CreateQuizController extends Controller
         $mcIncorrectAnswer1 = Input::get('mcIncorrectAnswer1');
         $mcIncorrectAnswer2 = Input::get('mcIncorrectAnswer2');
         $mcIncorrectAnswer3 = Input::get('mcIncorrectAnswer3');
+
         for($i = 0; $i < $mcCount; $i++){
-            Quiz::addQuestionMC($mcQuestion[$i], $mcCorrectAns[$i], $mcIncorrectAnswer1[$i], $mcIncorrectAnswer2[$i], $mcIncorrectAnswer3[$i], $quizID);
+
+           Quiz::addQuestionMC($mcQuestion[$i], $mcCorrectAns[$i], $mcIncorrectAnswer1[$i], $mcIncorrectAnswer2[$i], $mcIncorrectAnswer3[$i], $newID);
+
         }
 
         //----Input Questions----//
@@ -90,10 +95,10 @@ class CreateQuizController extends Controller
 
         for ($i = 0; $i < $inputCount; $i++) {
 
-            Quiz::addQuestionInput($inputQuestion[$i], $inputAnswer[$i], $quizID);
+           return Quiz::addQuestionInput($inputQuestion[$i], $inputAnswer[$i], $newID);
 
         }
-        //return $mcCount;
+
         }
 
 
