@@ -11,14 +11,14 @@
 <div class="smallLogo">
     <img src="/images/GradiQuiz_Logo.png" style="height: 90px;" alt="logo"/>
 </div>
-<hr>
+
 <nav class="navigation">
     <a id="home" href="teacherHomepage.blade.php">Home</a>
     <a id="create" href="/createquiz">Create Quizzes</a>
     <a id="contact" href="contact.html">Contact Us</a>
     <a id="logout" href="/teacher/logout">Log out</a>
 </nav>
-<hr>
+
 <br>
 <h2 class="welcome"></h2>
 <table>
