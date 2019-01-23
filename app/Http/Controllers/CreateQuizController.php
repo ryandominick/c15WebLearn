@@ -45,7 +45,7 @@ class CreateQuizController extends Controller
 
         //retrieve teacher ID from Session
         //PLACEHOLDER
-        $teacherID = 1;
+        $teacherID = 8;
         //ignore module code for now
 
 
@@ -79,7 +79,7 @@ class CreateQuizController extends Controller
         $mcIncorrectAnswer2 = Input::get('mcIncorrectAnswer2');
         $mcIncorrectAnswer3 = Input::get('mcIncorrectAnswer3');
         for($i = 0; $i < $mcCount; $i++){
-            Quiz::addQuestionMC($mcQuestion[$i], $mcCorrectAns[$i], $mcIncorrectAnswer1[$i], $mcIncorrectAnswer2[$i], $mcIncorrectAnswer3[$i]);
+            Quiz::addQuestionMC($mcQuestion[$i], $mcCorrectAns[$i], $mcIncorrectAnswer1[$i], $mcIncorrectAnswer2[$i], $mcIncorrectAnswer3[$i], $quizID);
         }
 
         //----Input Questions----//
@@ -90,7 +90,7 @@ class CreateQuizController extends Controller
 
         for ($i = 0; $i < $inputCount; $i++) {
 
-            Quiz::addQuestionInput($inputQuestion[$i], $inputAnswer[$i]);
+            Quiz::addQuestionInput($inputQuestion[$i], $inputAnswer[$i], $quizID);
 
         }
         //return $mcCount;
