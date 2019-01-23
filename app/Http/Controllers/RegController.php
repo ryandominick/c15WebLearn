@@ -36,6 +36,7 @@ class RegController extends Controller
      */
     public function store(Request $request)
     {
+
             $correctKey = '123';
             $key = $request ['teacherKey'];
             $userType = $request['userType'];
