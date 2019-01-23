@@ -45,25 +45,30 @@ class CreateQuizController extends Controller
 
         //retrieve teacher ID from Session
         //PLACEHOLDER
-        $teacherID = 1;
+        $teacherID = 8;
         //ignore module code for now
 
 
         //quiz ID
             $quizID = Quiz::findQuizID();
 
-            return $quizID["max(quizID)"];
+            $newID = $quizID["max(quizID)"] + 1;
             //return $quizIDString;
         //add quizTitle,quizstart,quizend,quizstatus,duration,module code,teacherID to teachquiz table
         $quizTitle = $request ['quizTitle'];
         $quizDateStart = $request ['quizDateStart'];
         $quizDateEnd = $request ['quizDateEnd'];
         $quizDuration = $request ['timer'];
+        $moduleCode = $request ['moduleCode'];
         $quizStatus = "active";
+
         if($quizDateStart > time()){
 
             $quizStatus = "queued";
         };
+
+        Quiz::addDetails($newID, $quizTitle, $quizDateStart, $quizDateEnd, $quizStatus, $quizDuration, $moduleCode, $teacherID);
+
         //return $quizTitle;
         //----Multiple Choice Questions----//
     //retrieve arrays of question inputs, and set a count for the amount
@@ -74,7 +79,7 @@ class CreateQuizController extends Controller
         $mcIncorrectAnswer2 = Input::get('mcIncorrectAnswer2');
         $mcIncorrectAnswer3 = Input::get('mcIncorrectAnswer3');
         for($i = 0; $i < $mcCount; $i++){
-            Quiz::addQuestionMC($mcQuestion[$i], $mcCorrectAns[$i], $mcIncorrectAnswer1[$i], $mcIncorrectAnswer2[$i], $mcIncorrectAnswer3[$i]);
+            Quiz::addQuestionMC($mcQuestion[$i], $mcCorrectAns[$i], $mcIncorrectAnswer1[$i], $mcIncorrectAnswer2[$i], $mcIncorrectAnswer3[$i], $quizID);
         }
 
         //----Input Questions----//
@@ -85,7 +90,7 @@ class CreateQuizController extends Controller
 
         for ($i = 0; $i < $inputCount; $i++) {
 
-            Quiz::addQuestionInput($inputQuestion[$i], $inputAnswer[$i]);
+            Quiz::addQuestionInput($inputQuestion[$i], $inputAnswer[$i], $quizID);
 
         }
         //return $mcCount;
