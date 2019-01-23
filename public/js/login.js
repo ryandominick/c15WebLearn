@@ -18,7 +18,6 @@ studentRadio.addEventListener("RadioStateChange", onRadioStateChange);
     var passwordClicked = false;
 
     function showHidePass() {
-        alert("meme");
     var getLoginInput = document.getElementById("passwordClicked");
     if(passwordClicked === false) {
     //If button is clicked, change to 'text' type to see what password is
