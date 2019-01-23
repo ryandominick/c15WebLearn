@@ -26,7 +26,7 @@
                 @csrf
             <br>
             <label for = "email">
-                <span class="fa fa-user-o"></span>
+                {{--<span class="fa fa-user-o"></span>--}}
                 <input class="loginInputs" type ="email" placeholder = "Enter your University email address" size="35" name="email" required>
             </label>
             <br>
