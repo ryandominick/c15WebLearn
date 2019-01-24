@@ -14,7 +14,6 @@
     <div class="logo">
         <img src="/images/GradiQuiz_Logo.png" alt="logo" />
     </div>
-
     <form method = "post" action="/reg">
         {{csrf_field()}}
 
@@ -78,8 +77,8 @@
 
         <br><br>
         <button class="buttons" type="submit" value="Submit" onclick="return formValidation()">Register me!</button>
-
     </form>
+
 </div>
 </body>
 </html>
