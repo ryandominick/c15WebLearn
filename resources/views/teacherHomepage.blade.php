@@ -13,9 +13,9 @@
 </div>
 
 <nav class="navigation">
-    <a id="home" href="teacherHomepage.blade.php">Home</a>
+    <a id="home" href="/teacher/home">Home</a>
     <a id="create" href="/createquiz">Create Quizzes</a>
-    <a id="contact" href="contact.html">Contact Us</a>
+    <a id="contact" href="/contact">Contact Us</a>
     <a id="logout" href="/teacher/logout">Log out</a>
 </nav>
 
