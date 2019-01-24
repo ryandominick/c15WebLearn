@@ -15,7 +15,6 @@
     <a id="home" href="/teacher/home">Home</a>
     <a id="results" href="MyResults.html">My results</a>
     <a id="studProfile" href="StudentProfile.html">My Profile</a>
-    <!-- TEST -->
     <a id="contact" href="contact.html">Contact Us</a>
     <a id="logout" href="/html/">Log out</a>
 </nav>
