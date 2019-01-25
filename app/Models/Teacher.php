@@ -26,27 +26,19 @@ class Teacher extends Authenticatable
     {
 
         $Password = Hash::make($teaPassword);
-        //if(self::checkExists($Email) == false) {
+
         DB::insert('insert into Teacher(firstName, lastName, email, password) values (:firstName, :lastName, :teaEmail, :teaPassword)',
             [':firstName' => $firstName, ':lastName' => $lastName, ':teaEmail' => $Email, ':teaPassword' => $Password]);
 
         //}
     }
 
-    public static function checkExists($Email){
+    public static function getID ($email){
 
-        $count = DB::select('select count(teaEmail) from Teacher where teaEmail = :teaEmail', [':teaEmail' => $Email]);
-
-        if($count == 0){
-
-            return false;
-
-        }
-        else{
-
-            return "Email already exists";
-        }
-
+        return DB::select('select id from Teacher where email= :email', [':email' => $email]);
 
     }
+
+
+
 }

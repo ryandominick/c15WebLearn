@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use App\Models\Quiz;
+use Illuminate\Support\Facades\Session;
 
 class CreateQuizController extends Controller
 {
@@ -44,10 +45,8 @@ class CreateQuizController extends Controller
         //return $request->all();
 
         //retrieve teacher ID from Session
-        //PLACEHOLDER
-        $teacherID = 8;
+        $teacherID = Session::get("id");
         //ignore module code for now
-
 
         //quiz ID
             $quizID = Quiz::findQuizID();

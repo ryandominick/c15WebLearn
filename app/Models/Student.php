@@ -43,6 +43,12 @@ class Student extends Authenticatable
 
     }
 
+    public static function getID ($email){
+
+        return DB::select('select id from Student where email= :email', [':email' => $email]);
+
+    }
+
 
 
 
