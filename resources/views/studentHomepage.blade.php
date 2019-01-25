@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Student Homepage</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="/css/projstyle.css">
     <script type="text/javascript" src="/js/studentHome.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 </head>
 <body>
 <div class="smallLogo">
@@ -30,7 +30,10 @@
         <th id="duedate">Due Date</th>
     </tr>
     <td>CO530</td>
-    <td>Introduction to Web Development</td>
+        <td>Introduction to Web Development
+            <!-- Open popup -->
+            <button id="popupButton">Take Quiz</button>
+        </td>
     <td>25/12/18</td>
 
     <tr>

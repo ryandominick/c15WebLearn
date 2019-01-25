@@ -530,3 +530,33 @@ input {
 .loginInputs{
     background-image: linear-gradient(to right, #f3f3f2, #e3e2e6);
 }
+
+/* Popup background */
+.modal {
+    display: none; /* Hidden until clicked */
+    position: fixed;
+    z-index: 1; /* Stack order of element */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Enable scrolling of popup */
+    background-color: rgba(0,0,0,0.3); /* Alters background opacity */
+}
+
+/* Content within popup */
+.popupContent {
+    background-color: white;
+    margin: 10% auto; /* 10% from the top of the page and in the middle of the screen */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%; /* size of the popup */
+}
+/* Exit button */
+.exit {
+    color: red;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
