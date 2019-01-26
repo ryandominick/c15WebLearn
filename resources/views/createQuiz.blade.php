@@ -7,6 +7,7 @@
     <link rel="stylesheet" type="text/css" href="/css/projstyle.css">
     <script type="text/javascript" src="/js/createQuiz.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 <div class="smallLogo">
@@ -14,8 +15,8 @@
 </div>
 <nav class="navigation">
     <a id="home" href="TeacherHomepage.html">Home</a>
-    <a id="contact" href="contact.html">Contact Us</a>
-    <a id="logout" href="/html/">Logout</a>
+    <a id="contact" href="/contact">Contact Us</a>
+    <a id="logout" href="/teacher/logout">Logout</a>
 </nav>
 <h2>Please enter the following information:</h2>
 <br>

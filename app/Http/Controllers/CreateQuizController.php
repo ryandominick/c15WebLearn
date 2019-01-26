@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\InputQuestion;
+use App\Models\MCQuestion;
+use App\Models\TeacherQuiz;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
-use App\Models\Quiz;
+use Illuminate\Support\Facades\Session;
 
 class CreateQuizController extends Controller
 {
@@ -44,26 +47,31 @@ class CreateQuizController extends Controller
         //return $request->all();
 
         //retrieve teacher ID from Session
-        //PLACEHOLDER
-        $teacherID = 1;
+        $teacherID = Session::get("id");
         //ignore module code for now
 
-
         //quiz ID
-            $quizID = Quiz::findQuizID();
+            $quizID = TeacherQuiz::findQuizID();
 
-            return $quizID["max(quizID)"];
+            $newID = $quizID["max(quizID)"] + 1;
+
             //return $quizIDString;
         //add quizTitle,quizstart,quizend,quizstatus,duration,module code,teacherID to teachquiz table
+
         $quizTitle = $request ['quizTitle'];
         $quizDateStart = $request ['quizDateStart'];
         $quizDateEnd = $request ['quizDateEnd'];
         $quizDuration = $request ['timer'];
+        $moduleCode = $request ['moduleCode'];
         $quizStatus = "active";
+
         if($quizDateStart > time()){
 
             $quizStatus = "queued";
         };
+
+        TeacherQuiz::addDetails($newID, $quizTitle, $quizDateStart, $quizDateEnd, $quizStatus, $quizDuration, $moduleCode, $teacherID);
+
         //return $quizTitle;
         //----Multiple Choice Questions----//
     //retrieve arrays of question inputs, and set a count for the amount
@@ -73,8 +81,11 @@ class CreateQuizController extends Controller
         $mcIncorrectAnswer1 = Input::get('mcIncorrectAnswer1');
         $mcIncorrectAnswer2 = Input::get('mcIncorrectAnswer2');
         $mcIncorrectAnswer3 = Input::get('mcIncorrectAnswer3');
+
         for($i = 0; $i < $mcCount; $i++){
-            Quiz::addQuestionMC($mcQuestion[$i], $mcCorrectAns[$i], $mcIncorrectAnswer1[$i], $mcIncorrectAnswer2[$i], $mcIncorrectAnswer3[$i]);
+
+           MCQuestion::addQuestionMC($mcQuestion[$i], $mcCorrectAns[$i], $mcIncorrectAnswer1[$i], $mcIncorrectAnswer2[$i], $mcIncorrectAnswer3[$i], $newID);
+
         }
 
         //----Input Questions----//
@@ -85,10 +96,10 @@ class CreateQuizController extends Controller
 
         for ($i = 0; $i < $inputCount; $i++) {
 
-            Quiz::addQuestionInput($inputQuestion[$i], $inputAnswer[$i]);
+           return InputQuestion::addQuestionInput($inputQuestion[$i], $inputAnswer[$i], $newID);
 
         }
-        //return $mcCount;
+
         }
 
 

@@ -11,21 +11,23 @@
 </head>
 <body>
 <div class="startContainer">
-    <div class="logo">
-        <img src="/images/GradiQuiz_Logo.png" alt="logo" />
+    <div class="bigLogo">
+        <img src="/images/GradiQuiz_Logo.png" width="600px" height="180px" alt="logo"/>
     </div>
-
     <form method = "post" action="/reg">
         {{csrf_field()}}
 
 
 
-        <label id="studentRadioRegistration">
+
+        <label class="userType regRadioButtons">
             <input id="stuRadio" type="radio" onclick="disableInput()" value="student" name="userType" required />Student
+            <span class="radioCheck"></span>
         </label>
 
-        <label id="teacherRadioRegistration">
+        <label class="userType">
             <input id="teaRadio" onclick="disableInput()" type="radio" value="teacher" name="userType" required />Lecturer
+            <span class="radioCheck"></span>
         </label>
         <div id="faRadioButton" class="fa">&#xf128;
             <span class="tooltipText">Select the type of account you are registering.</span>
@@ -77,9 +79,9 @@
         </div>
 
         <br><br>
-        <button class="buttons" type="submit" value="Submit" onclick="return formValidation()">Register me!</button>
-
+        <button class="buttons" id="loginButton"  type="submit" value="Submit" onclick="return formValidation()"><span>Create</span><i class="fa fa-user-plus"></i></button>
     </form>
+
 </div>
 </body>
 </html>

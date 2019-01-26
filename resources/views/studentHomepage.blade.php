@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Student Homepage</title>
     <link rel="stylesheet" type="text/css" href="/css/projstyle.css">
+    <script type="text/javascript" src="/js/studentHome.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 </head>
 <body>
@@ -12,12 +13,11 @@
 </div>
 <hr>
 <nav class="navigation">
-    <a id="home" href="/studentHome">Home</a>
-    <a id="studProfile" href="StudentSearch">My Profile</a>
-    <a id="studentSearch" href="/student/search">Search Quizzes</a>
-    <a id="contact" href="contact.html">Contact Us</a>
-    <a id="logout" href="/student/logout">Logout</a>
-
+    <a id="home" href="/student/home">Home</a>
+    <a id="studProfile" href="/StudentProfile.html">My Profile</a>
+    <a id="results" href="MyResults.html">My results</a>
+    <a class="floatRight" href="/contact">Contact Us</a>
+    <a class="floatRight" href="/student/logout">Logout</a>
 </nav>
 <hr>
 <br>
@@ -51,5 +51,34 @@
         <td>15/12/18</td>
     </tr>
 </table>
+
+<!-- Open popup -->
+<button id="popupButton">Take Quiz</button>
+
+<!-- Modal -->
+<div id="popup" class="modal">
+
+    <!-- Information inside popup -->
+    <div class="popupContent">
+        <span class="exit">&times;</span>
+        <h2>Quiz Instructions</h2>
+        <p>1: Ensure you have a stable connection and an enviroment with minal distractions.</p>
+        <br>
+        <p>2: Please do not use the internet or other resources to help you with this quiz.</p>
+        <br>
+        <p>3: You have limited time, any questions left unanswered will result as incorrect. The quiz will auto submit when time reaches the limit.</p>
+        <br>
+        <p>4: If the page is closed at any time during the quiz, all unanswered questions will be marked as incorrect.</p>
+        <br>
+        <p>5: When you have finished the quiz and are happy with your answers, ensure that you have answered all questions. Click the 'submit' button when you are ready to finish.</p>
+        <br>
+        <p>6: When you are ready, click the 'Start Quiz' button to begin and start the timer.</p>
+        <br>
+        <div class="quizButton" align="center">
+            <button id="takeQuiz">Start Quiz</button>
+        </div>
+    </div>
+
+</div>
 </body>
 </html>

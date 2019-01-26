@@ -37,9 +37,15 @@ class Student extends Authenticatable
 
         $hashPass = Hash::make($stupassword);
         //if(self::checkExists($Email) == false) {
-        DB::insert('insert into Student(firstName, lastName, email, password) values (:firstName, :lastName, :stuEmail, :stupassword)',
+        DB::insert('insert into student(firstName, lastName, email, password) values (:firstName, :lastName, :stuEmail, :stupassword)',
             [':firstName' => $firstName, ':lastName' => $lastName, ':stuEmail' => $Email, ':stupassword' => $hashPass]);
         //}
+
+    }
+
+    public static function getID ($email){
+
+        return DB::select('select id from Student where email= :email', [':email' => $email]);
 
     }
 

@@ -15,13 +15,13 @@
 
 <body>
 <div class="smallLogo">
-    <img src="/images/GradiQuiz_Logo.jpg" style="height: 90px;" alt="logo" />
+    <img src="/images/GradiQuiz_Logo.png" style="height: 90px;" alt="logo" />
 </div>
 <hr>
 <nav class="navigation">
     <a id="home" href="StudentHomepage.html">Home</a>
     <a id="studProfile" href="StudentProfile.html">My Profile</a>
-    <a id="contact" href="contact.html">Contact Us</a>
+    <a id="contact" href="/contact">Contact Us</a>
     <a id="logout" href="/html/">Logout</a>
 </nav>
 <hr>

@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\Teacher;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class TeacherLoginController extends Controller
 {
@@ -56,6 +58,16 @@ class TeacherLoginController extends Controller
 
         if(Auth::guard('teacher')->attempt(['email'=> $request->email, 'password' => $request->password], $request->remember)){
            // return redirect()->intended(route('teacher.home'));
+
+            //Ryan changes start:
+            //gets the ID of the email address from database
+            $id = Teacher::getID($request->email);
+            //extracts the array from the returned object
+            $extractID = get_object_vars($id[0]);
+            //adds the element of the extracted array to the session with key "id"
+            Session::put("id", $extractID['id']);
+            //Ryan changes end.
+
             return redirect()->route('teacher.home');
         }
 
