@@ -17,7 +17,6 @@ class Quiz extends Model
 
             [':mcQuestion' => $mcQuestion, ':correctAns' => $correctAns, ':altAns1' => $altAns1, ':altAns2' => $altAns2, ':altAns3' => $altAns3]);
 
-
     }
 
     public static function addQuestionInput($inputQuestion, $inputAnswer)

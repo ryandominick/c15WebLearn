@@ -3,9 +3,14 @@
 
 <head>
     <meta charset="UTF-8">
+
+    <meta name="csrf-token" content="{{ csrf_token() }}" >
+
     <title>Results Page</title>
     <link rel="stylesheet" type="text/css" href="/css/projstyle.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="/js/studentSearch.js"></script>
 </head>
 
 <body>
@@ -23,28 +28,35 @@
 <br>
 <div id="userBar">
 
-    <label for="searchInput"><input type="search" id="searchText" name="searchInput"></label>
-    <input type="button" id="searchButton" class="buttons" value="search">
+    <form id="searchQuery">
+        <label for="searchInput"><input type="search" id="searchText" name="searchInput"></label>
+        <input type="button" id="searchButton" class="buttons" value="search">
+    </form>
+
 </div>
-<table>
-    <caption class="tablecap">Results</caption>
+
+<table id="quizResults">
+    <caption class="tablecap">Quizzes</caption>
+    <thead>
     <tr>
+        <th>Title</th>
         <th>Module Code</th>
         <th>Module Name</th>
-        <th>Quiz Title</th>
+        <th>Deadline</th>
+        <th>Result</th>
 
     </tr>
-    <td>CO530</td>
-    <td>Introduction to Web Development</td>
-    <td>Week 1 assessment</td>
+    </thead>
 
+    <tbody>
 
-    <tr>
-        <td>CO213</td>
-        <td>Theory of Computing</td>
-        <td>week 2 assessment</td>
-    </tr>
-
+    </tbody>
 </table>
+
+<table id="pageTable">
+    <tbody>
+        <tr></tr>
+    </tbody>
+    </table>
 </body>
 </html>

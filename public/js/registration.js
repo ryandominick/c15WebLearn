@@ -31,11 +31,13 @@ document.addEventListener("DOMContentLoaded", function () {
             document.getElementById("courseInput").disabled = false;
             tooltipField.style.backgroundColor = '#A9A9A9'; //change disabled colour to a darker grey
             courseInput.style.backgroundColor = ''; //revert enabled field to default colour
+            tooltipField.value = ""; //Remove lecture key value
         } else if (document.getElementById("teaRadio").checked === true) { //if teacher radio button is checked, enable lecture key field and disable course field
             document.getElementById("tooltipField").disabled = false;
             document.getElementById("courseInput").disabled = true;
             courseInput.style.backgroundColor = '#A9A9A9'; //change disabled colour to a darker grey
             tooltipField.style.backgroundColor = ''; //revert enabled field to default colour
+            courseInput.value = ""; //Remove course input value
         } else {
             //do nothing
         }

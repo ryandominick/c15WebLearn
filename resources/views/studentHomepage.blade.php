@@ -17,6 +17,7 @@
     <a id="studentSearch" href="/student/search">Search Quizzes</a>
     <a id="contact" href="contact.html">Contact Us</a>
     <a id="logout" href="/student/logout">Logout</a>
+
 </nav>
 <hr>
 <br>

@@ -77,7 +77,7 @@
         </div>
 
         <br><br>
-        <button id="registerSubmit" type="submit" value="Submit" onclick="return formValidation()">Register me!</button>
+        <button class="buttons" type="submit" value="Submit" onclick="return formValidation()">Register me!</button>
 
     </form>
 </div>
