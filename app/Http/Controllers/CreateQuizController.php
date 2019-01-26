@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\InputQuestion;
+use App\Models\MCQuestion;
+use App\Models\TeacherQuiz;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
-use App\Models\Quiz;
 use Illuminate\Support\Facades\Session;
 
 class CreateQuizController extends Controller
@@ -49,7 +51,7 @@ class CreateQuizController extends Controller
         //ignore module code for now
 
         //quiz ID
-            $quizID = Quiz::findQuizID();
+            $quizID = TeacherQuiz::findQuizID();
 
             $newID = $quizID["max(quizID)"] + 1;
 
@@ -68,7 +70,7 @@ class CreateQuizController extends Controller
             $quizStatus = "queued";
         };
 
-        Quiz::addDetails($newID, $quizTitle, $quizDateStart, $quizDateEnd, $quizStatus, $quizDuration, $moduleCode, $teacherID);
+        TeacherQuiz::addDetails($newID, $quizTitle, $quizDateStart, $quizDateEnd, $quizStatus, $quizDuration, $moduleCode, $teacherID);
 
         //return $quizTitle;
         //----Multiple Choice Questions----//
@@ -82,7 +84,7 @@ class CreateQuizController extends Controller
 
         for($i = 0; $i < $mcCount; $i++){
 
-           Quiz::addQuestionMC($mcQuestion[$i], $mcCorrectAns[$i], $mcIncorrectAnswer1[$i], $mcIncorrectAnswer2[$i], $mcIncorrectAnswer3[$i], $newID);
+           MCQuestion::addQuestionMC($mcQuestion[$i], $mcCorrectAns[$i], $mcIncorrectAnswer1[$i], $mcIncorrectAnswer2[$i], $mcIncorrectAnswer3[$i], $newID);
 
         }
 
@@ -94,7 +96,7 @@ class CreateQuizController extends Controller
 
         for ($i = 0; $i < $inputCount; $i++) {
 
-           return Quiz::addQuestionInput($inputQuestion[$i], $inputAnswer[$i], $newID);
+           return InputQuestion::addQuestionInput($inputQuestion[$i], $inputAnswer[$i], $newID);
 
         }
 
