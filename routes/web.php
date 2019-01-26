@@ -29,6 +29,10 @@ Route::get('/teacher/filter', function(){
 
 Route::resource('createquiz', 'CreateQuizController');
 
+Route::get('/contact', function(){
+    return view('contact');
+});
+
 //Route::get('student/login', 'Auth\StudentLoginController@showLoginForm');
 
 

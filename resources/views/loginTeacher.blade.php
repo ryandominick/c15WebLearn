@@ -10,7 +10,7 @@
 
 <div class="login">
     <div class="logo">
-        <img src="/images/GradiQuiz_Logo.jpg" alt="logo" />
+        <img src="/images/GradiQuiz_Logo.png" alt="logo" />
     </div>
 
     <div class="loginContainer">

@@ -15,8 +15,8 @@
 </div>
 <nav class="navigation">
     <a id="home" href="TeacherHomepage.html">Home</a>
-    <a id="contact" href="contact.html">Contact Us</a>
-    <a id="logout" href="/html/">Logout</a>
+    <a id="contact" href="/contact">Contact Us</a>
+    <a id="logout" href="/teacher/logout">Logout</a>
 </nav>
 <h2>Please enter the following information:</h2>
 <br>

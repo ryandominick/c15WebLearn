@@ -15,12 +15,13 @@
         <img src="/images/GradiQuiz_Logo.png" width="600px" height="180px" alt="logo"/>
     </div>
         <div class="loginContainer">
-            <label for="userType">
-                <input id="stuRadio" type="radio" value="student" name="userType"  required checked="checked">Student
+            <label class="userType">
+                <input id="teaRadio" type="radio" value="student" name="userType"  required checked="checked">Student
+                <span class="radioCheck"></span>
             </label>
-
-            <label for ="userType">
-                <input id="teaRadio"  type="radio" value="teacher" name="userType"  required >Teacher
+            <label class ="userType">
+                <input id="stuRadio"  type="radio" value="teacher" name="userType"  required >Teacher
+                <span class="radioCheck"></span>
             </label>
             <form method="POST" action ="/student/login" id="loginForm" autocomplete="off">
                 @csrf
@@ -42,9 +43,9 @@
                 <br>
             </label>
         </div>
-    <br><br>
-    <a class="loginLinks" href="reg">Don't have an account? Click here</a><br>
-    <a class="loginLinks" href="/meme.html">Forgot your password? Click here</a>
+    <br>
+    <p>Don't have an account? <a class="loginLinks" href="reg">Create one here!</a></p>
+    <p> Forgot your password? <a class="loginLinks" href="/meme.html">Click here</a></p>
 </div>
 </body>
 </html>

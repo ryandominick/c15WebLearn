@@ -111,27 +111,130 @@ th {
     margin-left:20px;
 }
 
-#studentRadioLogin{
-    padding-right: 30px;
-}
-
 .loginLinks:link {
     text-decoration: none;
-    color:black;
+    color:#2D1B7E;
+    font-weight:900;
 }
 
 .loginLinks:visited {
     text-decoration: none;
-    color: black;
+    color: #2D1B7E;
 }
 
 .loginLinks:hover{
     text-decoration: underline;
-    color: black;
+    color: #2D1B7E;
 }
 
 .loginLinks:active{
     text-decoration: underline;
+}
+
+#loginButton span{
+    display: inline-block;
+    transition: 0.3s;
+    position: relative;
+}
+
+
+#loginButton span:after{
+    position: absolute;
+    content: '\00bb';
+    transition: 0.3s;
+    top: 0;
+    right: -15px;
+    padding-left: 50px;
+    margin-right: 15px;
+    opacity: 0;
+}
+
+#loginButton:hover span{
+    padding-right: 55px;
+    padding-left: 23px;
+}
+
+#loginButton:hover span:after{
+    right: 0;
+    opacity: 5;
+}
+
+/*.fa-user-o{*/
+/*position: absolute;*/
+/*}*/
+
+.loginInputs{
+    background-image: linear-gradient(to right, #f3f3f2, #e3e2e6);
+}
+
+.userType {
+    display: inline;
+    position: relative;
+    padding-left: 25px;
+    padding-right:10px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 15px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+
+}
+
+/* hide default radio button */
+.userType input {
+    position: absolute;
+    opacity: 0;
+
+}
+
+.userType{
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+/* login radio button  */
+.radioCheck {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #bcbcbe;
+    border-radius: 50%;
+
+}
+
+/*display light purple background on hover */
+.userType:hover input ~ .radioCheck {
+    background-color: #9796f8;
+}
+
+/* display purple background when checked */
+.userType input:checked ~ .radioCheck {
+    background-color: #7776d5;
+}
+
+/* hide circle when checked */
+.radioCheck:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* display circle when checked */
+.userType input:checked ~ .radioCheck:after {
+    display: block;
+}
+
+/* Style circle when checked */
+.userType .radioCheck:after {
+    top: 5px;
+    left: 5px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #ffffff;
 }
 
 .buttons{
@@ -168,12 +271,13 @@ th {
 }
 .loginContainer {
     border-style: solid;
-    border-width: 5px;
+    border-width: 2px;
     padding: 30px 27px 30px 30px;
     border-color: #DCDCDC;
     border-radius: 25px;
     background-color: #f3f3f2;
     background-image: linear-gradient(to right, #f3f3f2, #e3e2e6);
+    box-shadow: 0 6px 63px 0 #c4c4c4;
 }
 
 input {
@@ -490,41 +594,10 @@ input {
     color: red;
 }
 
-
-#loginButton span{
-    display: inline-block;
-    transition: 0.3s;
-    position: relative;
-}
-
+/*breaks when moved to top?*/
 .fa-key{
-   color: white;
-   left: -15px;
-}
-
-#loginButton span:after{
-    position: absolute;
-    content: '\00bb';
-    transition: 0.3s;
-    top: 0;
-    right: -15px;
-    padding-left: 50px;
-    margin-right: 15px;
-    opacity: 0;
-}
-
-#loginButton:hover span{
-    padding-right: 55px;
-    padding-left: 23px;
-}
-
-#loginButton:hover span:after{
-    right: 0;
-    opacity: 5;
-}
-
-.fa-user-o{
-    position: absolute;
+    color: white;
+    left: -15px;
 }
 
 .loginInputs{
