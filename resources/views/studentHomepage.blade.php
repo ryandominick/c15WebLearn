@@ -16,7 +16,7 @@
     <a id="home" href="/student/home">Home</a>
     <a id="studProfile" href="/StudentProfile.html">My Profile</a>
     <a id="results" href="MyResults.html">My results</a>
-    <a class="floatRight" href="contact.html">Contact Us</a>
+    <a class="floatRight" href="/contact">Contact Us</a>
     <a class="floatRight" href="/student/logout">Logout</a>
 </nav>
 <hr>
