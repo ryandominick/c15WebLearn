@@ -32,13 +32,13 @@ class Student extends Authenticatable
         return $sessionData;
     }
 
-    public static function register($firstName, $lastName, $Email, $stupassword)
+    public static function register($firstName, $lastName, $Email, $stupassword, $courseID)
     {
 
         $hashPass = Hash::make($stupassword);
         //if(self::checkExists($Email) == false) {
-        DB::insert('insert into student(firstName, lastName, email, password) values (:firstName, :lastName, :stuEmail, :stupassword)',
-            [':firstName' => $firstName, ':lastName' => $lastName, ':stuEmail' => $Email, ':stupassword' => $hashPass]);
+        DB::insert('insert into student(firstName, lastName, email, password, courseID) values (:firstName, :lastName, :stuEmail, :stupassword, :courseID)',
+            [':firstName' => $firstName, ':lastName' => $lastName, ':stuEmail' => $Email, ':stupassword' => $hashPass, ':courseID' => $courseID]);
         //}
 
     }

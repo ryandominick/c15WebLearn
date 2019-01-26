@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Course;
 use App\Models\Student;
 use App\Models\Teacher;
 use Illuminate\Http\Request;
@@ -44,9 +45,13 @@ class RegController extends Controller
             $lastName = $request['lastName'];
             $Email = $request['email'];
             $password = $request['password'];
+            $courseName = $request['courseName'];
+            $courseIDHolder = Course::getCourseID($courseName);
+            $extractCourseID = get_object_vars($courseIDHolder[0]);
+            $courseID = $extractCourseID['courseID'];
 
             if($userType === "student") {
-                Student::register($firstName, $lastName, $Email, $password);
+                Student::register($firstName, $lastName, $Email, $password, $courseID);
                 return redirect('/login');
             }
             elseif ($userType === "teacher"){
