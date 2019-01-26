@@ -32,6 +32,7 @@ return array(
     'App\\Http\\Middleware\\TrimStrings' => $baseDir . '/app/Http/Middleware/TrimStrings.php',
     'App\\Http\\Middleware\\TrustProxies' => $baseDir . '/app/Http/Middleware/TrustProxies.php',
     'App\\Http\\Middleware\\VerifyCsrfToken' => $baseDir . '/app/Http/Middleware/VerifyCsrfToken.php',
+    'App\\Message' => $baseDir . '/app/Message.php',
     'App\\Models\\InputQuestion' => $baseDir . '/app/Models/InputQuestion.php',
     'App\\Models\\MCQuestion' => $baseDir . '/app/Models/MCQuestion.php',
     'App\\Models\\Student' => $baseDir . '/app/Models/Student.php',

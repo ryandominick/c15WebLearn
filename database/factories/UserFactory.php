@@ -26,9 +26,17 @@ $factory->define(App\User::class, function (Faker $faker) {
 
 
 $factory->define(App\Message::class, function (Faker $faker) {
+
+    do {
+        /* Random number between 1 and 15 */
+        $from = rand(1, 15);
+        $to = rand(1,15);
+
+        /* User can't send message to themselves*/
+    } while ($from == $to);
     return [
-        'from' => $faker->name,
-        'to' => $faker->unique()->safeEmail,
+        'from' => $from, /* Will be user ID */
+        'to' => $to,
         'text' => $faker->sentence,
     ];
 });
