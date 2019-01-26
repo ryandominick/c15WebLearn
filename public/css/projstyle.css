@@ -4,7 +4,7 @@
 }
 
 body {
-    background-image: url("/images/stripes-light.png");
+    background-image: url("/images/dust_scratches.png");
 }
 table {
     width:100%;
@@ -291,12 +291,11 @@ input {
 
 /*show password icon stlye*/
 #eyeIcon{
-
     position: absolute;
-    bottom: 19px;
-    right: 10px;
     color: #C0C0C0;
     font-size: 24px;
+    bottom: 10px;
+    right: 65px;
 }
 
 #faPasswordContainer {
@@ -353,7 +352,7 @@ input {
     top: -58px;
 }
 #faRadioButton .tooltipText{
-    top: -20px;
+    top: -23px;
 
 }
 #faPassword .show {
@@ -364,6 +363,11 @@ input {
 
 #password{
     margin-right: 4px;
+    margin-bottom: 0px;
+}
+
+#confirmPassword{
+    margin-top: 0px;
 }
 
 /*Positioning tooltip icon*/
@@ -452,8 +456,8 @@ input {
     padding-bottom: 10px;
     color: #3f4047;
     font-size: 18px;
-    margin-right: 50px;
-    margin-left: 50px;
+    margin-right: 70px;
+    margin-left: 70px;
 }
 
 .takeQuestionContainer {
@@ -600,5 +604,13 @@ input {
     left: -15px;
 }
 
+.fa-user-plus{
+    color: white;
+    left: -15px;
+}
+
+.regRadioButtons{
+    margin-left: 85px;
+}
 
 
