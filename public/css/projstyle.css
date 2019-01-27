@@ -167,6 +167,10 @@ th {
     background-image: linear-gradient(to right, #f3f3f2, #e3e2e6);
 }
 
+#registerContainer{
+    background-image: url("/images/absurdity.png");
+}
+
 .userType {
     display: inline;
     position: relative;
@@ -247,6 +251,7 @@ th {
     margin-top: 10px;
     padding: 15px;
     width: 230px;
+    outline: none;
 }
 #passwordValidityTxt{
     margin-top: 10px;
@@ -345,7 +350,7 @@ input {
 /*Tooltip hover animation*/
 .fa:hover .tooltipText {
     visibility: visible;
-    opacity: 0.5;
+    opacity: 0.8;
 }
 /*Positioning tooltip arrow*/
 #faPassword .tooltipText{
@@ -396,10 +401,10 @@ input {
     padding-top: 30px;
     padding-left: 30px;
     padding-bottom: 30px;
-    border-color: #3f37b8;
+    border-color: #5a4182;
     border-radius: 25px;
-    background-color: #5c97fc;
-    background-image: linear-gradient(to right, #9394e9, #b0a5ff, #5c97fc);
+    background-color: #9d86e0;
+    background-image: url("/images/crossword.png");
     text-align: left;
     margin: 25px 450px 25px 450px;
 }
@@ -448,10 +453,11 @@ input {
 }
 .QuestionContainer{
     border-style: inset;
-    border-color: #686ecc;
+    border-color: #9e94bf;
     border-radius: 25px;
     border-width: 3px;
-    background-image:  url("/images/arches.png"), linear-gradient(to right, #91a8dd, #b0b6da);
+    background-color: #c9c1ff;
+    background-image:  url("/images/brushed-alum-dark.png");
     padding-top: 10px;
     padding-bottom: 10px;
     color: #3f4047;
@@ -502,25 +508,36 @@ input {
 .addQuestions{
     cursor: pointer;
     color: white;
-    background-color: #485d9e;
+    background-color: #887ed0;
     border-radius: 8px;
-    border-color:  #8fabff;
+    border-color: #554c95;
     padding: 10px 10px 10px 10px;
     font-weight: bold;
     margin-top: 25px;
     font-size: 18px;
     margin-left: 50px;
     outline: none;
+    box-shadow: 0px 10px 16px 2px rgba(0,0,0,0.18);
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
 }
+
+.addQuestions:hover{
+    background-color: #9b7ad0;
+    border-radius: 8px;
+    border-color: #71529e;
+}
+
+
 .questionCaption{
     margin-left: 35px;
 }
 #deleteQuestion{
     float: right;
     cursor: pointer;
-    background-color: #d20000;
+    background-color: #ad0000;
     border-radius: 8px;
-    border-color: #8c0400;
+    border-color: #7a0400;
     padding: 7px 7px 7px 7px;
     font-weight: bold;
     margin-top: 25px;
@@ -528,6 +545,15 @@ input {
     color: white;
     margin-right: 50px;
     outline: none;
+    box-shadow: 0px 10px 16px 2px rgba(0,0,0,0.18);
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+
+#deleteQuestion:hover{
+    background-color: #d80000;
+    border-radius: 8px;
+    border-color: #ff0500;
 }
 
 .fa-trash{
@@ -540,14 +566,23 @@ input {
     margin:auto;
     cursor: pointer;
     color: white;
-    background-color: #3cb43c;
+    background-color: #237e07;
     border-radius: 8px;
-    border-color:  #a7ffb2;
+    border-color: #298303;
     padding: 10px 10px 10px 10px;
     font-weight: bold;
     font-size: 18px;
     outline: none;
     display:none;
+    box-shadow: 0px 10px 16px 2px rgba(0,0,0,0.18);
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+
+#submitQuizButton:hover{
+    background-color: #3cb43c;
+    border-radius: 8px;
+    border-color:  #a7ffb2;
 }
 /* Popup background */
 .modal {

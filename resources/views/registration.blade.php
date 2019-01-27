@@ -14,6 +14,7 @@
     <div class="bigLogo">
         <img src="/images/GradiQuiz_Logo.png" width="600px" height="180px" alt="logo"/>
     </div>
+    <div class="loginContainer" id="registerContainer">
     <form method = "post" action="/reg">
         {{csrf_field()}}
 
@@ -26,7 +27,7 @@
         </label>
 
         <label class="userType">
-            <input id="teaRadio" onclick="disableInput()" type="radio" value="teacher" name="userType" required />Lecturer
+            <input  id="teaRadio" onclick="disableInput()" type="radio" value="teacher" name="userType" required />Lecturer
             <span class="radioCheck"></span>
         </label>
         <div id="faRadioButton" class="fa">&#xf128;
@@ -81,7 +82,7 @@
         <br><br>
         <button class="buttons" id="loginButton"  type="submit" value="Submit" onclick="return formValidation()"><span>Create</span><i class="fa fa-user-plus"></i></button>
     </form>
-
+    </div>
 </div>
 </body>
 </html>
