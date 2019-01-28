@@ -47,7 +47,7 @@
             <h3>Timer (minutes):</h3>
         </label>
         <label class="createQuizDetails">
-            <input id="quizTimerInput" type="number" placeholder="Please enter duration" name="timer" required/>
+            <input id="quizTimerInput" type="number" placeholder="Duration of quiz" name="timer" required/>
             <span id='timerValidityTxt'></span>
         </label>
     </div>

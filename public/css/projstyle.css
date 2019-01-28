@@ -416,7 +416,6 @@ input {
     background-color: #9d86e0;
     background-image: url("/images/crossword.png");
     text-align: left;
-
     width: 40%;
     height: 50%;
 }
@@ -451,6 +450,7 @@ input {
 }
 #quizTimerInput{
     margin-left: 18px;
+    width: 60%;
 }
 #quizTitlePosition{
     margin-left: 81px;
