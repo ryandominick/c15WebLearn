@@ -27,6 +27,11 @@ Route::get('/student/search', 'StudentSearchController@index');
 Route::post('/student/search/query', 'StudentSearchController@query');
 
 
+Route::get('/displayMessage', function() {
+    return view('displayMessages');
+});
+Route::get('/displayMessage', 'Conversations');
+
 
 Route::resource('createquiz', 'CreateQuizController');
 
