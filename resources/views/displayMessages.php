@@ -24,18 +24,8 @@
 <h1>Welcome, </h1>
 <h2 class="welcome"></h2>
 <table>
-    <tr>
-        <td>FirstName</td>
-        <td>LastName</td>
-        <td>Email</td>
-    </tr>
-    @foreach($data as $value)
-    <tr>
-        <td>{{ $value->firstName }}</td>
-        <td>{{ $value->lastName }}</td>
-        <td>{{ $value->email }}</td>
-    </tr>
-    @endforeach
+
+
 </table>
 </body>
 </html>
