@@ -28,8 +28,15 @@ Route::post('/student/search/query', 'StudentSearchController@query');
 
 
 
+Route::resource('myResults', 'ResultsController');
+
 Route::resource('createquiz', 'CreateQuizController');
 
+//View the myResults page
+Route::get('/myResults', function(){
+    return view("myResults");
+});
+//View the Contact Page
 Route::get('/contact', function(){
     return view('contact');
 });

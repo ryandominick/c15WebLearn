@@ -13,7 +13,7 @@
 <hr>
 <nav class="navigation">
     <a id="home" href="/student/home">Home</a>
-    <a id="results" href="MyResults.html">My results</a>
+    <a id="results" href="/myResults">My results</a>
     <a id="studProfile" href="StudentProfile.html">My Profile</a>
     <a id="logout" href="/student/logout">Log out</a>
 </nav>
