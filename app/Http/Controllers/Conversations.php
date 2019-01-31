@@ -3,17 +3,87 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Auth;
+use App\Models\Message;
 
 class Conversations extends Controller
 {
-    /*
-        1. Find current user id.
-        2. Get all 'messages' involving the current user, from them only include one 'other person' once.
-
-    (next controller - it will take the current id, and the other person's id)
-        1. Get all messages between the current user and the other person's id (this is the query we did)
-        2. List all those messages, with the if statement to differentiate between 'my'
-                 messages and the other person's messages
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
      */
+    public function index()
+    {
+        return view('displayMessages');
+    }
 
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        //
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        //get currently logged in user id
+        $currentUser = Session::get("id");
+
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        //
+    }
 }

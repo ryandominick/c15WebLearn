@@ -21,7 +21,7 @@
 </nav>
 <hr>
 <br>
-<h2 class="welcome"></h2>
+<h2 class="welcome">Welcome <?php echo Auth::user()->firstName;?>, <?php echo Auth::user()->email ?> </h2>
 <table>
     <caption class="tablecap">My Deadlines</caption>
     <tr>
