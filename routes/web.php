@@ -26,7 +26,7 @@ Route::resource('reg', 'RegController');
 Route::get('/student/search', 'StudentSearchController@index');
 Route::post('/student/search/query', 'StudentSearchController@query');
 
-Route::resource('displayMessages', 'Conversations');
+Route::resource('/displayMessages', 'Conversations');
 
 Route::resource('createquiz', 'CreateQuizController');
 

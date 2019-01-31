@@ -15,9 +15,8 @@ class Conversations extends Controller
      */
     public function index()
     {
-        return view('displayMessages');
-    }
 
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -37,9 +36,7 @@ class Conversations extends Controller
      */
     public function store(Request $request)
     {
-        //get currently logged in user id
-        $currentUser = Session::get("id");
-
+        //
     }
 
     /**

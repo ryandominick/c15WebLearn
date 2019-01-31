@@ -21,11 +21,8 @@
 </nav>
 <hr>
 <br>
+<h2 class="welcome">Welcome</h2>
 
-
-<div class="test">
-
-</div>
 
 
 </body>
