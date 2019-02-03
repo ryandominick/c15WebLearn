@@ -19,7 +19,7 @@
 </nav>
 <hr>
 
-<h2>Contact Us</h2>
+<h2 id="center">Contact Us</h2>
 
 <!--CREATE GET IN TOUCH FORM, will look professional-(Cole) -->
 <p id="techInfo">For technical support, bug reports and recommendations, please contact us here: <br>
