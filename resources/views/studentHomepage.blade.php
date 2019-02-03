@@ -13,9 +13,9 @@
 </div>
 <hr>
 <nav class="navigation">
-    <a id="home" href="/student/home">Home</a>
-    <a id="studProfile" href="/StudentProfile.html">My Profile</a>
-    <a id="results" href="/student/results">My results</a>
+    <a id="leftNav" href="/student/home">Home</a>
+    <a id="leftNav" href="/StudentProfile.html">My Profile</a>
+    <a id="leftNav" href="/student/results">My results</a>
     <a id="rightNav" href="/student/logout">Logout</a>
     <a id="rightNav" href="/contact">Contact Us</a>
 </nav>
