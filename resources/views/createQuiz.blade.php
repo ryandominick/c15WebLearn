@@ -12,11 +12,13 @@
 <div class="smallLogo">
     <img src="/images/GradiQuiz_Logo.png" style="height: 90px;" alt="logo" />
 </div>
+<hr>
 <nav class="navigation">
     <a id="leftNav" href="/teacher/home">Home</a>
     <a id="rightNav" href="/teacher/logout">Logout</a>
     <!--<a id="rightNav" href="/contact">Contact Us</a> DISABLE until fixed-->
 </nav>
+<hr>
 <h2>Please enter the following information:</h2>
 <br>
 <form method="post" action="/createquiz" id="quizInfo">

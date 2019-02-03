@@ -78,6 +78,9 @@ th {
 #rightNav {
     float: right;
 }
+
+/* Start of Nav bar styling*/
+
 .navigation {
     background-color: #1B2F7E;
     color: white;
@@ -85,7 +88,6 @@ th {
     /* position:  */
 }
 
-/* Style the links inside the navigation bar */
 .navigation a {
     float: left;
     color: #f2f2f2;
