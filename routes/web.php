@@ -30,10 +30,10 @@ Route::post('/student/search/query', 'StudentSearchController@query');
 
 Route::resource('myResults', 'ResultsController');
 
-Route::resource('createquiz', 'CreateQuizController');
+Route::resource('/teacher/createquiz', 'CreateQuizController');
 
 //View the myResults page
-Route::get('/myResults', function(){
+Route::get('/student/results', function(){
     return view("myResults");
 });
 //View the Contact Page

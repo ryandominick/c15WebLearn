@@ -14,8 +14,8 @@
 </div>
 <nav class="navigation">
     <a id="home" href="/teacher/home">Home</a>
-    <a id="contact" href="/contact">Contact Us</a>
-    <a id="logout" href="/teacher/logout">Logout</a>
+    <a id="rightNav" href="/teacher/logout">Logout</a>
+    <!--<a id="rightNav" href="/contact">Contact Us</a> DISABLE until fixed-->
 </nav>
 <h2>Please enter the following information:</h2>
 <br>

@@ -14,9 +14,9 @@
 
 <nav class="navigation">
     <a id="home" href="/teacher/home">Home</a>
-    <a id="create" href="/createquiz">Create Quizzes</a>
-    <a id="contact" href="/contact">Contact Us</a>
-    <a id="logout" href="/teacher/logout">Log out</a>
+    <a id="create" href="/teacher/createquiz">Create Quizzes</a>
+    <a id="rightNav" href="/teacher/logout">Log out</a>
+    <!--<a id="rightNav" href="/contact">Contact Us</a> DISABLE until fixed-->
 </nav>
 
 <br>

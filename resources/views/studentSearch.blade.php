@@ -21,9 +21,9 @@
 <nav class="navigation">
     <a id="home" href="/student/home">Home</a>
     <a id="studProfile" href="StudentProfile.html">My Profile</a>
-    <a id="results" href="/myResults">My results</a>
-    <a id="contact" href="/contact">Contact Us</a>
-    <a id="logout" href="/student/logout">Logout</a>
+    <a id="results" href="/student/results">My results</a>
+    <a id="rightNav" href="/contact">Contact Us</a>
+    <a id="rightNav" href="/student/logout">Logout</a>
 </nav>
 <hr>
 <br>
