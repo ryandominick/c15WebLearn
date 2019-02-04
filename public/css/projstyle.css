@@ -176,6 +176,7 @@ th {
 
 #registerContainer{
     background-image: url("/images/absurdity.png");
+    width: 430px;
 }
 
 .userType {
@@ -261,10 +262,14 @@ th {
     outline: none;
 }
 #passwordValidityTxt{
-    margin-top: 10px;
-    margin-left: 8px;
     position:absolute;
     font-size: 25px;
+    left: 330px;
+    bottom: 15px;
+}
+
+#passwordValidityTxtContainer {
+    position: relative;
 }
 
 #timerValidityTxt{
@@ -302,12 +307,16 @@ input {
 }
 
 /*show password icon stlye*/
-#eyeIcon{
+#eyeSlashIcon{
     position: absolute;
     color: #C0C0C0;
     font-size: 24px;
     bottom: 10px;
     right: 65px;
+    display: -ms-flexbox; /* IE10 */
+    display: flex;
+    width: 100%;
+    left: 238px;
 }
 
 #faPasswordContainer {
@@ -374,7 +383,8 @@ input {
 }
 
 #password{
-    margin-right: 4px;
+    position: absolute;
+    margin-right: 0px;
     margin-bottom: 0px;
 }
 
@@ -385,8 +395,10 @@ input {
 /*Positioning tooltip icon*/
 
 #faPassword{
-    top: -40px;
-    left: 195px;
+    top: 20px;
+    left: 350px;
+    margin-left: 0;
+    height: 0;
 }
 
 #tooltipField{
@@ -553,7 +565,7 @@ input {
     margin-left: 50px;
     outline: none;
     box-shadow: 0px 10px 16px 2px rgba(0,0,0,0.18);
-    -webkit-transition-duration: 0.4s; /* Safari */
+    -webkit-transition-duration: 0.4s;
     transition-duration: 0.4s;
 }
 
@@ -581,7 +593,7 @@ input {
     margin-right: 50px;
     outline: none;
     box-shadow: 0px 10px 16px 2px rgba(0,0,0,0.18);
-    -webkit-transition-duration: 0.4s; /* Safari */
+    -webkit-transition-duration: 0.4s;
     transition-duration: 0.4s;
 }
 
@@ -610,7 +622,7 @@ input {
     outline: none;
     display:none;
     box-shadow: 0px 10px 16px 2px rgba(0,0,0,0.18);
-    -webkit-transition-duration: 0.4s; /* Safari */
+    -webkit-transition-duration: 0.4s;
     transition-duration: 0.4s;
 }
 
@@ -677,9 +689,37 @@ input {
 .regRadioButtons{
     margin-left: 85px;
 }
+
+#registerIcons{
+    display: -ms-flexbox; /* IE10 */
+    display: flex;
+    width: 100%;
+}
+
+.icon {
+    color: white;
+    min-width: 20px;
+    text-align: center;
+    height: 30px;
+    margin-top: 8px;
+    padding: 12px 10px 0 10px;
+    margin-right: 0;
+    background-color: darkgray;
+}
+
 #contactUs{
     text-align: center;
 }
 #userBar{
     text-align: center;
+}
+
+/*Counter the left positioning for the key button*/
+#passKeyIcon{
+    left:0;
+}
+
+#conPassKeyIcon{
+    left:0;
+    bottom: 8px;
 }
