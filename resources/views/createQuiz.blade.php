@@ -14,6 +14,7 @@
 </div>
 <nav class="navigation">
     <a id="leftNav" href="/teacher/home">Home</a>
+    <a id="leftNav" href="/teacher/manageStudents">Manage Students</a>
     <a id="rightNav" href="/teacher/logout">Logout</a>
     <!--<a id="rightNav" href="/contact">Contact Us</a> DISABLE until fixed-->
 </nav>
