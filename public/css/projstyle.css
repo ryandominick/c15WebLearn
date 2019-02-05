@@ -274,8 +274,8 @@ th {
 
 #timerValidityTxt{
     position: absolute;
-    top: 31.5em;
-    left: 920px;
+    top: 31.4em;
+    left: 61.5em;
 }
 
 .startContainer {
@@ -286,6 +286,7 @@ th {
     align-items: center;
     min-height: 100vh;
 }
+
 .loginContainer {
     border-style: solid;
     border-width: 2px;
@@ -408,30 +409,18 @@ input {
 .createContainer{
     border-style: outset;
     border-width: 3px;
-    padding-top: 30px;
-    padding-left: 30px;
-    padding-bottom: 30px;
-    border-color: #5a4182;
+    padding: 30px 100px 30px 80px;
+    border-color: #595d82;
     border-radius: 25px;
-    background-color: #9d86e0;
+    background-color: #9999e0;
     background-image: url("/images/crossword.png");
     text-align: left;
     margin: 25px 450px 25px 450px;
     width: 40%;
     height: 50%;
+    box-shadow: 0 6px 63px 5px #c4c4c4;
 }
-/*Styling for create quiz inputs */
-.createContainer{
-    border-style: outset;
-    border-width: 3px;
-    border-color: #5a4182;
-    border-radius: 25px;
-    background-color: #9d86e0;
-    background-image: url("/images/crossword.png");
-    text-align: left;
-    width: 40%;
-    height: 50%;
-}
+
 .createQuizDetails{
     width: 49%;
     height: 50%;
@@ -460,6 +449,7 @@ input {
 }
 #quizModulePosition{
     margin-left: 43px;
+    width: 20%;
 }
 #quizTimerInput{
     margin-left: 18px;
@@ -467,6 +457,7 @@ input {
 }
 #quizTitlePosition{
     margin-left: 81px;
+    width: 70%;
 }
 #quizStartDatePosition {
     margin-left: 72px;
@@ -481,6 +472,7 @@ input {
     outline:none;
     width: 80%;
     height: 80%;
+
 }
 .mcCorrectAnswer {
     margin-left: 60px;
@@ -500,10 +492,10 @@ input {
 }
 .QuestionContainer{
     border-style: inset;
-    border-color: #9e94bf;
+    border-color: #a5bfa5;
     border-radius: 25px;
     border-width: 3px;
-    background-color: #c9c1ff;
+    background-color: #566f8e;
     background-image:  url("/images/brushed-alum-dark.png");
     padding-top: 10px;
     padding-bottom: 10px;
@@ -511,6 +503,8 @@ input {
     font-size: 18px;
     margin-right: 70px;
     margin-left: 70px;
+    margin-top: 10px;
+    box-shadow: 0 6px 63px 5px #c4c4c4;
 }
 
 .takeQuestionContainer {
@@ -552,6 +546,11 @@ input {
     border: 2px solid   rgb(60, 150, 65);
     outline:none;
 }
+
+#addMCQuestions{
+    margin-left: 630px;
+}
+
 .addQuestions{
     cursor: pointer;
     color: white;
@@ -563,6 +562,7 @@ input {
     margin-top: 25px;
     font-size: 18px;
     margin-left: 50px;
+    left:630px;
     outline: none;
     box-shadow: 0px 10px 16px 2px rgba(0,0,0,0.18);
     -webkit-transition-duration: 0.4s;
@@ -575,10 +575,13 @@ input {
     border-color: #71529e;
 }
 
-
 .questionCaption{
     margin-left: 35px;
+    border-width: 2px;
+    border-radius: 8px;
+    color: white;
 }
+
 #deleteQuestion{
     float: right;
     cursor: pointer;
