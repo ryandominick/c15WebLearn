@@ -29,7 +29,7 @@ $(document).ready(function(){
     $(searchButton).click( search = function(){
 
         $.ajax({
-            url: '/student/search/query',
+            url: '/teacher/search/query',
             type: 'POST',
             data: $("#searchQuery").serialize(),
             dataType: "json",
@@ -62,17 +62,13 @@ $(document).ready(function(){
         quizResults.children().remove();
 
         while(index <= max && count < 20){
-            quiz = '<tr>' +  '<td>' + results[index].quizTitle +  '</td>' + '<td>' + results[index].moduleCode +  '</td>' + '<td>' + results[index].moduleName +
-                   '</td>' + '<td>' + results[index].quizEnd +  '</td>' + '<td>' + results[index].grade +  '</td>'  +  '</tr>'  ;
+            quiz = '<tr class="quizRecord">' + '<td>' + results[index].quizTitle +  '</td>' + '<td>' + results[index].moduleCode +  '</td>' + '<td>' + results[index].moduleName +  '</td>' + '<td>' + results[index].quizEnd +  '</td>' + '</tr>';
             quizResults.append(quiz);
             count++;
             index++;
 
         }
     }
-
-    //
-
 
     function updatePageNum(quizzes){
 
@@ -88,7 +84,7 @@ $(document).ready(function(){
 
         for(let i = 1; i <= pages; i++){
 
-            pageTable.append('<td>' + '<p class="pages"  >' + i +'</p>' + '</td>');
+            pageTable.append('<td>' + '<p class=pages  >' + i +'</p>' + '</td>');
         }
     }
 

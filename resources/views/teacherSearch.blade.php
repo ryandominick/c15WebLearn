@@ -10,8 +10,7 @@
     <link rel="stylesheet" type="text/css" href="/css/projstyle.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="/js/studentSearch.js"></script>
-
+    <script src="/js/teacherSearch.js"></script>
 
 
 </head>
@@ -24,7 +23,6 @@
 <nav class="navigation">
     <a id="leftNav" href="/student/home">Home</a>
     <a id="leftNav" href="StudentProfile.html">My Profile</a>
-    <a id="leftNav" href="/student/results">My results</a>
     <a id="rightNav" href="/contact">Contact Us</a>
     <a id="rightNav" href="/student/logout">Logout</a>
 </nav>
@@ -47,7 +45,6 @@
         <th>Module Code</th>
         <th>Module Name</th>
         <th>Deadline</th>
-        <th>Result</th>
 
     </tr>
     </thead>
@@ -59,8 +56,8 @@
 
 <table id="pageTable">
     <tbody>
-        <tr></tr>
+    <tr></tr>
     </tbody>
-    </table>
+</table>
 </body>
 </html>
