@@ -467,7 +467,7 @@ input {
 }
 .mcQuestion {
     margin-left: 60px;
-    border-radius: 6px;
+    border-radius: 9px;
     border: 2px solid   rgb(145, 145, 145);
     outline:none;
     width: 80%;
@@ -476,7 +476,7 @@ input {
 }
 .mcCorrectAnswer {
     margin-left: 60px;
-    border-radius: 6px;
+    border-radius: 9px;
     border: 2px solid   rgb(60, 150, 65);
     outline:none;
     width: 80%;
@@ -484,13 +484,13 @@ input {
 }
 .mcIncorrectAnswer {
     margin-left: 60px;
-    border-radius: 6px;
+    border-radius: 9px;
     border: 2px solid   rgb(150, 60, 60);
     outline:none;
     width: 80%;
     height: 80%;
 }
-.QuestionContainer{
+#QuestionContainer{
     border-style: inset;
     border-color: #a5bfa5;
     border-radius: 25px;
