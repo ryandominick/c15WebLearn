@@ -4,7 +4,9 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("teaRadio").addEventListener("click", disableInput); //Make teacher radio buttons function after selection
     document.getElementById("password").addEventListener("keyup", checkPassword); //Run checkPassword function when user presses a key in password
     document.getElementById("confirmPassword").addEventListener("keyup", checkPassword); //Run checkPassword function when user presses a key in confirmPassword
-    document.getElementById("eyeIcon").addEventListener("click", showPassword);
+    document.getElementById("eyeSlashIcon").addEventListener("click", showPassword);
+    document.getElementById("stuRadio").addEventListener("click", disableInput);
+    document.getElementById("teaRadio").addEventListener("click", disableInput);
 
     function checkPassword() {
         if (document.getElementById('password').value !== "" && document.getElementById('confirmPassword').value !== "") {
@@ -23,35 +25,40 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    document.getElementById("stuRadio").addEventListener("click", disableInput);
-    document.getElementById("teaRadio").addEventListener("click", disableInput);
+
     function disableInput() {
         if (document.getElementById("stuRadio").checked === true) { 	//if student radio button is checked, disable lecture key field and enable course field
             document.getElementById("tooltipField").disabled = true;
             document.getElementById("courseInput").disabled = false;
             tooltipField.style.backgroundColor = '#A9A9A9'; //change disabled colour to a darker grey
             courseInput.style.backgroundColor = ''; //revert enabled field to default colour
+            gradIcon.style.color = '';
             tooltipField.value = ""; //Remove lecture key value
         } else if (document.getElementById("teaRadio").checked === true) { //if teacher radio button is checked, enable lecture key field and disable course field
             document.getElementById("tooltipField").disabled = false;
             document.getElementById("courseInput").disabled = true;
             courseInput.style.backgroundColor = '#A9A9A9'; //change disabled colour to a darker grey
             tooltipField.style.backgroundColor = ''; //revert enabled field to default colour
+            gradIcon.style.color = '#A9A9A9'; //hide icon when selected
             courseInput.value = ""; //Remove course input value
         } else {
             //do nothing
         }
     }
 
+
     function showPassword(){
         var showPass = document.getElementById("password");
         var showConPass = document.getElementById("confirmPassword");
+        var passwordStatus = document.getElementById('eyeSlashIcon')
         if (showPass.type === "password") { //If password has been entered, change to type text to make password visible
             showConPass.type ="text";
             showPass.type = "text";
-            eyeIcon.style.color = "red";
+            eyeSlashIcon.style.color = "red";
+            passwordStatus.className ='fa fa-eye';
         } else { //If eye icon is pressed again, revert password type text back to password type to hide it.
-            eyeIcon.style.color = "#C0C0C0";
+            eyeSlashIcon.style.color = "#C0C0C0";
+            passwordStatus.className ='fa fa-eye-slash';
             showConPass.type = "password";
             showPass.type = "password";
         }

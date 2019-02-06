@@ -12,14 +12,12 @@
     <div class="smallLogo">
         <img src="/images/GradiQuiz_Logo.png" style="height: 90px;" alt="logo" />
     </div>
-    <hr>
         <nav class="navigation">
         <a id="leftNav" href="/student/home">Home</a>
         <a id="leftNav" href="StudentProfile.html">My Profile</a>
         <a id="rightNav" href="/student/logout">Logout</a>
         <a id="rightNav" href="/contact">Contact Us</a>
     </nav>
-    <hr>
     <br>
     <div id="userBar">
         <label for="searchInput"><input type="search" id="searchText" name="searchInput"></label>

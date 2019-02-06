@@ -41,6 +41,10 @@ Route::get('/student/results', function(){
 Route::get('/contact', function(){
     return view('contact');
 });
+//View the manageStudents page
+Route::get('/teacher/manageStudents', function(){
+    return view('manageStudents');
+});
 
 //Route::get('student/login', 'Auth\StudentLoginController@showLoginForm');
 

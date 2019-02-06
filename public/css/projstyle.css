@@ -176,6 +176,7 @@ th {
 
 #registerContainer{
     background-image: url("/images/absurdity.png");
+    width: 430px;
 }
 
 .userType {
@@ -261,16 +262,20 @@ th {
     outline: none;
 }
 #passwordValidityTxt{
-    margin-top: 10px;
-    margin-left: 8px;
     position:absolute;
     font-size: 25px;
+    left: 330px;
+    bottom: 15px;
+}
+
+#passwordValidityTxtContainer {
+    position: relative;
 }
 
 #timerValidityTxt{
     position: absolute;
-    top: 31.5em;
-    left: 920px;
+    top: 31.4em;
+    left: 61.5em;
 }
 
 .startContainer {
@@ -281,6 +286,7 @@ th {
     align-items: center;
     min-height: 100vh;
 }
+
 .loginContainer {
     border-style: solid;
     border-width: 2px;
@@ -302,12 +308,16 @@ input {
 }
 
 /*show password icon stlye*/
-#eyeIcon{
+#eyeSlashIcon{
     position: absolute;
     color: #C0C0C0;
     font-size: 24px;
     bottom: 10px;
     right: 65px;
+    display: -ms-flexbox; /* IE10 */
+    display: flex;
+    width: 100%;
+    left: 238px;
 }
 
 #faPasswordContainer {
@@ -374,7 +384,8 @@ input {
 }
 
 #password{
-    margin-right: 4px;
+    position: absolute;
+    margin-right: 0px;
     margin-bottom: 0px;
 }
 
@@ -385,8 +396,10 @@ input {
 /*Positioning tooltip icon*/
 
 #faPassword{
-    top: -40px;
-    left: 195px;
+    top: 20px;
+    left: 350px;
+    margin-left: 0;
+    height: 0;
 }
 
 #tooltipField{
@@ -396,30 +409,18 @@ input {
 .createContainer{
     border-style: outset;
     border-width: 3px;
-    padding-top: 30px;
-    padding-left: 30px;
-    padding-bottom: 30px;
-    border-color: #5a4182;
+    padding: 30px 100px 30px 80px;
+    border-color: #595d82;
     border-radius: 25px;
-    background-color: #9d86e0;
+    background-color: #9999e0;
     background-image: url("/images/crossword.png");
     text-align: left;
     margin: 25px 450px 25px 450px;
     width: 40%;
     height: 50%;
+    box-shadow: 0 6px 63px 5px #c4c4c4;
 }
-/*Styling for create quiz inputs */
-.createContainer{
-    border-style: outset;
-    border-width: 3px;
-    border-color: #5a4182;
-    border-radius: 25px;
-    background-color: #9d86e0;
-    background-image: url("/images/crossword.png");
-    text-align: left;
-    width: 40%;
-    height: 50%;
-}
+
 .createQuizDetails{
     width: 49%;
     height: 50%;
@@ -448,6 +449,7 @@ input {
 }
 #quizModulePosition{
     margin-left: 43px;
+    width: 20%;
 }
 #quizTimerInput{
     margin-left: 18px;
@@ -455,6 +457,7 @@ input {
 }
 #quizTitlePosition{
     margin-left: 81px;
+    width: 70%;
 }
 #quizStartDatePosition {
     margin-left: 72px;
@@ -464,15 +467,16 @@ input {
 }
 .mcQuestion {
     margin-left: 60px;
-    border-radius: 6px;
+    border-radius: 9px;
     border: 2px solid   rgb(145, 145, 145);
     outline:none;
     width: 80%;
     height: 80%;
+
 }
 .mcCorrectAnswer {
     margin-left: 60px;
-    border-radius: 6px;
+    border-radius: 9px;
     border: 2px solid   rgb(60, 150, 65);
     outline:none;
     width: 80%;
@@ -480,18 +484,18 @@ input {
 }
 .mcIncorrectAnswer {
     margin-left: 60px;
-    border-radius: 6px;
+    border-radius: 9px;
     border: 2px solid   rgb(150, 60, 60);
     outline:none;
     width: 80%;
     height: 80%;
 }
-.QuestionContainer{
+#QuestionContainer{
     border-style: inset;
-    border-color: #9e94bf;
+    border-color: #a5bfa5;
     border-radius: 25px;
     border-width: 3px;
-    background-color: #c9c1ff;
+    background-color: #566f8e;
     background-image:  url("/images/brushed-alum-dark.png");
     padding-top: 10px;
     padding-bottom: 10px;
@@ -499,6 +503,8 @@ input {
     font-size: 18px;
     margin-right: 70px;
     margin-left: 70px;
+    margin-top: 10px;
+    box-shadow: 0 6px 63px 5px #c4c4c4;
 }
 
 .takeQuestionContainer {
@@ -540,6 +546,11 @@ input {
     border: 2px solid   rgb(60, 150, 65);
     outline:none;
 }
+
+#addMCQuestions{
+    margin-left: 630px;
+}
+
 .addQuestions{
     cursor: pointer;
     color: white;
@@ -551,9 +562,10 @@ input {
     margin-top: 25px;
     font-size: 18px;
     margin-left: 50px;
+    left:630px;
     outline: none;
     box-shadow: 0px 10px 16px 2px rgba(0,0,0,0.18);
-    -webkit-transition-duration: 0.4s; /* Safari */
+    -webkit-transition-duration: 0.4s;
     transition-duration: 0.4s;
 }
 
@@ -563,10 +575,13 @@ input {
     border-color: #71529e;
 }
 
-
 .questionCaption{
     margin-left: 35px;
+    border-width: 2px;
+    border-radius: 8px;
+    color: white;
 }
+
 #deleteQuestion{
     float: right;
     cursor: pointer;
@@ -581,7 +596,7 @@ input {
     margin-right: 50px;
     outline: none;
     box-shadow: 0px 10px 16px 2px rgba(0,0,0,0.18);
-    -webkit-transition-duration: 0.4s; /* Safari */
+    -webkit-transition-duration: 0.4s;
     transition-duration: 0.4s;
 }
 
@@ -610,7 +625,7 @@ input {
     outline: none;
     display:none;
     box-shadow: 0px 10px 16px 2px rgba(0,0,0,0.18);
-    -webkit-transition-duration: 0.4s; /* Safari */
+    -webkit-transition-duration: 0.4s;
     transition-duration: 0.4s;
 }
 
@@ -677,9 +692,37 @@ input {
 .regRadioButtons{
     margin-left: 85px;
 }
+
+#registerIcons{
+    display: -ms-flexbox; /* IE10 */
+    display: flex;
+    width: 100%;
+}
+
+.icon {
+    color: white;
+    min-width: 20px;
+    text-align: center;
+    height: 30px;
+    margin-top: 8px;
+    padding: 12px 10px 0 10px;
+    margin-right: 0;
+    background-color: darkgray;
+}
+
 #contactUs{
     text-align: center;
 }
 #userBar{
     text-align: center;
+}
+
+/*Counter the left positioning for the key button*/
+#passKeyIcon{
+    left:0;
+}
+
+#conPassKeyIcon{
+    left:0;
+    bottom: 8px;
 }
