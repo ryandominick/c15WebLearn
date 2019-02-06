@@ -11,15 +11,13 @@
 <div class="smallLogo">
     <img src="/images/GradiQuiz_Logo.png" style="height: 90px;" alt="logo"/>
 </div>
-<hr>
 <nav class="navigation">
-    <a id="home" href="/student/home">Home</a>
-    <a id="studProfile" href="/StudentProfile.html">My Profile</a>
-    <a id="results" href="MyResults.html">My results</a>
-    <a class="floatRight" href="/contact">Contact Us</a>
-    <a class="floatRight" href="/student/logout">Logout</a>
+    <a id="leftNav" href="/student/home">Home</a>
+    <a id="leftNav" href="/StudentProfile.html">My Profile</a>
+    <a id="leftNav" href="/student/results">My results</a>
+    <a id="rightNav" href="/student/logout">Logout</a>
+    <a id="rightNav" href="/contact">Contact Us</a>
 </nav>
-<hr>
 <br>
 <h2 class="welcome"></h2>
 <table>
@@ -30,7 +28,8 @@
         <th id="duedate">Due Date</th>
     </tr>
     <td>CO530</td>
-    <td>Introduction to Web Development</td>
+    <td>Introduction to Web Development <!-- Open popup -->
+        <button id="popupButton">Take Quiz</button></td>
     <td>25/12/18</td>
 
     <tr>
@@ -52,9 +51,6 @@
     </tr>
 </table>
 
-<!-- Open popup -->
-<button id="popupButton">Take Quiz</button>
-
 <!-- Modal -->
 <div id="popup" class="modal">
 
@@ -62,7 +58,7 @@
     <div class="popupContent">
         <span class="exit">&times;</span>
         <h2>Quiz Instructions</h2>
-        <p>1: Ensure you have a stable connection and an enviroment with minal distractions.</p>
+        <p>1: Ensure you have a stable connection and an enviroment with minimal distractions.</p>
         <br>
         <p>2: Please do not use the internet or other resources to help you with this quiz.</p>
         <br>
@@ -78,7 +74,6 @@
             <button id="takeQuiz">Start Quiz</button>
         </div>
     </div>
-
 </div>
 </body>
 </html>

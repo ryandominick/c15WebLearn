@@ -12,11 +12,11 @@
     <img src="/images/GradiQuiz_Logo.png" style="height: 90px;" alt="logo"/>
 </div>
 <nav class="navigation">
-    <a id="home" href="/teacher/home">Home</a>
-    <a id="results" href="MyResults.html">My results</a>
-    <a id="studProfile" href="StudentProfile.html">My Profile</a>
-    <a id="contact" href="/contact">Contact Us</a>
-    <a id="logout" href="/html/">Log out</a>
+    <a id="leftNav" href="/teacher/home">Home</a>
+    <a id="leftNav" href="/student/results">My results</a>
+    <a id="leftNav" href="StudentProfile.html">My Profile</a>
+    <a id="rightNav" href="/contact">Contact Us</a>
+    <a id="rightNav" href="/html/">Log out</a>
 </nav>
 <h2 id="quizHeader">Quiz</h2>
 <form id ="takeQuizForm" action="submit.php">

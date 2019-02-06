@@ -23,14 +23,26 @@
 
 Route::resource('reg', 'RegController');
 
-Route::get('/teacher/filter', function(){
-    return view('myResults');
+Route::get('/student/search', 'StudentSearchController@index');
+Route::post('/student/search/query', 'StudentSearchController@query');
+
+
+
+Route::resource('myResults', 'ResultsController');
+
+Route::resource('/teacher/createquiz', 'CreateQuizController');
+
+//View the myResults page
+Route::get('/student/results', function(){
+    return view("myResults");
 });
-
-Route::resource('createquiz', 'CreateQuizController');
-
+//View the Contact Page
 Route::get('/contact', function(){
     return view('contact');
+});
+//View the manageStudents page
+Route::get('/teacher/manageStudents', function(){
+    return view('manageStudents');
 });
 
 //Route::get('student/login', 'Auth\StudentLoginController@showLoginForm');
@@ -38,6 +50,8 @@ Route::get('/contact', function(){
 
 //Route::prefix('/student')->group(function(){
     // ->name() allows for route alias
+
+// Authentication Routes
 
     Route::get('/login', 'Auth\StudentLoginController@showLoginForm')->middleware('guest:teacher', 'guest:student');
 
