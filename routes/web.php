@@ -26,7 +26,8 @@ Route::resource('reg', 'RegController');
 Route::get('/student/search', 'StudentSearchController@index');
 Route::post('/student/search/query', 'StudentSearchController@query');
 
-
+Route::get('/teacher/search', 'TeacherSearchController@index');
+Route::post('/teacher/search/query', 'TeacherSearchController@query');
 
 Route::resource('myResults', 'ResultsController');
 

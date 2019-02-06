@@ -1,93 +1,97 @@
 
-
-// NEED TO ADD USER ID IN QUERY AND FORMAT CSS FOR BOTTOM TABLE + COMMENT
-
 $(document).ready(function(){
 
-        var quizResults = $('#quizResults tbody');
-        var pageTable = $('#pageTable tbody tr');
+    //alert(studentDetails);
+    // variables used to manipulate and track DOM elements in creating and removing search rows while storing placeholders
+    //alert($url);
+    let quizResults = $('#quizResults tbody');
+    let pageTable = $('#pageTable tbody tr');
 
-        var searchButton = $('#searchButton');
-        var results;
-        var pages;
-        var index = 0;
-        var max;
+    let searchButton = $('#searchButton');
+    let results;
+    let pages;
+    let index = 0;
+    let max;
 
-        var search;
-        var displayed = false;
+    // search is assigned the function for carrying out a query so that an initial search can be performed automatically
+    let search;
 
+    //let studentDetails = JSON.parse(window.localStorage.getItestudentDetails.urlm('student'));
 
-
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            }
-        });
-
-        $(searchButton).click( search = function(){
-
-    $.ajax({
-        url: '/student/search/query',
-        type: 'POST',
-        data: $("#searchQuery").serialize(),
-        dataType: "json",
-
-    }).done(function (quizzes) {
-
-        $('.pages').parent().remove();
-        //remove appended results
-
-         max = quizzes.length -1;
-        if(max + 1 > 20)
-            pages = (((max +1) - ((max +1) % 20)) / 20) + 1;
-         else pages = 1;
-
-        results = quizzes;
-
-        for(var i = 1; i <= pages; i++){
-
-            pageTable.append('<td>' + '<p class=pages  >' + i +'</p>' + '</td>');
+    // The jquery ajax wrapper is set up with Laravels csrf protection to prevent failure
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
+    });
 
-        if(displayed === false){
 
-            updateResults();
-            displayed = true;
-        }
+    $(searchButton).click( search = function(){
 
-        $('.pages').click(function(e) {
+        $.ajax({
+            url: '/student/search/query',
+            type: 'POST',
+            data: $("#searchQuery").serialize(),
+            dataType: "json",
 
-            index = (e.currentTarget.innerHTML -1) * 20;
+        }).done(function (quizzes) {
+
+            index = 0;
+            updatePageNum(quizzes);
             updateResults();
 
-        });
+            $('.pages').click(function(e) {
 
+                index = (e.currentTarget.innerHTML -1) * 20;
+                updateResults();
 
+            });
 
 
         }).fail(function (jqXHR, exception) {
 
             // Add fail condition
         });
-        });
+    });
 
     function updateResults(){
 
-        var count = 0;
-        var quiz;
+        let count = 0;
+        let quiz;
 
         quizResults.children().remove();
 
         while(index <= max && count < 20){
-            quiz = '<tr>' + '<td>' + results[index].quizTitle +  '</td>' + '<td>' + results[index].moduleCode +  '</td>' + '<td>' + results[index].moduleName +  '</td>' + '<td>' + results[index].quizEnd +  '</td>' + '<td>' + results[index].grade +  '</td>'+ '</tr>';
+            quiz = '<tr>' +  '<td>' + results[index].quizTitle +  '</td>' + '<td>' + results[index].moduleCode +  '</td>' + '<td>' + results[index].moduleName +
+                   '</td>' + '<td>' + results[index].quizEnd +  '</td>' + '<td>' + results[index].grade +  '</td>'  +  '</tr>'  ;
             quizResults.append(quiz);
             count++;
             index++;
+
         }
     }
 
-        search();
+    //
+
+
+    function updatePageNum(quizzes){
+
+        $('.pages').parent().remove();
+        //remove appended results
+
+        max = quizzes.length -1;
+        if(max + 1 > 20)
+            pages = (((max +1) - ((max +1) % 20)) / 20) + 1;
+        else pages = 1;
+
+        results = quizzes;
+
+        for(let i = 1; i <= pages; i++){
+
+            pageTable.append('<td>' + '<p class="pages"  >' + i +'</p>' + '</td>');
+        }
+    }
+
+    search();
 
 });
-
-
