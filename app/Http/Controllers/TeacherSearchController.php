@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\TeacherQuiz;
 use Illuminate\Http\Request;
+use App\Models\TeacherQuiz;
 
-class StudentSearchController extends Controller
+class TeacherSearchController extends Controller
 {
+
     /**
      *Create a new controller
      *
@@ -15,21 +16,21 @@ class StudentSearchController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth:student');
+        $this->middleware('auth:teacher');
     }
 
 
     public function index(){
 
-        return view('studentSearch');
+        return view('teacherSearch');
 
     }
 
     public function query(Request $request){
 
-         $results =  TeacherQuiz::studentSearch($request->input('searchInput'));
+        $results =  TeacherQuiz::teacherSearch($request->input('searchInput'));
 
-         return response()->json($results);
+        return response()->json($results);
 
     }
 }

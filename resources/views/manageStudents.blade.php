@@ -11,13 +11,11 @@
 <div class="smallLogo">
     <img src="/images/GradiQuiz_Logo.png" style="height: 90px;" alt="logo"/>
 </div>
-<hr>
 <nav class="navigation">
     <a id="leftNav" href="/teacher/home">Home</a>
     <a id="leftNav" href="/teacher/createquiz">Create Quizzes</a>
     <a id="rightNav" href="/teacher/logout">Logout</a>
 </nav>
-<hr>
 <br>
 <div class="search">
     <input type="text" id="searchBox" placeholder="Search for student name...">

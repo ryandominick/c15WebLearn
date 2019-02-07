@@ -10,14 +10,12 @@
 <div class="smallLogo">
     <img src="/images/GradiQuiz_Logo.png" style="height: 90px;" alt="logo"/>
 </div>
-<hr>
 <nav class="navigation">
     <a id="leftNav" href="/student/home">Home</a>
     <a id="leftNav" href="StudentProfile.html">My Profile</a>
     <a id="leftNav" href="/student/results">My results</a>
     <a id="rightNav" href="/student/logout">Log out</a>
 </nav>
-<hr>
 
 <h2 id="center">Contact Us</h2>
 

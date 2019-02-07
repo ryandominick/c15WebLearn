@@ -5,6 +5,8 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("password").addEventListener("keyup", checkPassword); //Run checkPassword function when user presses a key in password
     document.getElementById("confirmPassword").addEventListener("keyup", checkPassword); //Run checkPassword function when user presses a key in confirmPassword
     document.getElementById("eyeSlashIcon").addEventListener("click", showPassword);
+    document.getElementById("stuRadio").addEventListener("click", disableInput);
+    document.getElementById("teaRadio").addEventListener("click", disableInput);
 
     function checkPassword() {
         if (document.getElementById('password').value !== "" && document.getElementById('confirmPassword').value !== "") {
@@ -23,8 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    document.getElementById("stuRadio").addEventListener("click", disableInput);
-    document.getElementById("teaRadio").addEventListener("click", disableInput);
+
     function disableInput() {
         if (document.getElementById("stuRadio").checked === true) { 	//if student radio button is checked, disable lecture key field and enable course field
             document.getElementById("tooltipField").disabled = true;
