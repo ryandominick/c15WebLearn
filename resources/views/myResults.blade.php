@@ -19,7 +19,7 @@
         <a id="rightNav" href="/contact">Contact Us</a>
     </nav>
     <br>
-    <div id="userBar">
+    <div id="center">
         <label for="searchInput"><input type="search" id="searchText" name="searchInput"></label>
         <input type="button" id="searchButton" class="buttons" value="search">
     </div>

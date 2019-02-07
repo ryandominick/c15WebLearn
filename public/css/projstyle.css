@@ -710,13 +710,6 @@ input {
     background-color: darkgray;
 }
 
-#contactUs{
-    text-align: center;
-}
-#userBar{
-    text-align: center;
-}
-
 /*Counter the left positioning for the key button*/
 #passKeyIcon{
     left:0;
