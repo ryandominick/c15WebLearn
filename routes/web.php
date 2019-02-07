@@ -50,26 +50,26 @@ Route::get('/teacher/manageStudents', function(){
 
 
 //Route::prefix('/student')->group(function(){
-    // ->name() allows for route alias
+// ->name() allows for route alias
 
 // Authentication Routes
 
-    Route::get('/login', 'Auth\StudentLoginController@showLoginForm')->middleware('guest:teacher', 'guest:student');
+Route::get('/login', 'Auth\StudentLoginController@showLoginForm')->middleware('guest:teacher', 'guest:student');
 
-   //Route::get('/student/login', 'Auth\StudentLoginController@showLoginForm')->name('student.showLogin');
-   Route::post('/student/login', 'Auth\StudentLoginController@studentLogin')->name('student.login');
-   Route::get('/student/logout', 'Auth\StudentLoginController@studentLogout')->name('student.logout');
-    Route::get('/student/home', 'Auth\StudentController@index')->name('student.home');
+//Route::get('/student/login', 'Auth\StudentLoginController@showLoginForm')->name('student.showLogin');
+Route::post('/student/login', 'Auth\StudentLoginController@studentLogin')->name('student.login');
+Route::get('/student/logout', 'Auth\StudentLoginController@studentLogout')->name('student.logout');
+Route::get('/student/home', 'Auth\StudentController@index')->name('student.home');
 //});
 
 //Route::prefix('/teacher')->group(function(){
-    //Route::get('/teacher/login', 'Auth\TeacherLoginController@showLoginForm')->name('teacher.showLogin');
-    Route::post('/teacher/login', 'Auth\TeacherLoginController@teacherLogin')->name('teacher.login');
-    Route::get('/teacher/logout', 'Auth\TeacherLoginController@teacherLogout')->name('teacher.logout');
-    Route::get('/teacher/home', 'Auth\TeacherController@index')->name('teacher.home');
+//Route::get('/teacher/login', 'Auth\TeacherLoginController@showLoginForm')->name('teacher.showLogin');
+Route::post('/teacher/login', 'Auth\TeacherLoginController@teacherLogin')->name('teacher.login');
+Route::get('/teacher/logout', 'Auth\TeacherLoginController@teacherLogout')->name('teacher.logout');
+Route::get('/teacher/home', 'Auth\TeacherController@index')->name('teacher.home');
 //});
 
-    Route::any('/', ["as" => "/student/home", "uses" => "Auth\StudentController@index"]);
+Route::any('/', ["as" => "/student/home", "uses" => "Auth\StudentController@index"]);
 
 //Route::get('/', ['as' => 'teacher/home', 'uses' => 'Auth\TeacherController@index']);
 

@@ -14,11 +14,11 @@ class TeacherQuiz extends Model
 
     public static function studentSearch($searchText){
 
-       $results = DB::select('SELECT t.quizTitle, t.moduleCode, m.moduleName, t.quizEnd, r.grade, t.quizID, t.duration FROM TeacherQuiz AS t INNER JOIN Module AS m ON t.moduleCode = 
+        $results = DB::select('SELECT t.quizTitle, t.moduleCode, m.moduleName, t.quizEnd, r.grade, t.quizID, t.duration FROM TeacherQuiz AS t INNER JOIN Module AS m ON t.moduleCode = 
         m.moduleCode LEFT JOIN Result AS r ON t.quizID = r.quizID WHERE  (t.quizTitle LIKE :quizTitle OR t.moduleCode LIKE :moduleCode OR m.moduleName LIKE :moduleName) AND 
         (r.studentID = :studentID OR r.studentID IS NULL) ORDER BY m.moduleCode, t.quizEnd, t.quizTitle;', ['quizTitle' => '%'.$searchText.'%', 'moduleCode' => '%'.$searchText.'%', 'moduleName' => '%'.$searchText.'%', 'studentID' =>  Session::get("id")]);
 
-       return $results;
+        return $results;
     }
 
     public static function teacherSearch($searchText){

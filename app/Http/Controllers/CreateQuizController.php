@@ -51,11 +51,11 @@ class CreateQuizController extends Controller
         //ignore module code for now
 
         //quiz ID
-            $quizID = TeacherQuiz::findQuizID();
+        $quizID = TeacherQuiz::findQuizID();
 
-            $newID = $quizID["max(quizID)"] + 1;
+        $newID = $quizID["max(quizID)"] + 1;
 
-            //return $quizIDString;
+        //return $quizIDString;
         //add quizTitle,quizstart,quizend,quizstatus,duration,module code,teacherID to teachquiz table
 
         $quizTitle = $request ['quizTitle'];
@@ -74,7 +74,7 @@ class CreateQuizController extends Controller
 
         //return $quizTitle;
         //----Multiple Choice Questions----//
-    //retrieve arrays of question inputs, and set a count for the amount
+        //retrieve arrays of question inputs, and set a count for the amount
         $mcCount = count(Input::get('mcQuestion'));
         $mcQuestion = Input::get('mcQuestion');
         $mcCorrectAns = Input::get('mcCorrectAnswer');
@@ -84,7 +84,7 @@ class CreateQuizController extends Controller
 
         for($i = 0; $i < $mcCount; $i++){
 
-           MCQuestion::addQuestionMC($mcQuestion[$i], $mcCorrectAns[$i], $mcIncorrectAnswer1[$i], $mcIncorrectAnswer2[$i], $mcIncorrectAnswer3[$i], $newID);
+            MCQuestion::addQuestionMC($mcQuestion[$i], $mcCorrectAns[$i], $mcIncorrectAnswer1[$i], $mcIncorrectAnswer2[$i], $mcIncorrectAnswer3[$i], $newID);
 
         }
 
@@ -96,11 +96,11 @@ class CreateQuizController extends Controller
 
         for ($i = 0; $i < $inputCount; $i++) {
 
-           return InputQuestion::addQuestionInput($inputQuestion[$i], $inputAnswer[$i], $newID);
+            return InputQuestion::addQuestionInput($inputQuestion[$i], $inputAnswer[$i], $newID);
 
         }
 
-        }
+    }
 
 
     /**

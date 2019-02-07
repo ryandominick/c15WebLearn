@@ -27,9 +27,9 @@ class StudentSearchController extends Controller
 
     public function query(Request $request){
 
-         $results =  TeacherQuiz::studentSearch($request->input('searchInput'));
+        $results =  TeacherQuiz::studentSearch($request->input('searchInput'));
 
-         return response()->json($results);
+        return response()->json($results);
 
     }
 }

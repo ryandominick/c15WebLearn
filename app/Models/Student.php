@@ -16,13 +16,13 @@ class Student extends Authenticatable
     // Auth guard for admin
     protected $guard = 'student';
 
-         protected $fillable = [
-             'email', 'password',
-         ];
+    protected $fillable = [
+        'email', 'password',
+    ];
 
-         protected $hidden = [
-             'password', 'remember_token',
-         ];
+    protected $hidden = [
+        'password', 'remember_token',
+    ];
 
     public static function validateStudent($email){
 

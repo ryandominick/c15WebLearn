@@ -57,8 +57,8 @@
 
 <table id="pageTable">
     <tbody>
-        <tr></tr>
+    <tr></tr>
     </tbody>
-    </table>
+</table>
 </body>
 </html>

@@ -38,34 +38,34 @@ class RegController extends Controller
     public function store(Request $request)
     {
 
-            $correctKey = '123';
-            $key = $request ['teacherKey'];
-            $userType = $request['userType'];
-            $firstName = $request['firstName'];
-            $lastName = $request['lastName'];
-            $Email = $request['email'];
-            $password = $request['password'];
-            $courseName = $request['courseName'];
-            $courseIDHolder = Course::getCourseID($courseName);
-            $extractCourseID = get_object_vars($courseIDHolder[0]);
-            $courseID = $extractCourseID['courseID'];
+        $correctKey = '123';
+        $key = $request ['teacherKey'];
+        $userType = $request['userType'];
+        $firstName = $request['firstName'];
+        $lastName = $request['lastName'];
+        $Email = $request['email'];
+        $password = $request['password'];
+        $courseName = $request['courseName'];
+        $courseIDHolder = Course::getCourseID($courseName);
+        $extractCourseID = get_object_vars($courseIDHolder[0]);
+        $courseID = $extractCourseID['courseID'];
 
-            if($userType === "student") {
-                Student::register($firstName, $lastName, $Email, $password, $courseID);
+        if($userType === "student") {
+            Student::register($firstName, $lastName, $Email, $password, $courseID);
+            return redirect('/login');
+        }
+        elseif ($userType === "teacher"){
+            if ($key === $correctKey) {
+                Teacher::register($firstName, $lastName, $Email, $password);
                 return redirect('/login');
             }
-            elseif ($userType === "teacher"){
-                if ($key === $correctKey) {
-                    Teacher::register($firstName, $lastName, $Email, $password);
-                    return redirect('/login');
-                }
-                else{
+            else{
 
-                    return "wrong key";
-                }
-
-
+                return "wrong key";
             }
+
+
+        }
 
 
     }

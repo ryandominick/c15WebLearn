@@ -57,7 +57,7 @@ class TeacherLoginController extends Controller
         ]);
 
         if(Auth::guard('teacher')->attempt(['email'=> $request->email, 'password' => $request->password], $request->remember)){
-           // return redirect()->intended(route('teacher.home'));
+            // return redirect()->intended(route('teacher.home'));
 
             //Ryan changes start:
             //gets the ID of the email address from database

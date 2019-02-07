@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function showSubmitQuiz() {
 
-            document.getElementById("submitQuizButton").style.display = "block";
+        document.getElementById("submitQuizButton").style.display = "block";
 
     }
 
