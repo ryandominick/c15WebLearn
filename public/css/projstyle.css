@@ -6,7 +6,6 @@
 html{
     width: 100%;
 }
-
 body {
     background-image: url("/images/dust_scratches.png");
 }
@@ -71,7 +70,7 @@ th {
 .bigLogo{
     margin-left: 94px;
 }
-/* Navigation bar styling */
+/* topnav bar styling */
 #leftNav {
     float:left;
 }
@@ -81,25 +80,7 @@ th {
 
 /* Start of Nav bar styling*/
 
-.navigation {
-    background-color: #1B2F7E;
-    color: white;
-    overflow: hidden;
-    /* position:  */
-}
 
-.navigation a {
-    float: left;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-}
-/* Change the color of links on hover */
-.navigation a:hover {
-    background-color: #3555D4;
-}
 /* Add a color to the active/current link */
 .smallLogo {
     text-align: center;
@@ -718,4 +699,124 @@ input {
 #conPassKeyIcon{
     left:0;
     bottom: 8px;
+}
+
+/* Add a black background color to the top navigation */
+.navigation {
+    width: 100%;
+    background-color: #1B2F7E;
+    overflow: auto;
+}
+
+/* Style the links inside the navigation bar */
+.navigation a {
+    float: left;
+    color: #ffffff;
+    padding: 14px 10px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.navigation a:hover {
+    background-color: #3555D4;
+    color: #ffffff;
+    transition: all 0.3s ease;
+}
+
+/* Hide the link that should open and close the navigation on small screens */
+.navigation .burger {
+    color: #ffffff;
+    display: none;
+}
+
+/* When screen is resized to less than 900px wide, hide the links except for the first child (homepage) Show the link that contains should open and close the navigation (.burger) */
+@media screen and (max-width: 975px) {
+    .navigation a:not(:first-child) {
+        display: none;
+    }
+    .navigation a.burger {
+        color: #ffffff;
+        float: right;
+        display: block;
+    }
+}
+
+/* A responsive class is inserted to the nav with JavaScript, this is done when the user clicks on the burger icon. This enables the user to still navigate the site while having split screen for example*/
+@media screen and (max-width: 975px) {
+    .navigation.responsive {
+        position: relative;
+    }
+    .navigation.responsive a.burger {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    .navigation.responsive a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+}
+#burgerIcon{
+    color: #ffffff;
+}
+#homeIcon{
+    color: #ffffff;
+    position: relative;
+    right: 20px;
+}
+/* The profileDropdown container */
+.profileDropdown {
+    float: left;
+    overflow: hidden;
+}
+
+/* Dropdown button */
+.profileDropdown .dropDownButton {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit; /* Important for vertical align on mobile phones */
+    margin: 0; /* Important for vertical align on mobile phones */
+}
+
+/* Adding transition and colour of dropdown */
+.navigation a:hover, .profileDropdown:hover .dropDownButton {
+    background-color: #3555D4;
+    color: #ffffff;
+    transition: all 0.3s ease;}
+
+/* Dropdown content (hidden by default) */
+.dropdownLinks {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Links inside the profileDropdown */
+.dropdownLinks a {
+    float: none;
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    background-color: #1B2F7E;
+}
+
+/* Add a grey background color to profileDropdown links on hover */
+.dropdownLinks a:hover {
+    background-color: #3555D4;
+}
+
+/* Show the profileDropdown menu on hover */
+.profileDropdown:hover .dropdownLinks {
+    display: block;
 }

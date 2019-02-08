@@ -11,7 +11,7 @@
 <div class="smallLogo">
     <img src="/images/GradiQuiz_Logo.png" style="height: 90px;" alt="logo"/>
 </div>
-<nav class="navigation">
+<nav class="topnav">
     <a id="leftNav" href="/teacher/home">Home</a>
     <a id="leftNav" href="/teacher/createquiz">Create Quizzes</a>
     <a id="rightNav" href="/teacher/logout">Log out</a>
