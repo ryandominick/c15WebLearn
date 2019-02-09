@@ -15,21 +15,21 @@
     <img src="/images/GradiQuiz_Logo.png" style="height: 90px;" alt="logo"/>
 </div>
 <div class="navigation" id="navBar">
-    <a href="/student/home"> <i class="fa fa-home" id="homeIcon"></i>Home</a>
-    <a href="javascript:void(0);" class="burger" onclick="burgerNav()">
-        <i class="fa fa-bars" id="burgerIcon"></i></a>
+    <a href="/student/home"> <i class="fas fa-home" id="homeIcon"></i>Home</a>
 
     <div class="profileDropdown">
-        <button class="dropDownButton">Your Profile
+
+        <button class="dropDownButton"><i class="fas fa-user" id="userIcon"></i>Your Profile
             <i class="fa fa-caret-down" id="dropdwn"></i>
         </button>
         <div class="dropdownLinks">
             <a href="/student/profile">Profile</a>
             <a href="/student/results">Results</a>
-            <a href="/student/logout">Logout</a>
+            <a href="/student/logout"> <i class="fas fa-sign-out-alt" id="signOutIcon"></i>Logout</a>
         </div>
     </div>
-    <a href="/contact">Contact Us</a>
+    <a href="/contact"> <i class="fas fa-envelope" id="envelopeIcon"></i>Contact Us</a>
+    <a href="javascript:void(0);" class="burger" onclick="burgerNav()">&#9776;</a>
 </div>
 <br>
 <h2 class="welcome"></h2>

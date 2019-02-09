@@ -18,11 +18,11 @@
 <div class="navigation" id="navBar">
     <a href="/student/home"> <i class="fa fa-home" id="homeIcon"></i>Home</a>
     <a href="javascript:void(0);" class="burger" onclick="burgerNav()">
-        <i class="fa fa-bars" id="burgerIcon"></i></a>
+        <i class="fa fa-bars" id="whiteIcon"></i></a>
 
     <div class="profileDropdown">
         <button class="dropDownButton">Your Profile
-            <i class="fa fa-caret-down" id="dropdwn"></i>
+            <i class="fa fa-user" id="dropdwn"></i>
         </button>
         <div class="dropdownLinks">
             <a href="/student/profile">Profile</a>
