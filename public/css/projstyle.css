@@ -742,7 +742,7 @@ input {
     }
 }
 
-/* A responsive class is inserted to the nav with JavaScript, this is done when the user clicks on the burger icon. This enables the user to still navigate the site while having split screen for example*/
+/* A responsive class is inserted to the nav bar with JavaScript, (When the user clicks on the burger icon) This allows the user to still navigate the site while having split screen for example*/
 @media screen and (max-width: 975px) {
     .navigation.responsive {
         position: relative;
@@ -759,10 +759,10 @@ input {
     }
 }
 #burgerIcon{
-    color: #ffffff;
+    color: white;
 }
 #homeIcon{
-    color: #ffffff;
+    color: white;
     position: relative;
     right: 20px;
 }
@@ -787,15 +787,16 @@ input {
 /* Adding transition and colour of dropdown */
 .navigation a:hover, .profileDropdown:hover .dropDownButton {
     background-color: #3555D4;
-    color: #ffffff;
-    transition: all 0.3s ease;}
+    color: white;
+    transition: all 0.3s ease;
+}
 
 /* Dropdown content (hidden by default) */
 .dropdownLinks {
     display: none;
     position: absolute;
     background-color: #f9f9f9;
-    min-width: 160px;
+    min-width: 174px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
 }
@@ -819,4 +820,7 @@ input {
 /* Show the profileDropdown menu on hover */
 .profileDropdown:hover .dropdownLinks {
     display: block;
+}
+#dropdwn{
+    color: white;
 }

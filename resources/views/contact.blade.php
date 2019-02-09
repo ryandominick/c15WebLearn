@@ -22,7 +22,7 @@
 
     <div class="profileDropdown">
         <button class="dropDownButton">Your Profile
-            <i class="fa fa-caret-down"></i>
+            <i class="fa fa-caret-down" id="dropdwn"></i>
         </button>
         <div class="dropdownLinks">
             <a href="/student/profile">Profile</a>
