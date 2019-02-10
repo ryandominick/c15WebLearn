@@ -4,31 +4,24 @@ document.addEventListener("DOMContentLoaded", function () {
 
 //document.addEventListener("click", function(){alert("works");});
 
+    document.getElementById("eyeSlashIcon").addEventListener("click", showPassword);
 
-
-    let checkbox = document.getElementById("checkbox1");
     let loginForm = document.getElementById("loginForm");
     let studentRadio = document.getElementById("stuRadio");
     let teacherRadio = document.getElementById("teaRadio");
 
 
-    //Set default value for if password is clicked
-    let passwordClicked = false;
-
-    //checkbox.click();
-
-    function showHidePass() {
-        let getLoginInput = document.getElementById("passwordClicked");
-
-        if(passwordClicked === false) {
-            //If button is clicked, change to 'text' type to see what password is
-            getLoginInput.setAttribute("type", "text");
-            passwordClicked = true;
-
-        } else if (passwordClicked === true) {
-            //If button is clicked again, change from 'text' type to 'password'
-            getLoginInput.setAttribute("type", "password");
-            passwordClicked = false;
+    function showPassword(){
+        var showPass = document.getElementById("passwordClicked");
+        var passwordStatus = document.getElementById('eyeSlashIcon')
+        if (showPass.type === "password") { //If password has been entered, change to type text to make password visible
+            showPass.type = "text";
+            eyeSlashIcon.style.color = "red";
+            passwordStatus.className ='fa fa-eye';
+        } else { //If eye icon is pressed again, revert password type text back to password type to hide it.
+            eyeSlashIcon.style.color = "#C0C0C0";
+            passwordStatus.className ='fa fa-eye-slash';
+            showPass.type = "password";
         }
     }
 
@@ -46,7 +39,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    checkbox.addEventListener("click", showHidePass);
     teacherRadio.addEventListener("click", onRadioStateChange);
     studentRadio.addEventListener("click", onRadioStateChange);
 

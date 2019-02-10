@@ -320,6 +320,20 @@ input {
     left: 238px;
 }
 
+.fa-eye-slash{
+
+}
+
+#passwordClicked{
+    display: inline-block;
+    margin-right: 6px;
+    background-image: linear-gradient(to right, #f3f3f2, #e3e2e6);
+}
+
+#loginEmail{
+    background-image: linear-gradient(to right, #f3f3f2, #e3e2e6);
+}
+
 #faPasswordContainer {
     position: absolute;
 }
@@ -328,6 +342,11 @@ input {
     position: relative;
 }
 
+#eyeIconContainerLogin  {
+    position: relative;
+    right: 40px;
+    bottom: 9px;
+}
 /*Question Mark Tooltip Icon */
 .fa{
     margin-left: 35px;

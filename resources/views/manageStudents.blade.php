@@ -5,6 +5,7 @@
     <title>Manage Students</title>
     <link rel="stylesheet" type="text/css" href="/css/projstyle.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <script type="text/javascript" src="js/manageStudents.js"></script>
 </head>
 <body>
 
@@ -47,8 +48,21 @@
     <tr>
         <td>Tim Grey</td>
         <td>Computer Science</td>
-        <td><button>Remove</button></td>
+        <td><button id="popupButton">Remove</button></td>
     </tr>
 </table>
+
+<div id="removeStudentModal" class="modal">
+
+    <!-- Information inside popup -->
+    <div class="popupContent">
+        <span class="exit">&times;</span>
+        <p> Are you sure you want to remove this student?</p>
+        <br>
+        <div class="quizButton" align="center">
+            <button id="takeQuiz">Remove Student</button>
+        </div>
+    </div>
+</div>
 </body>
 </html>

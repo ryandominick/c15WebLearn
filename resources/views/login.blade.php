@@ -25,25 +25,20 @@
         <form method="POST" action ="/student/login" id="loginForm" autocomplete="off">
             @csrf
             <br>
-            <div id="registerIcons">
-                <i class ="fa fa-user icon"></i>
                 <label for="email">
-                    <input type ="email" placeholder = "University Email Address" size="25" name="email" required >
+                    <input id ="loginEmail" type ="email" placeholder = "University Email Address" size="25" name="email" required >
                 </label>
-            </div>
-            <div id="registerIcons">
-                <i id="passKeyIcon" class ="fa fa-lock icon"></i>
+            <br>
                 <label for = "password">
                     <input class="loginInputs" type ="password" id="passwordClicked" placeholder = "Please enter your password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" size="25" required>
                 </label>
+            <div id = "eyeIconContainerLogin">
+                <i class="fa fa-eye-slash" id="eyeSlashIcon" aria-hidden="true" ></i>
             </div>
+            <br>
             <button class ="buttons" id="loginButton" type="submit" value="Submit"><span>Login </span><i class="fa fa-key"></i></button>
         </form>
         <br>
-        <label for ="showPass" >Show Password
-            <input type ="checkbox"name="checkbox" id="checkbox1">
-            <br>
-        </label>
     </div>
     <br>
     <p>Don't have an account? <a class="loginLinks" href="reg">Create one here!</a></p>
