@@ -33,15 +33,15 @@ Route::resource('myResults', 'ResultsController');
 
 Route::resource('/teacher/createquiz', 'CreateQuizController');
 
-//View the myResults page
-Route::get('/student/results', function(){
-    return view("myResults");
-});
+//Display the results view whilst using the StudentController
+Route::get('/student/results', 'Auth\StudentController@results');
+
 //View the Contact Page
 Route::get('/contact', function(){
     return view('contact');
 });
-//View the manageStudents page
+//View the manage
+//Students page
 Route::get('/teacher/manageStudents', function(){
     return view('manageStudents');
 });

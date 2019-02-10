@@ -18,8 +18,7 @@
     <a href="/student/home"> <i class="fas fa-home" id="homeIcon"></i>Home</a>
 
     <div class="profileDropdown">
-
-        <button class="dropDownButton"><i class="fas fa-user" id="userIcon"></i>Your Profile
+        <button class="dropDownButton"><i class="fas fa-user" id="userIcon"></i><?php echo Auth::user()->firstName?>
             <i class="fa fa-caret-down" id="dropdwn"></i>
         </button>
         <div class="dropdownLinks">
