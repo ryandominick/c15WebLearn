@@ -34,4 +34,10 @@ class StudentController extends Controller
         return view('myResults');
     }
 
+    public function contactUs()
+    {
+        return view('contact');
+    }
+
+
 }

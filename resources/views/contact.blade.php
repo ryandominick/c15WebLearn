@@ -16,20 +16,19 @@
 
 
 <div class="navigation" id="navBar">
-    <a href="/student/home"> <i class="fa fa-home" id="homeIcon"></i>Home</a>
-    <a href="javascript:void(0);" class="burger" onclick="burgerNav()">
-        <i class="fa fa-bars" id="whiteIcon"></i></a>
+    <a href="/student/home"> <i class="fas fa-home" id="homeIcon"></i>Home</a>
 
     <div class="profileDropdown">
-        <button class="dropDownButton">Your Profile
-            <i class="fa fa-user" id="dropdwn"></i>
+        <button class="dropDownButton"><i class="fas fa-user" id="userIcon"></i> <?php echo Auth::user()->firstName?>
+            <i class="fa fa-caret-down" id="dropdwn"></i>
         </button>
         <div class="dropdownLinks">
             <a href="/student/profile">Profile</a>
             <a href="/student/results">Results</a>
-            <a href="/student/logout">Logout</a>
+            <a href="/student/logout"> <i class="fas fa-sign-out-alt" id="signOutIcon"></i>Logout</a>
         </div>
     </div>
+    <a href="javascript:void(0);" class="burger" onclick="burgerNav()">&#9776;</a>
 </div>
 
 <h2 id="center">Contact Us</h2>

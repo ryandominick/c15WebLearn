@@ -24,7 +24,6 @@
         </button>
         <div class="dropdownLinks">
             <a href="/student/profile">Profile</a>
-            <a href="/student/results">Results</a>
             <a href="/student/logout"> <i class="fas fa-sign-out-alt" id="signOutIcon"></i>Logout</a>
         </div>
     </div>

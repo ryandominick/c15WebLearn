@@ -846,5 +846,9 @@ input {
     right: 5px;
     position: relative;
     color: white;
-
+}
+#editIcon{
+    right: 5px;
+    position: relative;
+    color: white;
 }

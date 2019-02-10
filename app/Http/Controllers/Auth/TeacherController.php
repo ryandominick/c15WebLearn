@@ -28,4 +28,14 @@ class TeacherController extends Controller
 
         return view('teacherHomepage');
     }
+
+    public function manage()
+    {
+        return view('manageStudents');
+    }
+
+    public function create()
+    {
+        return view('createQuiz');
+    }
 }
