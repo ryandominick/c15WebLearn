@@ -26,6 +26,7 @@ Route::resource('reg', 'RegController');
 Route::get('/student/search', 'StudentSearchController@index');
 Route::post('/student/search/query', 'StudentSearchController@query');
 
+
 Route::get('/teacher/search', 'TeacherSearchController@index');
 Route::post('/teacher/search/query', 'TeacherSearchController@query');
 
@@ -33,18 +34,17 @@ Route::resource('myResults', 'ResultsController');
 
 Route::resource('/teacher/createquiz', 'CreateQuizController');
 
-//View the myResults page
-Route::get('/student/results', function(){
-    return view("myResults");
-});
-//View the Contact Page
-Route::get('/contact', function(){
-    return view('contact');
-});
-//View the manageStudents page
-Route::get('/teacher/manageStudents', function(){
-    return view('manageStudents');
-});
+//Display the results view whilst using the StudentController
+Route::get('/student/results', 'Auth\StudentController@results');
+//Display contact us page for student (need to either create two pages or work out php for isset)
+Route::get('/contact', 'Auth\StudentController@contactUs');
+//display manage student page
+Route::get('/teacher/manageStudents', 'Auth\TeacherController@manage');
+//Display createquiz page
+Route::get('/teacher/createquiz', 'Auth\TeacherController@create');
+
+
+//View the manage
 
 //Route::get('student/login', 'Auth\StudentLoginController@showLoginForm');
 

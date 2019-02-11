@@ -29,5 +29,15 @@ class StudentController extends Controller
     }
 
 
+    public function results()
+    {
+        return view('myResults');
+    }
+
+    public function contactUs()
+    {
+        return view('contact');
+    }
+
 
 }

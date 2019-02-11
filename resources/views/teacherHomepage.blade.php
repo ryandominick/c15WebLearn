@@ -4,20 +4,45 @@
     <meta charset="UTF-8">
     <title>TeacherHomepage</title>
     <link rel="stylesheet" type="text/css" href="/css/projstyle.css">
+    <script type="text/javascript" src="/js/navBar.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
 </head>
 <body>
 
 <div class="smallLogo">
     <img src="/images/GradiQuiz_Logo.png" style="height: 90px;" alt="logo"/>
 </div>
-<nav class="navigation">
+
+<div class="navigation" id="navBar">
+    <a href="/teacher/home"> <i class="fas fa-home" id="homeIcon"></i>Home</a>
+
+    <div class="profileDropdown">
+        <button class="dropDownButton"><i class="fas fa-user" id="userIcon"></i> <?php echo Auth::user()->firstName?>
+            <i class="fa fa-caret-down" id="dropdwn"></i>
+        </button>
+        <div class="dropdownLinks">
+            <a href="/teacher/profile">Profile</a>
+            <a href="/teacher/manageStudents">Manage Students</a>
+            <a href="/teacher/logout"> <i class="fas fa-sign-out-alt" id="signOutIcon"></i>Logout</a>
+        </div>
+    </div>
+    <a href="/teacher/createquiz"> <i class="fas fa-edit" id="editIcon"></i> Create a quiz</a>
+    <a href="javascript:void(0);" class="burger" onclick="burgerNav()">&#9776;</a>
+</div>
+
+<!--
+<nav class="topnav">
     <a id="leftNav" href="/teacher/home">Home</a>
     <a id="leftNav" href="/teacher/createquiz">Create Quizzes</a>
     <a id="rightNav" href="/teacher/logout">Log out</a>
     <a id="leftNav" href="/teacher/manageStudents">Manage Students</a>
-    <!--<a id="rightNav" href="/contact">Contact Us</a> DISABLE until fixed-->
 </nav>
+-->
+
+<!--<a id="rightNav" href="/contact">Contact Us</a> DISABLE until fixed-->
 <br>
 <h2 class="welcome"></h2>
 <table>

@@ -19,7 +19,7 @@
 <div class="smallLogo">
     <img src="/images/GradiQuiz_Logo.png" style="height: 90px;" alt="logo" />
 </div>
-<nav class="navigation">
+<nav class="topnav">
     <a id="leftNav" href="/student/home">Home</a>
     <a id="leftNav" href="StudentProfile.html">My Profile</a>
     <a id="rightNav" href="/contact">Contact Us</a>

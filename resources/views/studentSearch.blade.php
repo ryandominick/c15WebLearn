@@ -11,16 +11,13 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="/js/studentSearch.js"></script>
-
-
-
 </head>
 
 <body>
 <div class="smallLogo">
     <img src="/images/GradiQuiz_Logo.png" style="height: 90px;" alt="logo" />
 </div>
-<nav class="navigation">
+<nav class="topnav">
     <a id="leftNav" href="/student/home">Home</a>
     <a id="leftNav" href="StudentProfile.html">My Profile</a>
     <a id="leftNav" href="/student/results">My results</a>
