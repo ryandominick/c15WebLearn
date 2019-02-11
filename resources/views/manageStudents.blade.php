@@ -8,7 +8,7 @@
     <script type="text/javascript" src="/js/navBar.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-    <script type="text/javascript" src="js/manageStudents.js"></script>
+    <script type="text/javascript" src="/js/manageStudents.js"></script>
 </head>
 <body>
 
@@ -49,31 +49,33 @@
     <tr>
         <td>Cole Hart</td>
         <td>Computer Science</td>
-        <td><button>Remove</button></td>
+        <td><button class="removeStudentButton">Remove</button></td>
     </tr>
 
     <tr>
         <td>Harry Bennett</td>
         <td>Computer Science</td>
-        <td><button>Remove</button></td>
+        <td><button class="removeStudentButton">Remove</button></td>
     </tr>
 
     <tr>
         <td>Tim Grey</td>
         <td>Computer Science</td>
-        <td><button id="popupButton">Remove</button></td>
+        <td><button class="removeStudentButton">Remove</button></td>
     </tr>
 </table>
+<!-- modal container -->
+<div id="popup" class="modal">
 
-<div id="removeStudentModal" class="modal">
-
-    <!-- Information inside popup -->
+    <!-- modal content -->
     <div class="popupContent">
+        <div class ="modal-top">
         <span class="exit">&times;</span>
-        <p> Are you sure you want to remove this student?</p>
-        <br>
-        <div class="quizButton" align="center">
-            <button id="takeQuiz">Remove Student</button>
+            <h2>Remove Student</h2>
+        </div>
+        <div class="modal-body">
+        <h3 id="removeStudentPopup">Are you sure you want to remove this student?</h3>
+        <button type="button" id="deleteStudentConfirm">Delete<i id="studentTrash" class="fa fa-trash"></i></button>
         </div>
     </div>
 </div>
