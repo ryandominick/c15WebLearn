@@ -46,11 +46,11 @@ class RegController extends Controller
         $Email = $request['email'];
         $password = $request['password'];
         $courseName = $request['courseName'];
-        $courseIDHolder = Course::getCourseID($courseName);
-        $extractCourseID = get_object_vars($courseIDHolder[0]);
-        $courseID = $extractCourseID['courseID'];
 
         if($userType === "student") {
+            $courseIDHolder = Course::getCourseID($courseName);
+            $extractCourseID = get_object_vars($courseIDHolder[0]);
+            $courseID = $extractCourseID['courseID'];
             Student::register($firstName, $lastName, $Email, $password, $courseID);
             return redirect('/login');
         }
