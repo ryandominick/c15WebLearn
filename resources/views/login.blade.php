@@ -43,7 +43,7 @@
     </div>
     <br>
     <p>Don't have an account? <a class="loginLinks" href="reg">Create one here!</a></p>
-    <p> Forgot your password? <a class="loginLinks" href="/meme.html">Click here</a></p>
+    <p>Forgot your password? <a class="loginLinks" href="/meme.html">Click here</a></p>
 </div>
 </body>
 </html>

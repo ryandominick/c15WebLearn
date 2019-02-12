@@ -935,3 +935,33 @@ input {
     position: relative;
     color: white;
 }
+
+/* Popup background */
+.mainModal {
+    display: none; /* Hidden until clicked */
+    position: fixed;
+    z-index: 1; /* Stack order of element */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Enable scrolling of popup */
+    background-color: rgba(0,0,0,0.8); /* Alters background opacity */
+}
+
+/* Content within popup */
+.popupInformation {
+    background-color: white;
+    margin: 6% auto; /* 10% from the top of the page and in the middle of the screen */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%; /* size of the popup */
+}
+/* Exit button */
+.exit {
+    color: red;
+    float: right;
+    font-size: 42px;
+    font-weight: bold;
+    cursor: pointer;
+}

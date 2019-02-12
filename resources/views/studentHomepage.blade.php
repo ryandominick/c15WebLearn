@@ -64,19 +64,19 @@
 </table>
 
 <!-- Modal -->
-<div id="popup" class="modal">
+<div id="popup" class="mainModal">
 
     <!-- Information inside popup -->
-    <div class="popupContent">
+    <div class="popupInformation">
         <span class="exit">&times;</span>
-        <h2>Quiz Instructions</h2>
-        <p>1: Ensure you have a stable connection and an enviroment with minimal distractions.</p>
+        <h2 id="center">Quiz Instructions</h2>
+        <p>1: Ensure you have a stable connection and an environment with minimal distractions.</p>
         <br>
         <p>2: Please do not use the internet or other resources to help you with this quiz.</p>
         <br>
         <p>3: You have limited time, any questions left unanswered will result as incorrect. The quiz will auto submit when time reaches the limit.</p>
         <br>
-        <p>4: If the page is closed at any time during the quiz, all unanswered questions will be marked as incorrect.</p>
+        <p>4: If the page is closed at any timer during the quiz, all unanswered questions will be marked as incorrect.</p>
         <br>
         <p>5: When you have finished the quiz and are happy with your answers, ensure that you have answered all questions. Click the 'submit' button when you are ready to finish.</p>
         <br>
