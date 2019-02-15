@@ -23,7 +23,8 @@
         </button>
         <div class="dropdownLinks">
             <a href="/student/profile">Profile</a>
-            <a href="/student/results">Results</a>
+            <a href="/student/results"><i class="fas fa-poll" id="userIcon"></i>Results</a>
+            <a href="/student/profile/settings">Account Information</a>
             <a href="/student/logout"> <i class="fas fa-sign-out-alt" id="signOutIcon"></i>Logout</a>
         </div>
     </div>
@@ -76,7 +77,7 @@
         <br>
         <p>3: You have limited time, any questions left unanswered will result as incorrect. The quiz will auto submit when time reaches the limit.</p>
         <br>
-        <p>4: If the page is closed at any timer during the quiz, all unanswered questions will be marked as incorrect.</p>
+        <p>4: If the page is closed at any time during the quiz, all unanswered questions will be marked as incorrect.</p>
         <br>
         <p>5: When you have finished the quiz and are happy with your answers, ensure that you have answered all questions. Click the 'submit' button when you are ready to finish.</p>
         <br>
