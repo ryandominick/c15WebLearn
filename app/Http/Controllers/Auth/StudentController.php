@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
+
 
 class StudentController extends Controller
 {
@@ -39,5 +41,16 @@ class StudentController extends Controller
         return view('contact');
     }
 
+    public function settings()
+    {
+        $data['data'] = DB::table('Course')->get();
 
+        if(count($data) > 0)
+        {
+            return view('settings', $data);
+        }
+        else {
+            return view ('settings');
+        }
+    }
 }

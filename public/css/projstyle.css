@@ -44,6 +44,7 @@ td {
     padding: 9px;
     text-align: center;
     background-color:#e0f0ff;
+    word-wrap: break-word;
 }
 th {
     width: 9px;
@@ -964,4 +965,7 @@ input {
     font-size: 42px;
     font-weight: bold;
     cursor: pointer;
+}
+#bold{
+    font-weight: bold;
 }

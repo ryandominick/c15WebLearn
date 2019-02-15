@@ -25,18 +25,31 @@
         <div class="dropdownLinks">
             <a href="/student/profile">Profile</a>
             <a href="/student/results"><i class="fas fa-poll" id="userIcon"></i>Results</a>
-            <a href="/student/profile/settings">Account Information</a>
             <a href="/student/logout"> <i class="fas fa-sign-out-alt" id="signOutIcon"></i>Logout</a>
         </div>
     </div>
+    <a href="/contact"> <i class="fas fa-envelope" id="envelopeIcon"></i>Contact Us</a>
     <a href="javascript:void(0);" class="burger" onclick="burgerNav()">&#9776;</a>
 </div>
 
-<h2 id="center">Contact Us</h2>
+<table>
+    <caption class="tablecap">Account Information</caption>
+    <tr>
+        <th>First Name</th>
+        <th>Surname</th>
+        <th>Email</th>
+        <th>Course Name</th>
+    </tr>
+    @foreach($data as $value)
+        <tr>
+            <td id="bold"><?php echo Auth::user()->firstName?></td>
+            <td id="bold"><?php echo Auth::user()->lastName?></td>
+            <td id="bold"><?php echo Auth::user()->email?></td>
+            <td id="bold">{{ $value->courseName }}</td>
+        </tr>
+    @endforeach
+</table>
 
-<!--CREATE GET IN TOUCH FORM, will look professional-(Cole) -->
-<p id="techInfo">For technical support, bug reports and recommendations, please contact us here: <br>
-    <a href="mailto:GradiQuiz@gmail.com">GradiQuiz@gmail.com</a>
-</p>
+
 </body>
 </html>
