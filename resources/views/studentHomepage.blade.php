@@ -24,7 +24,6 @@
         <div class="dropdownLinks">
             <a href="/student/profile">Profile</a>
             <a href="/student/results"><i class="fas fa-poll" id="userIcon"></i>Results</a>
-            <a href="/student/profile/settings">Account Information</a>
             <a href="/student/logout"> <i class="fas fa-sign-out-alt" id="signOutIcon"></i>Logout</a>
         </div>
     </div>
