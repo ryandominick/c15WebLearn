@@ -42,6 +42,7 @@ $(document).ready(function(){
 
             $('.pages').click(function(e) {
 
+
                 index = (e.currentTarget.innerHTML -1) * 20;
                 updateResults();
 
@@ -54,25 +55,51 @@ $(document).ready(function(){
         });
     });
 
+    search();
+
+
     function updateResults(){
 
         let count = 0;
         let quiz;
 
+
         quizResults.children().remove();
 
         while(index <= max && count < 20){
             quiz = '<tr class="quizRecord">' + '<td>' + results[index].quizTitle +  '</td>' + '<td>' + results[index].moduleCode +  '</td>' +
-                   '<td>' + results[index].moduleName +  '</td>' + '<td>' + results[index].quizEnd +  '</td>' + '</tr>' +
-                   '<tr class="studentResults">' + '<td colspan="4">'  + '<table>' + '<tbody>' + '</tbody>' +'</table>' +  '</td>' + '</tr>' ;
+                   '<td>' + results[index].moduleName +  '</td>' + '<td>' + results[index].quizEnd +  '</td>' +
+                   '<input type="hidden" class="quizIDs" value=' + results[index].quizID + '> ' + '</tr>' +
+                   '<tr class="studentResults">' + '<td colspan="4">'  + '<table class="studentResults1">' + '<tbody>' + '<td>' + "stuff" + '</td>' +
+                   '</tbody>' +'</table>' +  '</td>' + '</tr>' ;
             quizResults.append(quiz);
             count++;
             index++;
 
-            //'<thead>' + '<th>' + "firstname" + '</th>' + '<th>' + "lastname" + '</th>' +
-            //                 '<th>' +  "grade" +  '</th>' +'</thead>'
         }
     }
+
+    function selectRecord() {
+
+        let i;
+        let quizRecord = document.getElementsByClassName("quizRecord");
+
+        for (i = 0; i < quizRecord.length; i++) {
+            quizRecord[i].addEventListener("click", function () {
+                /* Toggle upon click so that the record can remain highlighted through CSS */
+                this.classList.toggle("active");
+
+                let studentResults = this.nextElementSibling;
+                if (studentResults.style.display === "table-row") {
+                    studentResults.style.display = "none";
+
+                } else {
+                    studentResults.style.display = "table-row";
+                }
+            });
+        }
+    }
+
 
     function updatePageNum(quizzes){
 
@@ -88,10 +115,20 @@ $(document).ready(function(){
 
         for(let i = 1; i <= pages; i++){
 
-            pageTable.append('<td>' + '<p class=pages  >' + i +'</p>' + '</td>');
+            pageTable.append('<td>' + '<p class="pages"  >' + i +'</p>' + '</td>');
         }
     }
 
-    search();
+
+    function ajaxCall(url, type, data, returnType, successFunc, failFunc) {
+
+        $.ajax({
+            url: url,
+            type: type,
+            data: data,
+            dataType: returnType,
+
+        }).done(successFunc()).fail(failFunc());
+    }
 
 });

@@ -35,6 +35,7 @@
 
 </div>
 
+
 <table id="quizResults">
     <caption class="tablecap">Quizzes</caption>
     <thead>
@@ -46,9 +47,7 @@
 
     </tr>
     </thead>
-
     <tbody>
-
     </tbody>
 </table>
 

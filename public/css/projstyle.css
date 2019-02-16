@@ -968,3 +968,21 @@ input {
 #bold{
     font-weight: bold;
 }
+
+/* BENS TEACHERSEARCH CSS */
+
+.studentResults {
+
+    display: none;
+
+}
+
+.studentResults1 {
+
+    border-collapse: collapse;
+    padding:0; margin:0;
+}
+
+ .active td{
+    background-color: #C2E1FF;
+}
