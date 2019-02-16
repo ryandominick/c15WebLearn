@@ -63,7 +63,7 @@ $(document).ready(function(){
 
         while(index <= max && count < 20){
             quiz = '<tr>' +  '<td>' + results[index].quizTitle +  '</td>' + '<td>' + results[index].moduleCode +  '</td>' + '<td>' + results[index].moduleName +
-                '</td>' + '<td>' + results[index].quizEnd +  '</td>' + '<td>' + results[index].grade +  '</td>'  +  '</tr>'  ;
+                '</td>' + '<td>' + results[index].quizEnd +  '</td>' + '<td>' + (results[index].grade  == null ? "Incomplete" : results[index].grade) +  '</td>'  +  '</tr>'  ;
             quizResults.append(quiz);
             count++;
             index++;

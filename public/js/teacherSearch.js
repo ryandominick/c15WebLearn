@@ -52,7 +52,7 @@ $(document).ready(function(){
 
             // Add fail condition
         });
-    });
+    });y
 
     function updateResults(){
 
@@ -62,7 +62,9 @@ $(document).ready(function(){
         quizResults.children().remove();
 
         while(index <= max && count < 20){
-            quiz = '<tr class="quizRecord">' + '<td>' + results[index].quizTitle +  '</td>' + '<td>' + results[index].moduleCode +  '</td>' + '<td>' + results[index].moduleName +  '</td>' + '<td>' + results[index].quizEnd +  '</td>' + '</tr>';
+            quiz = '<tr class="quizRecord">' + '<td>' + results[index].quizTitle +  '</td>' + '<td>' + results[index].moduleCode +  '</td>' + '' +
+                   '<td>' + results[index].moduleName +  '</td>' + '<td>' + results[index].quizEnd +  '</td>' + '</tr>'
+                   '<tr class="studentResults">' + '<td>' + '<table>' + '<thead>' + '</thead>'  +'</table>' +  '</td>' + '</tr>' ;
             quizResults.append(quiz);
             count++;
             index++;
