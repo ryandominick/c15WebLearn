@@ -30,6 +30,12 @@ class TeacherQuiz extends Model
         return $results;
     }
 
+    public static function teacherQuizExpand($quizID){
+        $results = DB::select('SELECT s.firstName, s.lastName, r.grade FROM  Result AS r INNER JOIN  Student AS s ON r.studentID = s.id WHERE  r.quizID = :quizID',
+            ['quizID' => $quizID]);
+
+        return $results;
+    }
 
     public static function findQuizID(){
 
