@@ -900,7 +900,7 @@ input {
         width: 100%;
         text-align: left;
     }
-}
+}Name
 #dropdwn{
     color: white;
 }
@@ -985,4 +985,36 @@ input {
 
  .active td{
     background-color: #C2E1FF;
+}
+
+#noResults {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 150px;
+    height: 100px;
+    font-size: 19px;
+    display: none;
+
+}
+
+#pageTable  {
+    /*position: absolute;*/
+    /*top: 1100px;*/
+    /*left: 850px;*/
+    margin-left:45%;
+    max-width: 150px;
+    border: none;
+    font-size: 19px;
+}
+
+#pageTable td {
+    background-color: transparent;
+    border-top: none;
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
 }

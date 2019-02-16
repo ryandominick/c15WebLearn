@@ -13,10 +13,11 @@ $(document).ready(function(){
     let index = 0;
     let max;
 
+
     // search is assigned the function for carrying out a query so that an initial search can be performed automatically
     let search;
+    let tmpInput;
 
-    //let studentDetails = JSON.parse(window.localStorage.getItestudentDetails.urlm('student'));
 
     // The jquery ajax wrapper is set up with Laravels csrf protection to prevent failure
     $.ajaxSetup({
@@ -25,46 +26,39 @@ $(document).ready(function(){
         }
     });
 
+    $(searchButton).click( search = function(){ajaxCall('/teacher/search/query', 'POST', $("#searchQuery").serialize(), "json", function(quizzes){
+        index = 0;
 
-    $(searchButton).click( search = function(){
-
-        $.ajax({
-            url: '/teacher/search/query',
-            type: 'POST',
-            data: $("#searchQuery").serialize(),
-            dataType: "json",
-
-        }).done(function (quizzes) {
-
-            index = 0;
+        if(quizzes.length >= 1) {
             updatePageNum(quizzes);
             updateResults();
+            selectRecordSetup();
+        } else {
+            updateNoResults();
+        }
 
-            $('.pages').click(function(e) {
+    }, ajaxFail)});
 
-
-                index = (e.currentTarget.innerHTML -1) * 20;
-                updateResults();
-
-            });
-
-
-        }).fail(function (jqXHR, exception) {
-
-            // Add fail condition
-        });
-    });
-
+    //((tmpInput = $("#searchQuery").serialize()) && tmpInput !== "searchInput="? tmpInput : "searchInput=\r")
     search();
 
+    function updateNoResults() {
+
+        quizResults.children().remove();
+        pageTable.children().remove();
+
+        document.getElementById("noResults").style.display ="block";
+
+    }
 
     function updateResults(){
 
         let count = 0;
         let quiz;
 
-
+        document.getElementById("noResults").style.display ="none";
         quizResults.children().remove();
+
 
         while(index <= max && count < 20){
             quiz = '<tr class="quizRecord">' + '<td>' + results[index].quizTitle +  '</td>' + '<td>' + results[index].moduleCode +  '</td>' +
@@ -79,7 +73,7 @@ $(document).ready(function(){
         }
     }
 
-    function selectRecord() {
+    function selectRecordSetup() {
 
         let i;
         let quizRecord = document.getElementsByClassName("quizRecord");
@@ -101,21 +95,37 @@ $(document).ready(function(){
     }
 
 
-    function updatePageNum(quizzes){
+    function updatePageNum(quizzes) {
+
+        let i;
 
         $('.pages').parent().remove();
         //remove appended results
 
-        max = quizzes.length -1;
-        if(max + 1 > 20)
-            pages = (((max +1) - ((max +1) % 20)) / 20) + 1;
+        max = quizzes.length - 1;
+        if (max + 1 > 20)
+            pages = (((max + 1) - (tmp = ((max + 1) % 20))) / 20) + (tmp !== 0 ? 1 : 0);
         else pages = 1;
 
         results = quizzes;
 
-        for(let i = 1; i <= pages; i++){
+        for (let i = 1; i <= pages; i++) {
 
-            pageTable.append('<td>' + '<p class="pages"  >' + i +'</p>' + '</td>');
+            pageTable.append('<td>' + '<p class="pages"  >' + i + '</p>' + '</td>');
+        }
+
+
+        let pageNum = document.getElementsByClassName("pages");
+
+        for (i = 0; i < pageNum.length; i++) {
+
+            pageNum[i].addEventListener("click", function () {
+
+                index = (this.innerHTML -1) * 20;
+                updateResults();
+                selectRecordSetup();
+
+            });
         }
     }
 
@@ -128,7 +138,12 @@ $(document).ready(function(){
             data: data,
             dataType: returnType,
 
-        }).done(successFunc()).fail(failFunc());
+        }).done(successFunc).fail(failFunc);
+    }
+
+
+    function ajaxFail(){
+        alert("An error occurred");
     }
 
 });

@@ -51,6 +51,8 @@
     </tbody>
 </table>
 
+<div id="noResults">No matches were found</div>
+
 <table id="pageTable">
     <tbody>
     <tr></tr>
