@@ -37,8 +37,6 @@ Route::resource('/teacher/createquiz', 'CreateQuizController');
 //Display the results view whilst using the StudentController
 Route::get('/student/results', 'Auth\StudentController@results');
 
-Route::get('/student/profile/settings', 'Auth\StudentController@settings');
-
 //Display contact us page for student (need to either create two pages or work out php for isset)
 Route::get('/contact', 'Auth\StudentController@contactUs');
 

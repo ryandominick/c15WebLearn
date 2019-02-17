@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function addInputQuestion() {
         if (count < limit) { //If count is less than the limit, add an input question
-            document.getElementById('questionSection').insertAdjacentHTML('beforeend', '<div id ="QuestionContainer"><button type="button" id="deleteQuestion">Delete<i class="fa fa-trash"></i></button><h3 class = "questionCaption">Input Question: <span id="countCaption">' + count + '</span></h3><br><input type=\"text\" size = \"200\" class=\"inputQuestion\" name=\"inputQuestion[]\" placeholder=\"Enter your question here\"/> <br><br> <input type=\"text\" size = \"200\" class=\"inputAnswer\" name=\"inputAnswer[]\" placeholder=\"Enter answer here\"/><br><br></div>'); //Add two input fields for the input question on button click
+            document.getElementById('questionSection').insertAdjacentHTML('beforeend', '<div id ="QuestionContainer"><button type="button" id="deleteQuestion">Delete<i class="fa fa-trash"></i></button><h3 class = "questionCaption">Input Question: <span id="countCaption">' + count + '</span></h3><br><input type="text" class="inputQuestion" name="inputQuestion[]" placeholder="Enter your question here"/> <br><br> <input type="text" class="inputAnswer" name="inputAnswer[]" placeholder="Enter answer here"/><br><br></div>'); //Add two input fields for the input question on button click
             count++;
         } else {  //else, alert user the max has been reached
             alert("Question limit has been reached (10 max)");

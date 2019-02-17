@@ -44,7 +44,6 @@ td {
     padding: 9px;
     text-align: center;
     background-color:#e0f0ff;
-    word-wrap: break-word;
 }
 th {
     width: 9px;
@@ -257,8 +256,8 @@ th {
 
 #timerValidityTxt{
     position: absolute;
-    top: 31.4em;
-    left: 61.5em;
+    top: 38.7em;
+    left: 53em;
 }
 
 .startContainer {
@@ -387,12 +386,12 @@ input {
 
 #password{
     position: absolute;
-    margin-right: 0px;
-    margin-bottom: 0px;
+    margin-right: 0;
+    margin-bottom: 0;
 }
 
 #confirmPassword{
-    margin-top: 0px;
+    margin-top: 0;
 }
 
 /*Positioning tooltip icon*/
@@ -411,14 +410,13 @@ input {
 .createContainer{
     border-style: outset;
     border-width: 3px;
-    padding: 30px 100px 30px 80px;
-    border-color: #595d82;
+    padding: 45px 23px 45px 0;
+    border-color: #d3d3d3;
     border-radius: 25px;
-    background-color: #9999e0;
+    background-color: #c8c8c8;
     background-image: url("/images/crossword.png");
-    text-align: left;
-    margin: 25px 450px 25px 450px;
-    width: 40%;
+    margin: 0 auto;
+    width: 30%;
     height: 50%;
     box-shadow: 0 6px 63px 5px #c4c4c4;
 }
@@ -426,7 +424,6 @@ input {
 .createQuizDetails{
     width: 49%;
     height: 50%;
-    display: inline-block;
 }
 .inputQuestion{
     width: 55%;
@@ -436,36 +433,30 @@ input {
     width: 55%;
     height: 50%;
 }
-.quizDate{
-    margin-left: 10px;
-    display: inline-block;
-}
-.dateCaption
-{
-    display: inline-block;
-}
 
-.quizDetails {
-    margin-left: 10px;
-    display: inline-block;
-}
 #quizModulePosition{
-    margin-left: 43px;
-    width: 20%;
+width: 80%;
 }
 #quizTimerInput{
-    margin-left: 18px;
-    width: 60%;
+    width: 80%;
 }
 #quizTitlePosition{
-    margin-left: 81px;
-    width: 70%;
+    width: 80%;
 }
+
 #quizStartDatePosition {
-    margin-left: 72px;
+    width: 80%;
 }
 #quizEndDatePosition {
-    margin-left: 79px;
+    width: 80%;
+}
+
+#centerQuizInfo{
+    text-align: center;
+}
+
+#quizInfo{
+    display: inline-block;
 }
 .mcQuestion {
     margin-left: 60px;
@@ -476,6 +467,7 @@ input {
     height: 80%;
 
 }
+
 .mcCorrectAnswer {
     margin-left: 60px;
     border-radius: 9px;
@@ -494,10 +486,10 @@ input {
 }
 #QuestionContainer{
     border-style: inset;
-    border-color: #a5bfa5;
+    border-color: #cfd0d6;
     border-radius: 25px;
     border-width: 3px;
-    background-color: #566f8e;
+    background-color: #959595;
     background-image:  url("/images/brushed-alum-dark.png");
     padding-top: 10px;
     padding-bottom: 10px;
@@ -507,6 +499,14 @@ input {
     margin-left: 70px;
     margin-top: 10px;
     box-shadow: 0 6px 63px 5px #c4c4c4;
+}
+
+#buttonWrapper{
+    text-align: center;
+}
+
+#createQuizButtons{
+    display: inline-block;
 }
 
 .takeQuestionContainer {
@@ -541,17 +541,18 @@ input {
     border-radius: 6px;
     border: 2px solid   rgb(145, 145, 145);
     outline:none;
+    width: 80%;
+    height: 80%;
 }
 .inputAnswer {
     margin-left: 60px;
     border-radius: 6px;
     border: 2px solid   rgb(60, 150, 65);
     outline:none;
+    width: 80%;
+    height: 80%;
 }
 
-#addMCQuestions{
-    margin-left: 630px;
-}
 
 .addQuestions{
     cursor: pointer;
@@ -563,10 +564,9 @@ input {
     font-weight: bold;
     margin-top: 25px;
     font-size: 18px;
-    margin-left: 50px;
-    left:630px;
+    margin-right: 10px;
     outline: none;
-    box-shadow: 0px 10px 16px 2px rgba(0,0,0,0.18);
+    box-shadow: 0 10px 16px 2px rgba(0,0,0,0.18);
     -webkit-transition-duration: 0.4s;
     transition-duration: 0.4s;
 }
@@ -597,7 +597,7 @@ input {
     color: white;
     margin-right: 50px;
     outline: none;
-    box-shadow: 0px 10px 16px 2px rgba(0,0,0,0.18);
+    box-shadow: 0 10px 16px 2px rgba(0,0,0,0.18);
     -webkit-transition-duration: 0.4s;
     transition-duration: 0.4s;
 }
@@ -611,7 +611,7 @@ input {
     font-size: 20px;
     margin-left: 330px;
     font-weight: bolder;
-    box-shadow: 0px 10px 16px 2px rgba(0,0,0,0.18);
+    box-shadow: 0 10px 16px 2px rgba(0,0,0,0.18);
     -webkit-transition-duration: 0.4s;
     transition-duration: 0.4s;
     outline: none;
@@ -655,7 +655,7 @@ input {
     font-size: 18px;
     outline: none;
     display:none;
-    box-shadow: 0px 10px 16px 2px rgba(0,0,0,0.18);
+    box-shadow: 0 10px 16px 2px rgba(0,0,0,0.18);
     -webkit-transition-duration: 0.4s;
     transition-duration: 0.4s;
 }
@@ -754,6 +754,15 @@ input {
     left: -15px;
 }
 
+#calenPosition{
+   height:34px;
+}
+
+.fa-calendar-check{
+    color: white;
+    left: -15px;
+}
+
 .regRadioButtons{
     margin-left: 85px;
 }
@@ -791,13 +800,12 @@ input {
     background-color: #1B2F7E;
     overflow: auto;
 }
-
 /* Style the links inside the navigation bar */
 .navigation a {
     float: left;
     display: block;
     color: #ffffff;
-    padding: 14px 16px;
+    padding: 14px 50px;
     text-align: center;
     text-decoration: none;
     font-size: 17px;
@@ -828,10 +836,10 @@ input {
     border: none;
     outline: none;
     color: white;
-    padding: 14px 16px;
+    padding: 14px 50px;
     background-color: inherit;
-    font-family: inherit; /* Important for vertical align on mobile phones */
-    margin: 0; /* Important for vertical align on mobile phones */
+    font-family: inherit; /* Vertical align for phones */
+    margin: 0; /* Vertical align for phones */
 }
 
 /* Dropdown content (hidden by default) */
@@ -839,8 +847,13 @@ input {
     display: none;
     position: absolute;
     background-color: #f9f9f9;
-    min-width: 232px;
+<<<<<<< HEAD
+    min-width: 202px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+=======
+    min-width: 232px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+>>>>>>> 82834eaeef75d9805f6443e00934a4a6c0dc9108
     z-index: 1;
 }
 /* Links inside the profileDropdown */
@@ -851,13 +864,44 @@ input {
     text-decoration: none;
     display: block;
     text-align: left;
-    background-color: #1B2F7E;
+    background-color: #243EA8;
 }
 /* on hover change the background colour */
 .dropdownLinks a:hover {
     background-color: #3555D4;
 }
+.dropdownLinksTeacher {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 220px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+dropdownLinksTeacher{
+    float: none;
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    background-color: #243EA8;
+}
+/* Links inside the profileDropdown for Teacher */
+.dropdownLinksTeacher a {
+    float: none;
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    background-color: #243EA8;
 
+}
+/* Show the profileDropdown menu on hover */
+.profileDropdown:hover .dropdownLinksTeacher {
+    display: block;
+}
 /* Show the profileDropdown menu on hover */
 .profileDropdown:hover .dropdownLinks {
     display: block;
@@ -936,6 +980,7 @@ input {
     position: relative;
     color: white;
 }
+/* END OF NAV BAR STYLING */
 
 /* Popup background */
 .mainModal {

@@ -19,13 +19,12 @@
     <a href="/student/home"> <i class="fas fa-home" id="homeIcon"></i>Home</a>
 
     <div class="profileDropdown">
-        <button class="dropDownButton"><i class="fas fa-user" id="userIcon"></i> <?php echo Auth::user()->firstName?>
+        <button class="dropDownButton"><i class="fas fa-user-graduate" id="userIcon"></i><?php echo Auth::user()->firstName?>
             <i class="fa fa-caret-down" id="dropdwn"></i>
         </button>
         <div class="dropdownLinks">
-            <a href="/student/profile">Profile</a>
+            <a href="/student/profile"><i class="fas fa-user-graduate" id="userIcon"></i>Profile</a>
             <a href="/student/results"><i class="fas fa-poll" id="userIcon"></i>Results</a>
-            <a href="/student/profile/settings">Account Information</a>
             <a href="/student/logout"> <i class="fas fa-sign-out-alt" id="signOutIcon"></i>Logout</a>
         </div>
     </div>
