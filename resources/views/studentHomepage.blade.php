@@ -31,6 +31,7 @@
     <a href="javascript:void(0);" class="burger" onclick="burgerNav()">&#9776;</a>
 </div>
 <br>
+<br>
 <h2 class="welcome"></h2>
 <table>
     <caption class="tablecap">My Deadlines</caption>
@@ -41,7 +42,7 @@
     </tr>
     <td>CO530</td>
     <td>Introduction to Web Development <!-- Open popup -->
-        <button id="popupButton">Take Quiz</button></td>
+        <button id="takeQuizButton">Take Quiz</button></td>
     <td>25/12/18</td>
 
     <tr>
