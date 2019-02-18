@@ -33,4 +33,12 @@ class TeacherSearchController extends Controller
         return response()->json($results);
 
     }
+
+    public function expand(Request $request){
+
+        $results = TeacherQuiz::teacherQuizExpand($request->input('quizID'));
+
+        return response()->json($results);
+
+    }
 }

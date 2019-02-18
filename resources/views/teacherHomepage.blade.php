@@ -20,11 +20,11 @@
     <a href="/teacher/home"> <i class="fas fa-home" id="homeIcon"></i>Home</a>
 
     <div class="profileDropdown">
-        <button class="dropDownButton"><i class="fas fa-user" id="userIcon"></i> <?php echo Auth::user()->firstName?>
+        <button class="dropDownButton"><i class="fas fa-user-tie" id="userIcon"></i> <?php echo Auth::user()->firstName?>
             <i class="fa fa-caret-down" id="dropdwn"></i>
         </button>
-        <div class="dropdownLinks">
-            <a href="/teacher/profile">Profile</a>
+        <div class="dropdownLinksTeacher">
+            <a href="/teacher/profile"><i class="fas fa-user-tie" id="userIcon"></i>Profile</a>
             <a href="/teacher/manageStudents"> <i class="fas fa-user-graduate" id="userIcon"></i>Manage Students</a>
             <a href="/teacher/logout"> <i class="fas fa-sign-out-alt" id="signOutIcon"></i>Logout</a>
         </div>
@@ -32,15 +32,6 @@
     <a href="/teacher/createquiz"> <i class="fas fa-edit" id="editIcon"></i> Create a quiz</a>
     <a href="javascript:void(0);" class="burger" onclick="burgerNav()">&#9776;</a>
 </div>
-
-<!--
-<nav class="topnav">
-    <a id="leftNav" href="/teacher/home">Home</a>
-    <a id="leftNav" href="/teacher/createquiz">Create Quizzes</a>
-    <a id="rightNav" href="/teacher/logout">Log out</a>
-    <a id="leftNav" href="/teacher/manageStudents">Manage Students</a>
-</nav>
--->
 
 <!--<a id="rightNav" href="/contact">Contact Us</a> DISABLE until fixed-->
 <br>

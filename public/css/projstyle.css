@@ -53,9 +53,13 @@ th {
     background-color: #5f6da5;
     color: white;
 }
-   tr:hover td {
+
+/* exempted studentResults expanded table tr class from hover so that the nested table could have this attribute applied to it */
+   tr:not(.studentResults):hover td {
     background-color: #C2E1FF;
 }
+
+
 
 .tablecap {
     font-weight: bold;
@@ -424,6 +428,7 @@ input {
 .createQuizDetails{
     width: 49%;
     height: 50%;
+    display: inline-block;
 }
 .inputQuestion{
     width: 55%;
@@ -546,6 +551,9 @@ width: 80%;
     height: 80%;
 }
 
+#addMCQuestions{
+    margin-left: 630px;
+}
 
 .addQuestions{
     cursor: pointer;
@@ -799,7 +807,7 @@ width: 80%;
     float: left;
     display: block;
     color: #ffffff;
-    padding: 14px 16px;
+    padding: 14px 50px;
     text-align: center;
     text-decoration: none;
     font-size: 17px;
@@ -830,10 +838,10 @@ width: 80%;
     border: none;
     outline: none;
     color: white;
-    padding: 14px 16px;
+    padding: 14px 50px;
     background-color: inherit;
-    font-family: inherit; /* Important for vertical align on mobile phones */
-    margin: 0; /* Important for vertical align on mobile phones */
+    font-family: inherit; /* Vertical align for phones */
+    margin: 0; /* Vertical align for phones */
 }
 
 /* Dropdown content (hidden by default) */
@@ -842,7 +850,7 @@ width: 80%;
     position: absolute;
     background-color: #f9f9f9;
     min-width: 232px;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
 }
 /* Links inside the profileDropdown */
@@ -853,13 +861,44 @@ width: 80%;
     text-decoration: none;
     display: block;
     text-align: left;
-    background-color: #1B2F7E;
+    background-color: #243EA8;
 }
 /* on hover change the background colour */
 .dropdownLinks a:hover {
     background-color: #3555D4;
 }
+.dropdownLinksTeacher {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 220px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+dropdownLinksTeacher{
+    float: none;
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    background-color: #243EA8;
+}
+/* Links inside the profileDropdown for Teacher */
+.dropdownLinksTeacher a {
+    float: none;
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    background-color: #243EA8;
 
+}
+/* Show the profileDropdown menu on hover */
+.profileDropdown:hover .dropdownLinksTeacher {
+    display: block;
+}
 /* Show the profileDropdown menu on hover */
 .profileDropdown:hover .dropdownLinks {
     display: block;
@@ -938,6 +977,7 @@ width: 80%;
     position: relative;
     color: white;
 }
+/* END OF NAV BAR STYLING */
 
 /* Popup background */
 .mainModal {
@@ -971,3 +1011,67 @@ width: 80%;
 #bold{
     font-weight: bold;
 }
+
+/* BENS TEACHERSEARCH CSS */
+
+.studentResults {
+
+    display: none;
+
+}
+
+.studentResults1 {
+
+    border-collapse: collapse;
+    padding:0; margin:0;
+}
+
+ .active td{
+    background-color: #C2E1FF;
+}
+
+#noResults {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 150px;
+    height: 100px;
+    font-size: 19px;
+    display: none;
+
+}
+
+#pageTable  {
+    /*position: absolute;*/
+    /*top: 1100px;*/
+    /*left: 850px;*/
+    margin-left:45%;
+    max-width: 150px;
+    border: none;
+    font-size: 19px;
+}
+
+#pageTable td {
+    background-color: transparent;
+    border-top: none;
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+}
+
+
+/*tr::hover {*/
+
+    /*background-color: #C2E1FF;*/
+
+/*}*/
+
+
+/*.StudentResults1 tr:hover td {*/
+
+    /*background-color: #C2E1FF;*/
+
+/*}*/

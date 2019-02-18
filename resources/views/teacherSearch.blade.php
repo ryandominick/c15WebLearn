@@ -35,6 +35,7 @@
 
 </div>
 
+
 <table id="quizResults">
     <caption class="tablecap">Quizzes</caption>
     <thead>
@@ -46,11 +47,11 @@
 
     </tr>
     </thead>
-
     <tbody>
-
     </tbody>
 </table>
+
+<div id="noResults">No matches were found</div>
 
 <table id="pageTable">
     <tbody>

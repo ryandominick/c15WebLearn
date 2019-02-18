@@ -29,6 +29,7 @@ Route::post('/student/search/query', 'StudentSearchController@query');
 
 Route::get('/teacher/search', 'TeacherSearchController@index');
 Route::post('/teacher/search/query', 'TeacherSearchController@query');
+Route::post('/teacher/search/expand', 'TeacherSearchController@expand');
 
 Route::resource('myResults', 'ResultsController');
 
