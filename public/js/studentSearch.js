@@ -26,14 +26,24 @@ $(document).ready(function(){
         }
     });
 
-
+    /* JQuery is used to add an event listener to the search button which contains an AJAX post request for the results of the search */
     $(searchButton).click( search = function(){ajaxCall('/student/search/query', 'POST', $("#searchQuery").serialize(), "json", function(quizzes){
         index = 0;
 
         if(quizzes.length >= 1) {
+            /* updatePageNum is responsible for amending the page numbers in conjunction with the number of search results 20 per page
+               it also removes the previous search's page numbers and adds an event listener to each page number which will update the page with the corresponding
+               set of quiz results
+             */
             updatePageNum(quizzes);
+            /*
+               updateResults is responsible for removing the previous searches page results, hiding the no results found div and populating the current page with 20 of the first
+               new results and storing the rest in the global results variable. Called in the context of a page number click event it will do the same but with the results corresponding
+               to the correct page.
+             */
             updateResults();
         } else {
+            /* updateNoResults is a simple function which displays the no results div if no results are found */
             updateNoResults();
         }
 

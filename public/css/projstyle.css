@@ -53,9 +53,13 @@ th {
     background-color: #5f6da5;
     color: white;
 }
-   tr:hover td {
+
+/* exempted studentResults expanded table tr class from hover so that the nested table could have this attribute applied to it */
+   tr:not(.studentResults):hover td {
     background-color: #C2E1FF;
 }
+
+
 
 .tablecap {
     font-weight: bold;
@@ -1018,3 +1022,17 @@ input {
     border-left: none;
     border-right: none;
 }
+
+
+/*tr::hover {*/
+
+    /*background-color: #C2E1FF;*/
+
+/*}*/
+
+
+/*.StudentResults1 tr:hover td {*/
+
+    /*background-color: #C2E1FF;*/
+
+/*}*/
