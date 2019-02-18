@@ -35,10 +35,10 @@
 
 <br>
 <br>
+<form method="post" action="/createquiz" id="quizInfo">
     @csrf
     <div class="createContainer">
         <div id="centerQuizInfo">
-        <form method="post" action="/createquiz" id="quizInfo">
         <div id ="registerIcons">
             <i class ="fa fa-code icon"></i>
         <input class="createQuizDetails" id="quizModulePosition" type="text" size="50" placeholder="Module Code"  name="moduleCode" required/>
@@ -54,12 +54,12 @@
         <br>
             <div id ="registerIcons">
             <i id="calenPosition" class ="fa fa-calendar-check-o icon"></i>
-        <input id="quizStartDatePosition" type="date" name="quizDateStart" value="Start Date" required/> <br>
+        <input id="quizStartDatePosition" type="date" title="Start Date" name="quizDateStart" value="Start Date" required/> <br>
             </div>
             <br>
             <div id ="registerIcons">
             <i id="calenPosition" class ="fa fa-calendar-times-o icon"></i>
-        <input id="quizEndDatePosition" type="date" name="quizDateEnd" required/>
+        <input id="quizEndDatePosition" type="date" title="End Date" name="quizDateEnd" required/>
             </div>
 
         <br>
@@ -69,7 +69,6 @@
         <input id="quizTimerInput" type="number" placeholder="Quiz Duration (minutes)" name="timer" required/>
             <span id='timerValidityTxt'></span>
         </div>
-        </form>
         </div>
     </div>
 

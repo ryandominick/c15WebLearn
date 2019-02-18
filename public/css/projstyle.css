@@ -451,13 +451,6 @@ width: 80%;
     width: 80%;
 }
 
-#centerQuizInfo{
-    text-align: center;
-}
-
-#quizInfo{
-    display: inline-block;
-}
 .mcQuestion {
     margin-left: 60px;
     border-radius: 9px;
