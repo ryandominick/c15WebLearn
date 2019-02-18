@@ -33,34 +33,38 @@
 <br>
 <br>
 <h2 class="welcome"></h2>
-<table>
+<table id="studentTable">
     <caption class="tablecap">My Deadlines</caption>
     <tr>
         <th>Module Code</th>
         <th>Quiz Title</th>
         <th id="duedate">Due Date</th>
+        <th>Take Quiz</th>
     </tr>
-    <td>CO530</td>
-    <td>Introduction to Web Development <!-- Open popup -->
-        <button id="takeQuizButton">Take Quiz</button></td>
-    <td>25/12/18</td>
+        <td>CO530</td>
+        <td>Introduction to Web Development <!-- Open popup -->
+        <td>25/12/18</td>
+        <td> <button id="takeQuizButton">Take Quiz</button> </td>
 
     <tr>
         <td>CO342</td>
         <td>Introduction to Java</td>
         <td>30/11/18</td>
+        <td> <button id="takeQuizButton">Take Quiz</button> </td>
     </tr>
 
     <tr>
         <td>CO705</td>
         <td>Database Systems</td>
         <td>12/12/18</td>
+        <td> <button id="takeQuizButton">Take Quiz</button> </td>
     </tr>
 
-    <tr>
+    <tr id="finalRow">
         <td>CO364</td>
         <td>Human Computer Interaction</td>
         <td>15/12/18</td>
+        <td> <button id="takeQuizButton">Take Quiz</button> </td>
     </tr>
 </table>
 
@@ -84,7 +88,7 @@
         <p>6: When you are ready, click the 'Start Quiz' button to begin and start the timer.</p>
         <br>
         <div class="quizButton" align="center">
-            <button id="takeQuiz">Start Quiz</button>
+            <button id="modalButton">Start Quiz</button>
         </div>
     </div>
 </div>
