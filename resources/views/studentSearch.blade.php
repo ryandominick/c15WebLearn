@@ -57,7 +57,6 @@
     <tr></tr>
     </tbody>
 </table>
-</body>
 
 <!-- Modal -->
 <div id="popup" class="mainModal">
@@ -73,7 +72,7 @@
         <br>
         <p>4: When you have finished the quiz and are happy with your answers, ensure that you have answered all questions. Click the 'submit' button when you are ready to finish.</p>
         <br>
-        <p>5: When you are ready, click the 'Start Quiz' button to begin and start the timer, you will have <span id="time"></span>.</p>
+        <p>5: When you are ready, click the 'Start Quiz' button to begin and start the timer, you will have <span id="time"></span> minutes.</p>
         <br>
         <input type="hidden" id="quizID">
         <div class="quizButton" align="center">
@@ -81,5 +80,7 @@
         </div>
     </div>
 </div>
+
+</body>
 
 </html>
