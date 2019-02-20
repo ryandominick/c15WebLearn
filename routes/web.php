@@ -20,7 +20,7 @@
 //    return view('login');
 //});
 
-
+Route::post('reg/check', 'RegController@check');
 Route::resource('reg', 'RegController');
 
 Route::get('/student/search', 'StudentSearchController@index');
@@ -31,9 +31,9 @@ Route::get('/teacher/search', 'TeacherSearchController@index');
 Route::post('/teacher/search/query', 'TeacherSearchController@query');
 Route::post('/teacher/search/expand', 'TeacherSearchController@expand');
 
-Route::resource('myResults', 'ResultsController');
+//Route::resource('myResults', 'ResultsController');
 
-Route::resource('/teacher/createquiz', 'CreateQuizController');
+Route::resource('/createquiz', 'CreateQuizController');
 
 //Display the results view whilst using the StudentController
 Route::get('/student/results', 'Auth\StudentController@results');

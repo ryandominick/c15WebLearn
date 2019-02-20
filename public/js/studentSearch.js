@@ -42,6 +42,9 @@ $(document).ready(function(){
                to the correct page.
              */
             updateResults();
+            startQuizEvents();
+            modalExits()
+
         } else {
             /* updateNoResults is a simple function which displays the no results div if no results are found */
             updateNoResults();
@@ -61,7 +64,7 @@ $(document).ready(function(){
         quizResults.children().remove();
 
         while (index <= max && count < 20) {
-            quiz = '<tr>' + '<td>' + results[index].quizTitle + '</td>' + '<td>' + results[index].moduleCode + '</td>' + '<td>' + results[index].moduleName +
+            quiz = '<tr class="quizRecord">' + '<td>' + results[index].quizTitle + '</td>' + '<td>' + results[index].moduleCode + '</td>' + '<td>' + results[index].moduleName +
                 '</td>' + '<td>' + results[index].quizEnd + '</td>' + '<td>' + (results[index].grade == null ? "Incomplete" : results[index].grade) + '</td>' +
                 '<input type="hidden" class="quizIDs" value=' + results[index].quizID + '> ' +
                 '<input type="hidden" class="durations" value=' + results[index].duration + '> ' + '</tr>';
@@ -82,6 +85,39 @@ $(document).ready(function(){
     }
 
 
+    function startQuizEvents() {
+
+        let i;
+        let quizRecord = $(".quizRecord");
+        //let modal = document.getElementById('popup');
+
+        for (i = 0; i < quizRecord.length; i++) {
+
+            quizRecord[i].addEventListener("click", function () {
+
+
+                document.getElementById('popup').style.display = "block";
+
+            });
+        }
+    }
+
+    function modalExits(){
+
+        let popup = document.getElementById('popup');
+
+        $(".exit").click(function(){
+          popup.style.display = "none";
+        });
+
+        // WHY DOES THIS WORK ?
+        $(window).click(function(event){
+            if (event.target == popup) {
+                popup.style.display = "none";
+            }
+         });
+
+    }
 
 
     function updatePageNum(quizzes) {
@@ -112,6 +148,8 @@ $(document).ready(function(){
 
                 index = (this.innerHTML -1) * 20;
                 updateResults();
+                startQuizEvents();
+                modalExits()
 
             });
         }
@@ -128,7 +166,7 @@ $(document).ready(function(){
 
         }).done(successFunc).fail(failFunc);
     }
-
+ var exitSpan = document.getElementById("exit");
 
     function ajaxFail(){
         alert("An error occurred");

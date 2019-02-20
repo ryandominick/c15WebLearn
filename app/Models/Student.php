@@ -50,6 +50,13 @@ class Student extends Authenticatable
     }
 
 
+    public static function checkExists ($email){
+
+        return DB::select('select email from Student where email= :email', ['email' => $email]);
+
+    }
+
+
 
 
 
