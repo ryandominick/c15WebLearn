@@ -53,9 +53,13 @@ th {
     background-color: #5f6da5;
     color: white;
 }
-   tr:hover td {
+
+/* exempted studentResults expanded table tr class from hover so that the nested table could have this attribute applied to it */
+   tr:not(.studentResults):hover td {
     background-color: #C2E1FF;
 }
+
+
 
 .tablecap {
     font-weight: bold;
@@ -424,6 +428,7 @@ input {
 .createQuizDetails{
     width: 49%;
     height: 50%;
+    display: inline-block;
 }
 .inputQuestion{
     width: 55%;
@@ -553,6 +558,9 @@ width: 80%;
     height: 80%;
 }
 
+#addMCQuestions{
+    margin-left: 630px;
+}
 
 .addQuestions{
     cursor: pointer;
@@ -800,6 +808,7 @@ width: 80%;
     background-color: #1B2F7E;
     overflow: auto;
 }
+
 /* Style the links inside the navigation bar */
 .navigation a {
     float: left;
@@ -847,13 +856,8 @@ width: 80%;
     display: none;
     position: absolute;
     background-color: #f9f9f9;
-<<<<<<< HEAD
-    min-width: 202px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-=======
     min-width: 232px;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
->>>>>>> 82834eaeef75d9805f6443e00934a4a6c0dc9108
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
 }
 /* Links inside the profileDropdown */
@@ -1014,3 +1018,67 @@ dropdownLinksTeacher{
 #bold{
     font-weight: bold;
 }
+
+/* BENS TEACHERSEARCH CSS */
+
+.studentResults {
+
+    display: none;
+
+}
+
+.studentResults1 {
+
+    border-collapse: collapse;
+    padding:0; margin:0;
+}
+
+ .active td{
+    background-color: #C2E1FF;
+}
+
+#noResults {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 150px;
+    height: 100px;
+    font-size: 19px;
+    display: none;
+
+}
+
+#pageTable  {
+    /*position: absolute;*/
+    /*top: 1100px;*/
+    /*left: 850px;*/
+    margin-left:45%;
+    max-width: 150px;
+    border: none;
+    font-size: 19px;
+}
+
+#pageTable td {
+    background-color: transparent;
+    border-top: none;
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+}
+
+
+/*tr::hover {*/
+
+    /*background-color: #C2E1FF;*/
+
+/*}*/
+
+
+/*.StudentResults1 tr:hover td {*/
+
+    /*background-color: #C2E1FF;*/
+
+/*}*/

@@ -43,14 +43,13 @@
         <th>Module Name</th>
         <th>Deadline</th>
         <th>Result</th>
-
     </tr>
     </thead>
-
     <tbody>
-
     </tbody>
 </table>
+
+<div id="noResults">No matches were found</div>
 
 <table id="pageTable">
     <tbody>
