@@ -74,12 +74,29 @@
         <br>
         <p>5: When you are ready, click the 'Start Quiz' button to begin and start the timer, you will have <span id="time"></span> minutes.</p>
         <br>
-        <input type="hidden" id="quizID">
-        <div class="quizButton" align="center">
+
+        <div id="quizButton" align="center">
+            <form method="GET" action="/student/quiz">
+            <input type="hidden" id="quizID">
             <button id="takeQuiz">Start Quiz</button>
+            </form>
         </div>
     </div>
 </div>
+
+
+
+
+{{--@if (session()->has('message_error'))--}}
+
+    {{--{{session('message_error')}}--}}
+
+
+        {{--@endif--}}
+
+{{--<script type="text/javascript">--}}
+    {{--$(document).ready(function(){--}}
+        {{--window.alert--}}
 
 </body>
 
