@@ -2,9 +2,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
     //Get the popup
     var popup = document.getElementById('popup');
     // Button that opens the popup
-    var popupButton = document.getElementById("popupButton");
+    var popupButton = document.getElementById("takeQuizButton");
     // Span element that exits from the popup
-    var exitSpan = document.getElementById("exit");
+    var exitSpan = document.getElementsByClassName("exit")[0];
     // On click on popupButton open the popup
     popupButton.onclick = function() {
         popup.style.display = "block";
