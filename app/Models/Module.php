@@ -15,5 +15,4 @@ class Module extends Model
         return DB::select("select * from teacherquiz");
     }
 
-
 }
