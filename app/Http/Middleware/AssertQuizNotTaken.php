@@ -18,8 +18,8 @@ class assertQuizNotTaken
     public function handle($request, Closure $next)
     {
 
-        $results = Result::quizTaken("sdfg","erb");
-        If(0) {
+        $results = Result::quizTaken($request->query('quizID'),Auth->studen);
+        If($results = 0) {
             return $next($request);
         }
 
