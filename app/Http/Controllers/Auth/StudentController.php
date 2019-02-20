@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\Module;
 
 class StudentController extends Controller
 {
@@ -25,7 +26,9 @@ class StudentController extends Controller
      */
     public function index()
     {
-        return view('studentHomepage');
+
+        $modules = Module::getQuizInfo();
+        return view('studentHomepage', array('modules' => $modules));
     }
 
 
