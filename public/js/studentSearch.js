@@ -89,13 +89,17 @@ $(document).ready(function(){
 
         let i;
         let quizRecord = $(".quizRecord");
+        let quizTime = $("#time");
         //let modal = document.getElementById('popup');
 
         for (i = 0; i < quizRecord.length; i++) {
 
             quizRecord[i].addEventListener("click", function () {
 
+                let duration = $(this).find(".durations").val();
+                let modDur = duration % 60;
 
+                quizTime.text(((duration- modDur) / 60) + ":" + (modDur < 10 ? "0" + modDur : modDur)) ;
                 document.getElementById('popup').style.display = "block";
 
             });
