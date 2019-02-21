@@ -42,8 +42,6 @@ class CreateQuizController extends Controller
         //$mcCount = count(Input::get('mcQuestion'));
         //echo $mcCount;
 
-
-
         //return $request->all();
 
         //retrieve teacher ID from Session

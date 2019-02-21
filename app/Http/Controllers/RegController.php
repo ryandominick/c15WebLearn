@@ -76,9 +76,19 @@ class RegController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function check(Request $request)
     {
-        //
+        //0 = does not exist, 1 = does exist
+        $exists = 0;
+        $data = Student::checkExists($request);
+        if(count($data) > 0){
+            $exists = 1;
+        }
+        else{
+            $exists = 0;
+        }
+        return response($exists);
+
     }
 
     /**

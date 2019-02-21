@@ -9,6 +9,7 @@
     <title>Results Page</title>
     <link rel="stylesheet" type="text/css" href="/css/projstyle.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <!-- Validate the ajax library for security -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="/js/studentSearch.js"></script>
 </head>
@@ -56,5 +57,30 @@
     <tr></tr>
     </tbody>
 </table>
+
+<!-- Modal -->
+<div id="popup" class="mainModal">
+    <!-- Information inside popup -->
+    <div class="popupInformation">
+        <span class="exit">&times;</span>
+        <h2 id="center">Quiz Instructions</h2>
+        <p>1: Ensure you have a stable connection and an environment with minimal distractions.</p>
+        <br>
+        <p>2: You have limited time, any questions left unanswered will result as incorrect. The quiz will auto submit when time reaches the limit.</p>
+        <br>
+        <p>3: If the page is closed at any time during the quiz, all unanswered questions will be marked as incorrect.</p>
+        <br>
+        <p>4: When you have finished the quiz and are happy with your answers, ensure that you have answered all questions. Click the 'submit' button when you are ready to finish.</p>
+        <br>
+        <p>5: When you are ready, click the 'Start Quiz' button to begin and start the timer, you will have <span id="time"></span> minutes.</p>
+        <br>
+        <input type="hidden" id="quizID">
+        <div class="quizButton" align="center">
+            <button id="takeQuiz">Start Quiz</button>
+        </div>
+    </div>
+</div>
+
 </body>
+
 </html>
