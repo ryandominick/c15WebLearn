@@ -124,14 +124,14 @@ th {
     text-decoration: underline;
 }
 
-#loginButton span{
+.loginButton span{
     display: inline-block;
     transition: 0.3s;
     position: relative;
 }
 
 
-#loginButton span:after{
+.loginButton span:after{
     position: absolute;
     content: '\00bb';
     transition: 0.3s;
@@ -142,12 +142,12 @@ th {
     opacity: 0;
 }
 
-#loginButton:hover span{
+.loginButton:hover span{
     padding-right: 55px;
     padding-left: 23px;
 }
 
-#loginButton:hover span:after{
+.loginButton:hover span:after{
     right: 0;
     opacity: 5;
 }
@@ -499,11 +499,11 @@ width: 80%;
     box-shadow: 0 6px 63px 5px #c4c4c4;
 }
 
-#buttonWrapper{
+.buttonWrapper{
     text-align: center;
 }
 
-#createQuizButtons{
+.createQuizButtons{
     display: inline-block;
 }
 
@@ -551,9 +551,6 @@ width: 80%;
     height: 80%;
 }
 
-#addMCQuestions{
-    margin-left: 630px;
-}
 
 .addQuestions{
     cursor: pointer;
@@ -751,6 +748,11 @@ width: 80%;
 }
 
 .fa-user-plus{
+    color: white;
+    left: -15px;
+}
+
+.fa-envelope{
     color: white;
     left: -15px;
 }
@@ -1062,7 +1064,46 @@ dropdownLinksTeacher{
     border-right: none;
 }
 
+.contactContainer {
 
+}
+
+#fullName, #contactEmail, #contactMessage, #subjectEmail{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+}
+
+#contactMessage{
+    height: 150px;
+}
+
+.header{
+    height: 300px;
+    margin-bottom: -150px;
+    padding-top: 1px;
+    background-image: url("/images/congruent_pentagon.png");
+}
+
+.contactContainer{
+    width: 500px;
+    height: 400px;
+    background-image: url("/images/light-grey-floral-motif.png");
+    background-color: #dddddd;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    border-radius: 15px;
+    padding: 30px 30px 135px 30px;
+    border: 2px solid darkgrey;
+}
+
+.contactCaptions{
+    font-weight: bold;
+}
 /*tr::hover {*/
 
     /*background-color: #C2E1FF;*/

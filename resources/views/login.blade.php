@@ -37,7 +37,7 @@
                 <i class="fa fa-eye-slash" id="eyeSlashIcon" aria-hidden="true" ></i>
             </div>
             <br>
-            <button class ="buttons" id="loginButton" type="submit" value="Submit"><span>Login </span><i class="fa fa-key"></i></button>
+            <button class ="buttons loginButton" type="submit" value="Submit"><span>Login </span><i class="fa fa-key"></i></button>
         </form>
         <br>
     </div>
