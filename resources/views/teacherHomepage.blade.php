@@ -25,7 +25,7 @@
         </button>
         <div class="dropdownLinksTeacher">
             <a href="/teacher/profile"><i class="fas fa-user-tie" id="userIcon"></i>Profile</a>
-            <a href="/teacher/manageStudents"> <i class="fas fa-user-graduate" id="userIcon"></i>Manage Students</a>
+            <a href="/teacher/manageStudents"><i class="fas fa-user-graduate" id="userIcon"></i>Manage Students</a>
             <a href="/teacher/logout"> <i class="fas fa-sign-out-alt" id="signOutIcon"></i>Logout</a>
         </div>
     </div>

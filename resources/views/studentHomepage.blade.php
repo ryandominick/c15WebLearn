@@ -38,11 +38,13 @@
         <th>Module Code</th>
         <th>Quiz Title</th>
         <th id="duedate">Due Date</th>
+        <th>Take Quiz</th>
     </tr>
     <td>CO530</td>
-    <td>Introduction to Web Development <!-- Open popup -->
-        <button id="popupButton">Take Quiz</button></td>
+    <td>Introduction to Web Development</td>
     <td>25/12/18</td>
+    <!-- Open popup -->
+    <td><button id="popupButton">Take Quiz</button></td>
 
     <tr>
         <td>CO342</td>

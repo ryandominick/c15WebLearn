@@ -15,7 +15,6 @@ table {
 }
 table, th, td {
     margin-top: 70px;
-    border: 1px solid black;
     border-collapse: collapse;
     text-align: center;
 }
@@ -1010,6 +1009,27 @@ dropdownLinksTeacher{
 }
 #bold{
     font-weight: bold;
+}
+
+#popupButton{
+    margin:auto;
+    cursor: pointer;
+    color: white;
+    background-color: #237e07;
+    border-radius: 8px;
+    border-color: #298303;
+    padding: 5px 15px 5px 15px;
+    font-weight: bold;
+    font-size: 14px;
+    outline: none;
+    box-shadow: 0 10px 16px 2px rgba(0,0,0,0.18);
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+}
+
+#popupButton:hover{
+    background-color: #3cb43c;
+    border-color:  #a7ffb2;
 }
 
 /* BENS TEACHERSEARCH CSS */
