@@ -31,6 +31,7 @@
             <a href="/teacher/logout"> <i class="fas fa-sign-out-alt" id="signOutIcon"></i>Logout</a>
         </div>
     </div>
+    <a href="/teacher/search"><i class="fas fa-search" id="userIcon"></i>Search</a>
     <a href="javascript:void(0);" class="burger" onclick="burgerNav()">&#9776;</a>
 </div>
 
@@ -48,7 +49,7 @@
         <br>
 
         <div id ="registerIcons">
-            <i class ="fa fa-pencil icon"></i>
+            <i class="fa fa-pencil-alt icon"></i>
         <input class="createQuizDetails" id="quizTitlePosition" type="text" size="35" placeholder="Quiz Title" name="quizTitle" required/>
         </div>
 

@@ -27,6 +27,7 @@
             <a href="/student/logout"> <i class="fas fa-sign-out-alt" id="signOutIcon"></i>Logout</a>
         </div>
     </div>
+    <a href="/student/search"><i class="fas fa-search" id="userIcon"></i>Search</a>
     <a href="/contact"> <i class="fas fa-envelope" id="envelopeIcon"></i>Contact Us</a>
     <a href="javascript:void(0);" class="burger" onclick="burgerNav()">&#9776;</a>
 </div>
@@ -50,18 +51,21 @@
         <td>CO342</td>
         <td>Introduction to Java</td>
         <td>30/11/18</td>
+        <td><button id="popupButton">Take Quiz</button></td>
     </tr>
 
     <tr>
         <td>CO705</td>
         <td>Database Systems</td>
         <td>12/12/18</td>
+        <td><button id="popupButton">Take Quiz</button></td>
     </tr>
 
     <tr>
         <td>CO364</td>
         <td>Human Computer Interaction</td>
         <td>15/12/18</td>
+        <td><button id="popupButton">Take Quiz</button></td>
     </tr>
 </table>
 

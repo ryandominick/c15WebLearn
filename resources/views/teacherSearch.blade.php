@@ -13,6 +13,8 @@
     <!-- Validate the ajax library for security -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="/js/teacherSearch.js"></script>
+    <script type="text/javascript" src="/js/navBar.js"></script>
+
 
 
 </head>
@@ -21,14 +23,24 @@
 <div class="smallLogo">
     <img src="/images/GradiQuiz_Logo.png" style="height: 90px;" alt="logo" />
 </div>
-<nav class="topnav">
-    <a id="leftNav" href="/student/home">Home</a>
-    <a id="leftNav" href="StudentProfile.html">My Profile</a>
-    <a id="rightNav" href="/contact">Contact Us</a>
-    <a id="rightNav" href="/student/logout">Logout</a>
-</nav>
+<div class="navigation" id="navBar">
+    <a href="/teacher/home"> <i class="fas fa-home" id="homeIcon"></i>Home</a>
+
+    <div class="profileDropdown">
+        <button class="dropDownButton"><i class="fas fa-user-tie" id="userIcon"></i> <?php echo Auth::user()->firstName?>
+            <i class="fa fa-caret-down" id="dropdwn"></i>
+        </button>
+        <div class="dropdownLinksTeacher">
+            <a href="/teacher/profile"><i class="fas fa-user-tie" id="userIcon"></i>Profile</a>
+            <a href="/teacher/manageStudents"><i class="fas fa-user-graduate" id="userIcon"></i>Manage Students</a>
+            <a href="/teacher/logout"> <i class="fas fa-sign-out-alt" id="userIcon"></i>Logout</a>
+        </div>
+    </div>
+    <a href="/teacher/createquiz"> <i class="fas fa-edit" id="userIcon"></i> Create a quiz</a>
+    <a href="javascript:void(0);" class="burger" onclick="burgerNav()">&#9776;</a>
+</div>
 <br>
-<div id="userBar">
+<div id="center">
 
     <form id="searchQuery">
         <label for="searchInput"><input type="search" id="searchText" name="searchInput"></label>

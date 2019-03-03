@@ -28,6 +28,7 @@
             <a href="/student/logout"> <i class="fas fa-sign-out-alt" id="signOutIcon"></i>Logout</a>
         </div>
     </div>
+    <a href="/student/search"><i class="fas fa-search" id="userIcon"></i>Search</a>
     <a href="javascript:void(0);" class="burger" onclick="burgerNav()">&#9776;</a>
 </div>
 

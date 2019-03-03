@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>TeacherHomepage</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="/css/projstyle.css">
-    <script type="text/javascript" src="/js/navBar.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <script type="text/javascript" src="/js/navBar.js"></script>
 
 </head>
 <body>
@@ -26,10 +26,11 @@
         <div class="dropdownLinksTeacher">
             <a href="/teacher/profile"><i class="fas fa-user-tie" id="userIcon"></i>Profile</a>
             <a href="/teacher/manageStudents"><i class="fas fa-user-graduate" id="userIcon"></i>Manage Students</a>
-            <a href="/teacher/logout"> <i class="fas fa-sign-out-alt" id="signOutIcon"></i>Logout</a>
+            <a href="/teacher/logout"> <i class="fas fa-sign-out-alt" id="userIcon"></i>Logout</a>
         </div>
     </div>
-    <a href="/teacher/createquiz"> <i class="fas fa-edit" id="editIcon"></i> Create a quiz</a>
+    <a href="/teacher/search"><i class="fas fa-search" id="userIcon"></i>Search</a>
+    <a href="/teacher/createquiz"> <i class="fas fa-edit" id="userIcon"></i> Create a quiz</a>
     <a href="javascript:void(0);" class="burger" onclick="burgerNav()">&#9776;</a>
 </div>
 
