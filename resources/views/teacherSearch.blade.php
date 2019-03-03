@@ -8,6 +8,7 @@
 
     <title>Results Page</title>
     <link rel="stylesheet" type="text/css" href="/css/projstyle.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="/js/teacherSearch.js"></script>

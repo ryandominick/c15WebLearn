@@ -9,16 +9,30 @@ html{
 body {
     background-image: url("/images/dust_scratches.png");
 }
+table{
+    border-collapse:collapse;
+    width: 100%;
+    border-radius:10px;
+}
+table, th, td {
+    margin-top: 40px;
+    text-align: center;
+}
+
+td:first-child, th:first-child {
+    border-left: none;
+}
+/*
 table {
     width:100%;
     table-layout: fixed;
 }
 table, th, td {
     margin-top: 70px;
-    border: 1px solid black;
     border-collapse: collapse;
     text-align: center;
 }
+*/
 #table1 {
     margin-top: 30px;
     border: 1px solid black;
@@ -53,13 +67,9 @@ th {
     background-color: #5f6da5;
     color: white;
 }
-
-/* exempted studentResults expanded table tr class from hover so that the nested table could have this attribute applied to it */
-   tr:not(.studentResults):hover td {
+   tr:hover td {
     background-color: #C2E1FF;
 }
-
-
 
 .tablecap {
     font-weight: bold;
@@ -69,6 +79,7 @@ th {
     border-width: 1px;
     background-color: #1B2F7E;
     color: white;
+    border-radius: 20px 20px 0px 0px;
 }
 
 .bigLogo{
@@ -428,7 +439,6 @@ input {
 .createQuizDetails{
     width: 49%;
     height: 50%;
-    display: inline-block;
 }
 .inputQuestion{
     width: 55%;
@@ -558,9 +568,6 @@ width: 80%;
     height: 80%;
 }
 
-#addMCQuestions{
-    margin-left: 630px;
-}
 
 .addQuestions{
     cursor: pointer;
@@ -808,7 +815,6 @@ width: 80%;
     background-color: #1B2F7E;
     overflow: auto;
 }
-
 /* Style the links inside the navigation bar */
 .navigation a {
     float: left;
@@ -856,7 +862,7 @@ width: 80%;
     display: none;
     position: absolute;
     background-color: #f9f9f9;
-    min-width: 232px;
+    min-width: 202px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
 }
@@ -881,15 +887,6 @@ width: 80%;
     min-width: 220px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
-}
-dropdownLinksTeacher{
-    float: none;
-    color: white;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-    background-color: #243EA8;
 }
 /* Links inside the profileDropdown for Teacher */
 .dropdownLinksTeacher a {
@@ -940,9 +937,13 @@ dropdownLinksTeacher{
         text-align: left;
     }
 
-    .navigation.responsive .profileDropdown {float: none;}
+    .navigation.responsive .profileDropdown {
+        float: none;
+    }
 
-    .navigation.responsive .dropdownLinks {position: relative;}
+    .navigation.responsive .dropdownLinks {
+        position: relative;
+    }
 
     .navigation.responsive .profileDropdown .dropDownButton {
         display: block;
@@ -1018,67 +1019,38 @@ dropdownLinksTeacher{
 #bold{
     font-weight: bold;
 }
-
-/* BENS TEACHERSEARCH CSS */
-
-.studentResults {
-
-    display: none;
-
+#takeQuizButton{
+    cursor: pointer;
+    color: white;
+    background-color: #2CA008;
+    border-radius: 9px;
+    border-color: #298303;
+    padding: 8px 16px 8px 16px;
+    font-size: 11px;
+    box-shadow: 0 10px 13px 2px rgba(0,0,0,0.18);
+    -webkit-transition-duration: 0.8s;
+    transition-duration: 0.5s;
+    margin: 15px;
 }
-
-.studentResults1 {
-
-    border-collapse: collapse;
-    padding:0; margin:0;
+#takeQuizButton:hover{
+    background-color: #3CB43C;
+    border-color:  #A7FFB2;
 }
-
- .active td{
-    background-color: #C2E1FF;
+#modalButton{
+    cursor: pointer;
+    color: white;
+    background-color: #2CA008;
+    border-radius: 9px;
+    border-color: #298303;
+    padding: 8px 16px 8px 16px;
+    font-size: 16px;
+    box-shadow: 0 10px 13px 2px rgba(0,0,0,0.18);
+    -webkit-transition-duration: 0.8s;
+    transition-duration: 0.5s;
+    margin: 15px;
 }
-
-#noResults {
-    position: absolute;
-    margin: auto;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    width: 150px;
-    height: 100px;
-    font-size: 19px;
-    display: none;
-
+#modalButton:hover{
+    background-color: #3CB43C;
+    border-color:  #A7FFB2;
 }
-
-#pageTable  {
-    /*position: absolute;*/
-    /*top: 1100px;*/
-    /*left: 850px;*/
-    margin-left:45%;
-    max-width: 150px;
-    border: none;
-    font-size: 19px;
-}
-
-#pageTable td {
-    background-color: transparent;
-    border-top: none;
-    border-bottom: none;
-    border-left: none;
-    border-right: none;
-}
-
-
-/*tr::hover {*/
-
-    /*background-color: #C2E1FF;*/
-
-/*}*/
-
-
-/*.StudentResults1 tr:hover td {*/
-
-    /*background-color: #C2E1FF;*/
-
-/*}*/
+/* Student Homepage Table */
