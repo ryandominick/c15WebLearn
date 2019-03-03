@@ -24,11 +24,11 @@
         <div class="dropdownLinks">
             <a href="/student/profile"><i class="fas fa-user-graduate" id="userIcon"></i>Profile</a>
             <a href="/student/results"><i class="fas fa-poll" id="userIcon"></i>Results</a>
-            <a href="/student/logout"> <i class="fas fa-sign-out-alt" id="signOutIcon"></i>Logout</a>
+            <a href="/student/logout"> <i class="fas fa-sign-out-alt" id="userIcon"></i>Logout</a>
         </div>
     </div>
     <a href="/student/search"><i class="fas fa-search" id="userIcon"></i>Search</a>
-    <a href="/contact"> <i class="fas fa-envelope" id="envelopeIcon"></i>Contact Us</a>
+    <a href="/contact"> <i class="fas fa-envelope" id="userIcon"></i>Contact Us</a>
     <a href="javascript:void(0);" class="burger" onclick="burgerNav()">&#9776;</a>
 </div>
 <br>

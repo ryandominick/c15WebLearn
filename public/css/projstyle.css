@@ -619,14 +619,18 @@ width: 80%;
 }
 
 .removeStudentButton{
-    background-color: #d80000;
+    background-color: #ad0000;
     border-radius: 8px;
-    border-color: #ff0500;
-    font-size: 14px;
+    border-color: #7a0400;
+    padding: 8px 14px 8px 14px;
     color: white;
+    font-size: 14px;
+    box-shadow: 0 10px 16px 2px rgba(0,0,0,0.18);
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
 }
 .removeStudentButton:hover{
-    background-color: #d80000;
+    background-color: red;
     border-radius: 8px;
     border-color: #ff0500;
     font-size: 18px;
@@ -961,11 +965,6 @@ width: 80%;
 #dropdwn{
     color: white;
 }
-#envelopeIcon{
-    position: relative;
-    right: 10px;
-    color: white;
-}
 #whiteIcon{
     color: white;
 }
@@ -975,17 +974,12 @@ width: 80%;
     right: 10px;
 }
 #userIcon{
+    position: relative;
     right: 10px;
     color: white;
-    position: relative;
 }
 .dropDownButton:hover{
     background-color: #3555D4;
-}
-#signOutIcon{
-    right: 5px;
-    position: relative;
-    color: white;
 }
 #editIcon{
     right: 5px;
