@@ -86,7 +86,7 @@
                 <span class="tooltipText">Please refer to an email containing a key to create a teacher account.</span>
             </div>
             <br><br>
-            <button class="buttons" id="loginButton"  type="submit" value="Submit" onclick="return formValidation()"><span>Create</span><i class="fa fa-user-plus"></i></button>
+            <button class="buttons loginButton"  type="submit" value="Submit" onclick="return formValidation()"><span>Create</span><i class="fa fa-user-plus"></i></button>
         </form>
     </div>
 </div>

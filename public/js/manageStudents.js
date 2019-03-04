@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function() {
         modal.style.display = "block";
     }
     for (var i = 0; i < btn.length; i++) {
-       btn[i].addEventListener('click', popupButton, false);
+        btn[i].addEventListener('click', popupButton, false);
     }
     span.onclick = function() {
         modal.style.display = "none";

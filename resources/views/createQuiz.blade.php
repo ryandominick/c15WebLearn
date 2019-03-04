@@ -8,7 +8,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript" src="/js/navBar.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 </head>
 <body>
@@ -33,55 +33,70 @@
 </div>
 
 <br>
+<br>
 <form method="post" action="/createquiz" id="quizInfo">
     @csrf
     <div class="createContainer">
-        <label class="quizDetails">
-            <h3>Module Code:</h3>
-        </label>
-        <input class="createQuizDetails" id="quizModulePosition" type="text" placeholder="(e.g. CO434)" size="10" name="moduleCode"
-               required/>
+        <div id="centerQuizInfo">
+        <div id ="registerIcons">
+            <i class ="fa fa-code icon"></i>
+        <input class="createQuizDetails" id="quizModulePosition" type="text" size="50" placeholder="Module Code"  name="moduleCode" required/>
+        </div>
+
         <br>
-        <label class="quizDetails">
-            <h3>Quiz Title:</h3>
-        </label>
-        <input class="createQuizDetails" id="quizTitlePosition" type="text" placeholder="(e.g. Database Systems)"
-               name="quizTitle" size="50" required/>
+
+        <div id ="registerIcons">
+            <i class ="fa fa-pencil icon"></i>
+        <input class="createQuizDetails" id="quizTitlePosition" type="text" size="35" placeholder="Quiz Title" name="quizTitle" required/>
+        </div>
+
         <br>
-        <label class="quizDate">
-            <h3>Start Date:</h3>
-        </label>
-        <input id="quizStartDatePosition" type="date" name="quizDateStart" required/> <br>
-        <label class="quizDate">
-            <h3 id="endDateCaption">End Date:</h3>
-        </label>
-        <input id="quizEndDatePosition" type="date" name="quizDateEnd" required/>
+            <div id ="registerIcons">
+            <i id="calenPosition" class ="fa fa-calendar-check-o icon"></i>
+        <input id="quizStartDatePosition" type="date" title="Start Date" name="quizDateStart" value="Start Date" required/> <br>
+            </div>
+            <br>
+            <div id ="registerIcons">
+            <i id="calenPosition" class ="fa fa-calendar-times-o icon"></i>
+        <input id="quizEndDatePosition" type="date" title="End Date" name="quizDateEnd" required/>
+            </div>
+
         <br>
-        <label class="quizDetails">
-            <h3>Timer (minutes):</h3>
-        </label>
-        <label class="createQuizDetails">
-            <input id="quizTimerInput" type="number" placeholder="Duration of quiz" name="timer" required/>
+
+        <div id ="registerIcons">
+            <i class ="fa fa-clock-o icon"></i>
+        <input id="quizTimerInput" type="number" placeholder="Quiz Duration (minutes)" name="timer" required/>
             <span id='timerValidityTxt'></span>
-        </label>
+        </div>
+        </div>
     </div>
+
     <br>
-    <div class = "questionContainer" id="questionSection">
-    </div>
+
+    <div class = "questionContainer" id="questionSection"></div>
+
     <br>
-    {{--<button id="submitQuizButton" typ   e="submit" onclick="return submitAll()" value="Submit">Submit Quiz!</button>--}}
+
 </form>
+
 {{--
 <form method="post" id="createQuizForm" action="/createquiz">--}}
 {{--@csrf--}}
 {{--
 </form>
 --}}
-<div id="buttonWrapper">
+
+<div class="buttonWrapper">
+<div class ="createQuizButtons">
 <button class="addQuestions" id="addMCQuestions">Add Multiple Choice Question</button>
 <button class="addQuestions" id="addInputQuestions">Add Input Question</button>
+    <br>
+    <br>
+    <button id="submitQuizButton" type="submit" value="Submit">Submit Quiz!</button>
 </div>
-<br><br>
-<button id="submitQuizButton" type="submit" onclick="return submitAll()" value="Submit">Submit Quiz!</button>
+</div>
+
+
+
 </body>
 </html>

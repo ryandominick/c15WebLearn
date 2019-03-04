@@ -24,7 +24,7 @@
                 <input type ="password" placeholder = "Please enter your password" id="password" name="password" size="35" required>
             </label>
             <br>
-            <button id="loginButton" type="submit" value="Submit">Log me in!</button>
+            <button class="loginButton" type="submit" value="Submit">Log me in!</button>
         </form>
 
         <br><br>
