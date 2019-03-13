@@ -40,6 +40,7 @@
         <th>Quiz Title</th>
         <th id="duedate">Due Date</th>
         <th>Time Allocated</th>
+        <th>Quiz Status</th>
         <th>Take Quiz</th>
     </tr>
 
@@ -49,6 +50,7 @@
         <td><?php echo $module->quizTitle ?></td>
         <td><?php echo $module->quizEnd ?></td>
         <td><?php echo $module->duration?> Minutes</td>
+        <td><?php echo $module->quizStatus?></td>
         <td> <button id="takeQuizButton">Take Quiz</button></td>
     </tr>
     <?php endforeach; ?>
