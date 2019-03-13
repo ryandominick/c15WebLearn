@@ -1039,10 +1039,13 @@ width: 80%;
 
 #popupButton:hover{
     background-color: #3cb43c;
+    border-radius: 8px;
     border-color:  #a7ffb2;
+    font-size: 17px;
+    color: white;
 }
 
-/* BENS TEACHERSEARCH CSS */
+/* BENS TEACHERSEARCH CSS*/
 
 .studentResults {
 
