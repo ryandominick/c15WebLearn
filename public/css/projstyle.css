@@ -71,14 +71,6 @@ th {
 .bigLogo{
     margin-left: 94px;
 }
-/* topnav bar styling */
-#leftNav {
-    float:left;
-}
-#rightNav {
-    float: right;
-}
-
 /* Start of Nav bar styling*/
 
 
@@ -1001,13 +993,18 @@ width: 80%;
     background-color: rgba(0,0,0,0.8); /* Alters background opacity */
 }
 
-/* Content within popup */
+/* Content within popup*/
 .popupInformation {
     background-color: white;
     margin: 6% auto; /* 10% from the top of the page and in the middle of the screen */
     padding: 20px;
     border: 1px solid #888;
     width: 50%; /* size of the popup */
+    position: relative;
+    -webkit-animation-name: modalanimation;
+    -webkit-animation-duration: 0.5s;
+    animation-name: modalanimation;
+    animation-duration: 0.5s
 }
 /* Exit button */
 .exit {

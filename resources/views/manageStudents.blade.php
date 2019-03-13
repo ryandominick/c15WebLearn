@@ -66,7 +66,7 @@
 
     <!-- modal content -->
     <div class="popupContent">
-        <div class ="modal-top">
+        <div class="modal-top">
             <span class="exit">&times;</span>
             <h2>Remove Student</h2>
         </div>
