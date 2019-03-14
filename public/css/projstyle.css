@@ -656,6 +656,22 @@ width: 80%;
     transition-duration: 0.4s;
 }
 
+#submitJSQuizButton{
+    margin:auto;
+    cursor: pointer;
+    color: white;
+    background-color: #237e07;
+    border-radius: 8px;
+    border-color: #298303;
+    padding: 10px 10px 10px 10px;
+    font-weight: bold;
+    font-size: 18px;
+    outline: none;
+    box-shadow: 0 10px 16px 2px rgba(0,0,0,0.18);
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+}
+
 #submitQuizButton:hover{
     background-color: #3cb43c;
     border-radius: 8px;

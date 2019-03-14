@@ -2,21 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\InputQuestion;
-use App\Models\MCQuestion;
+use App\Models\JSQuestion;
 use App\Models\TeacherQuiz;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Session;
 
-class CreateQuizController extends Controller
+class JSQuizController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
+
     public function __construct()
     {
         $this->middleware('auth:teacher');
@@ -24,7 +24,7 @@ class CreateQuizController extends Controller
 
     public function index()
     {
-        return view('createQuiz');
+        return view('createJSQuiz');
     }
 
     /**
@@ -45,11 +45,6 @@ class CreateQuizController extends Controller
      */
     public function store(Request $request)
     {
-        //$mcCount = count(Input::get('mcQuestion'));
-        //echo $mcCount;
-
-        //return $request->all();
-
         //retrieve teacher ID from Session
         $teacherID = Session::get("id");
         //ignore module code for now
@@ -76,40 +71,16 @@ class CreateQuizController extends Controller
 
         TeacherQuiz::addDetails($newID, $quizTitle, $quizDateStart, $quizDateEnd, $quizStatus, $quizDuration, $moduleCode, $teacherID);
 
-        //return $quizTitle;
-        //----Multiple Choice Questions----//
-        //retrieve arrays of question inputs, and set a count for the amount
-        $mcCount = count(Input::get('mcQuestion'));
-        if($mcCount > 0) {
-            $mcQuestion = Input::get('mcQuestion');
-            $mcCorrectAns = Input::get('mcCorrectAnswer');
-            $mcIncorrectAnswer1 = Input::get('mcIncorrectAnswer1');
-            $mcIncorrectAnswer2 = Input::get('mcIncorrectAnswer2');
-            $mcIncorrectAnswer3 = Input::get('mcIncorrectAnswer3');
 
-            for ($i = 0; $i < $mcCount; $i++) {
+        $jsquestion = Input::get('jsquestion');
+        $input = Input::get('input');
+        $output = Input::get('output');
+        $type = Input::get('type');
 
-                MCQuestion::addQuestionMC($mcQuestion[$i], $mcCorrectAns[$i], $mcIncorrectAnswer1[$i], $mcIncorrectAnswer2[$i], $mcIncorrectAnswer3[$i], $newID);
+        JSQuestion::addQuestionJS($jsquestion, $input, $output, $type, $newID);
 
-            }
-        }
-
-        //----Input Questions----//
-
-        $inputCount = count(Input::get('inputQuestion'));
-        if($inputCount > 0) {
-            $inputQuestion = Input::get('inputQuestion');
-            $inputAnswer = Input::get('inputAnswer');
-
-            for ($i = 0; $i < $inputCount; $i++) {
-
-                return InputQuestion::addQuestionInput($inputQuestion[$i], $inputAnswer[$i], $newID);
-
-            }
-        }
         return view('teacherHomepage');
     }
-
 
     /**
      * Display the specified resource.

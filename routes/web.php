@@ -35,6 +35,8 @@ Route::post('/teacher/search/expand', 'TeacherSearchController@expand');
 
 //Route::resource('myResults', 'ResultsController');
 
+Route::resource('/jsquiz', 'JSQuizController');
+
 Route::resource('/createquiz', 'CreateQuizController');
 
 //Display the results view whilst using the StudentController
