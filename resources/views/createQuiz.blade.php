@@ -79,7 +79,6 @@
     <div class = "questionContainer" id="questionSection"></div>
 
     <br>
-
 </form>
 
 {{--

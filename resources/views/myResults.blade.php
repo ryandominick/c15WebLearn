@@ -28,7 +28,7 @@
         </div>
     </div>
     <a href="/student/search"><i class="fas fa-search" id="userIcon"></i>Search</a>
-    <a href="/contact"> <i class="fas fa-envelope" id="envelopeIcon"></i>Contact Us</a>
+    <a href="/contact"> <i class="fas fa-envelope" id="userIcon"></i>Contact Us</a>
     <a href="javascript:void(0);" class="burger" onclick="burgerNav()">&#9776;</a>
 </div>
 <br>
