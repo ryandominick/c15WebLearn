@@ -62,6 +62,7 @@ class Kernel extends HttpKernel
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'loginAuth' => \App\Http\Middleware\LoginAuth::class,
         'assertQuizNotTaken' => \App\Http\Middleware\AssertQuizNotTaken::class,
+        'assertQuizExists' => \App\Http\Middleware\AssertQuizExists::class,
 
     ];
 

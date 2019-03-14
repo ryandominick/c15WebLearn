@@ -77,7 +77,7 @@
 
         <div id="quizButton" align="center">
             <form method="GET" action="/student/quiz">
-            <input type="hidden" id="quizID">
+            <input type="hidden" id="quizID" name="quizID">
             <button id="takeQuiz">Start Quiz</button>
             </form>
         </div>
@@ -85,18 +85,14 @@
 </div>
 
 
+<script>
 
-
-{{--@if (session()->has('message_error'))--}}
-
-    {{--{{session('message_error')}}--}}
-
-
-        {{--@endif--}}
-
-{{--<script type="text/javascript">--}}
-    {{--$(document).ready(function(){--}}
-        {{--window.alert--}}
+    let msg = '{{Session::get('alert')}}';
+    let exist ='{{Session::has('alert')}}';
+    if(exist){
+        alert(msg);
+    }
+</script>
 
 </body>
 

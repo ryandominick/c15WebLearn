@@ -171,7 +171,7 @@ $(document).ready(function(){
 
         }).done(successFunc).fail(failFunc);
     }
- var exitSpan = document.getElementById("exit");
+ //let exitSpan = document.getElementById("exit");
 
     function ajaxFail(){
         alert("An error occurred");
