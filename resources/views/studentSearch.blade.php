@@ -87,12 +87,25 @@
         <br>
         <p>5: When you are ready, click the 'Start Quiz' button to begin and start the timer, you will have <span id="time"></span> minutes.</p>
         <br>
-        <input type="hidden" id="quizID">
-        <div class="quizButton" align="center">
+
+        <div id="quizButton" align="center">
+            <form method="GET" action="/student/quiz">
+            <input type="hidden" id="quizID" name="quizID">
             <button id="takeQuiz">Start Quiz</button>
+            </form>
         </div>
     </div>
 </div>
+
+
+<script>
+
+    let msg = '{{Session::get('alert')}}';
+    let exist ='{{Session::has('alert')}}';
+    if(exist){
+        alert(msg);
+    }
+</script>
 
 </body>
 

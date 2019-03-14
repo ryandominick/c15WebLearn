@@ -61,6 +61,9 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'loginAuth' => \App\Http\Middleware\LoginAuth::class,
+        'assertQuizNotTaken' => \App\Http\Middleware\AssertQuizNotTaken::class,
+        'assertQuizExists' => \App\Http\Middleware\AssertQuizExists::class,
+
     ];
 
     /**
