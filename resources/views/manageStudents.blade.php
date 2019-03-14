@@ -70,12 +70,12 @@
     <!-- modal content -->
     <div class="popupContent">
         <div class ="modal-top">
-        <span class="exit">&times;</span>
+            <span class="exit">&times;</span>
             <h2>Remove Student</h2>
         </div>
         <div class="modal-body">
-        <h3 id="removeStudentPopup">Are you sure you want to remove this student?</h3>
-        <button type="button" id="deleteStudentConfirm">Delete<i id="studentTrash" class="fa fa-trash"></i></button>
+            <h3 id="removeStudentPopup">Are you sure you want to remove this student?</h3>
+            <button type="button" id="deleteStudentConfirm">Delete<i id="studentTrash" class="fa fa-trash"></i></button>
         </div>
     </div>
 </div>

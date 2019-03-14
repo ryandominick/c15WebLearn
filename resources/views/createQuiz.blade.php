@@ -86,13 +86,13 @@
 </form>
 --}}
 
-<div id="buttonWrapper">
-<div id ="createQuizButtons">
+<div class="buttonWrapper">
+<div class ="createQuizButtons">
 <button class="addQuestions" id="addMCQuestions">Add Multiple Choice Question</button>
 <button class="addQuestions" id="addInputQuestions">Add Input Question</button>
     <br>
     <br>
-    <button id="submitQuizButton" type="submit" onclick="return submitAll()" value="Submit">Submit Quiz!</button>
+    <button id="submitQuizButton" type="submit" value="Submit">Submit Quiz!</button>
 </div>
 </div>
 

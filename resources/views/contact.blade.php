@@ -31,11 +31,38 @@
     <a href="javascript:void(0);" class="burger" onclick="burgerNav()">&#9776;</a>
 </div>
 
-<h2 id="center">Contact Us</h2>
+<div class="header">
+    <h2 id="center">Contact Us</h2>
+    <p id="techInfo">For technical support, bug reports and recommendations, please contact us here using the form below:</p>
+</div>
 
-<!--CREATE GET IN TOUCH FORM, will look professional-(Cole) -->
-<p id="techInfo">For technical support, bug reports and recommendations, please contact us here: <br>
-    <a href="mailto:GradiQuiz@gmail.com">GradiQuiz@gmail.com</a>
-</p>
+<div class ="contactContainer">
+    <form action="/contact.php">
+
+        <label class="contactCaptions">Full Name</label>
+        <input type="text" id="fullName" name="fullName" placeholder="Your Name">
+
+        <label class="contactCaptions">Email</label>
+        <input type="text" id="contactEmail" name="email" placeholder="Your Email">
+
+        <label class="contactCaptions">Subject</label>
+        <select id="subjectEmail" name="subjectEmail">
+            <option value ="bug report">Bug Report</option>
+            <option value ="Feedback">Feedback</option>
+            <option value ="Account Help">Account Help</option>
+            <option value ="Legal">Legal</option>
+            <option value ="Other">Other</option>
+        </select>
+
+        <label class="contactCaptions"> Message</label>
+        <textarea id="contactMessage" name="message" placeholder="Your Message"></textarea>
+        <div class="buttonWrapper">
+            <div class="createQuizButtons">
+                <button class="buttons loginButton"  type="submit" value="Submit"><span>Submit</span><i class="fa fa-envelope"></i></button>
+            </div>
+        </div>
+    </form>
+</div>
+
 </body>
 </html>
