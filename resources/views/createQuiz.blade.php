@@ -10,6 +10,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
 </head>
 <body>
 <div class="smallLogo">
@@ -20,15 +22,16 @@
     <a href="/teacher/home"> <i class="fas fa-home" id="homeIcon"></i>Home</a>
 
     <div class="profileDropdown">
-        <button class="dropDownButton"><i class="fas fa-user" id="userIcon"></i> <?php echo Auth::user()->firstName?>
+        <button class="dropDownButton"><i class="fas fa-user-tie" id="userIcon"></i> <?php echo Auth::user()->firstName?>
             <i class="fa fa-caret-down" id="dropdwn"></i>
         </button>
         <div class="dropdownLinks">
-            <a href="/teacher/profile">Profile</a>
-            <a href="/teacher/manageStudents">Manage Students</a>
-            <a href="/teacher/logout"> <i class="fas fa-sign-out-alt" id="signOutIcon"></i>Logout</a>
+            <a href="/teacher/profile"><i class="fas fa-user-tie" id="userIcon"></i>Profile</a>
+            <a href="/teacher/manageStudents"><i class="fas fa-user-graduate" id="userIcon"></i>Manage Students</a>
+            <a href="/teacher/logout"> <i class="fas fa-sign-out-alt" id="userIcon"></i>Logout</a>
         </div>
     </div>
+    <a href="/teacher/search"><i class="fas fa-search" id="userIcon"></i>Search</a>
     <a href="javascript:void(0);" class="burger" onclick="burgerNav()">&#9776;</a>
 </div>
 
@@ -46,7 +49,7 @@
         <br>
 
         <div id ="registerIcons">
-            <i class ="fa fa-pencil icon"></i>
+            <i class="fa fa-pencil-alt icon"></i>
         <input class="createQuizDetails" id="quizTitlePosition" type="text" size="35" placeholder="Quiz Title" name="quizTitle" required/>
         </div>
 
@@ -76,7 +79,6 @@
     <div class = "questionContainer" id="questionSection"></div>
 
     <br>
-
 </form>
 
 {{--

@@ -15,7 +15,6 @@ table {
 }
 table, th, td {
     margin-top: 70px;
-    border: 1px solid black;
     border-collapse: collapse;
     text-align: center;
 }
@@ -72,14 +71,6 @@ th {
 .bigLogo{
     margin-left: 94px;
 }
-/* topnav bar styling */
-#leftNav {
-    float:left;
-}
-#rightNav {
-    float: right;
-}
-
 /* Start of Nav bar styling*/
 
 
@@ -436,7 +427,9 @@ input {
     width: 55%;
     height: 50%;
 }
-
+#quizResults{
+    margin-top: 50px;
+}
 #quizModulePosition{
 width: 80%;
 }
@@ -615,6 +608,25 @@ width: 80%;
 
 #removeStudentPopup{
     text-align: center;
+}
+
+.removeStudentButton{
+    background-color: #ad0000;
+    border-radius: 8px;
+    border-color: #7a0400;
+    padding: 8px 14px 8px 14px;
+    color: white;
+    font-size: 14px;
+    box-shadow: 0 10px 16px 2px rgba(0,0,0,0.18);
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+}
+.removeStudentButton:hover{
+    background-color: red;
+    border-radius: 8px;
+    border-color: #ff0500;
+    font-size: 18px;
+    color: white;
 }
 
 #deleteStudentConfirm:hover{
@@ -849,7 +861,7 @@ width: 80%;
     display: none;
     position: absolute;
     background-color: #f9f9f9;
-    min-width: 232px;
+    min-width: 202px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
 }
@@ -874,15 +886,6 @@ width: 80%;
     min-width: 220px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
-}
-dropdownLinksTeacher{
-    float: none;
-    color: white;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-    background-color: #243EA8;
 }
 /* Links inside the profileDropdown for Teacher */
 .dropdownLinksTeacher a {
@@ -933,9 +936,17 @@ dropdownLinksTeacher{
         text-align: left;
     }
 
-    .navigation.responsive .profileDropdown {float: none;}
+    .navigation.responsive .profileDropdown {
+        float: none;
+    }
 
-    .navigation.responsive .dropdownLinks {position: relative;}
+    .navigation.responsive .dropdownLinks {
+        position: relative;
+    }
+
+    .navigation.responsive .dropdownLinksTeacher {
+        position: relative;
+    }
 
     .navigation.responsive .profileDropdown .dropDownButton {
         display: block;
@@ -944,11 +955,6 @@ dropdownLinksTeacher{
     }
 }
 #dropdwn{
-    color: white;
-}
-#envelopeIcon{
-    position: relative;
-    right: 10px;
     color: white;
 }
 #whiteIcon{
@@ -960,17 +966,12 @@ dropdownLinksTeacher{
     right: 10px;
 }
 #userIcon{
+    position: relative;
     right: 10px;
     color: white;
-    position: relative;
 }
 .dropDownButton:hover{
     background-color: #3555D4;
-}
-#signOutIcon{
-    right: 5px;
-    position: relative;
-    color: white;
 }
 #editIcon{
     right: 5px;
@@ -992,13 +993,18 @@ dropdownLinksTeacher{
     background-color: rgba(0,0,0,0.8); /* Alters background opacity */
 }
 
-/* Content within popup */
+/* Content within popup*/
 .popupInformation {
     background-color: white;
     margin: 6% auto; /* 10% from the top of the page and in the middle of the screen */
     padding: 20px;
     border: 1px solid #888;
     width: 50%; /* size of the popup */
+    position: relative;
+    -webkit-animation-name: modalanimation;
+    -webkit-animation-duration: 0.5s;
+    animation-name: modalanimation;
+    animation-duration: 0.5s
 }
 /* Exit button */
 .exit {
@@ -1012,7 +1018,31 @@ dropdownLinksTeacher{
     font-weight: bold;
 }
 
-/* BENS TEACHERSEARCH CSS */
+#popupButton{
+    margin:auto;
+    cursor: pointer;
+    color: white;
+    background-color: #237e07;
+    border-radius: 8px;
+    border-color: #298303;
+    padding: 5px 15px 5px 15px;
+    font-weight: bold;
+    font-size: 14px;
+    outline: none;
+    box-shadow: 0 10px 16px 2px rgba(0,0,0,0.18);
+    -webkit-transition-duration: 0.7s;
+    transition-duration: 0.4s;
+}
+
+#popupButton:hover{
+    background-color: #3cb43c;
+    border-radius: 8px;
+    border-color:  #a7ffb2;
+    font-size: 17px;
+    color: white;
+}
+
+/* BENS TEACHERSEARCH CSS*/
 
 .studentResults {
 
