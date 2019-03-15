@@ -12,7 +12,7 @@ class Module extends Model
 
     public static function getQuizInfo()
     {
-        return DB::select("SELECT `moduleCode`, `quizTitle`, `quizEnd`, `quizStatus`, `duration` FROM `TeacherQuiz`");
+        return DB::select("SELECT `moduleCode`, `quizTitle`, `quizEnd`, `quizStatus`, `duration` FROM `TeacherQuiz` ORDER BY quizEnd ASC");
     }
 
 }
