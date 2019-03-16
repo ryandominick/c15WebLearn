@@ -24,17 +24,14 @@
         </button>
         <div class="dropdownLinksTeacher">
             <a href="/teacher/profile"><i class="fas fa-user-tie" id="userIcon"></i>Profile</a>
-            <a href="/teacher/logout"> <i class="fas fa-sign-out-alt" id="signOutIcon"></i>Logout</a>
+            <a href="/teacher/logout"> <i class="fas fa-sign-out-alt" id="userIcon"></i>Logout</a>
         </div>
     </div>
-    <a href="/teacher/createquiz"> <i class="fas fa-edit" id="editIcon"></i> Create a quiz</a>
+    <a href="/teacher/createquiz"> <i class="fas fa-edit" id="userIcon"></i> Create a quiz</a>
+    <a href="/teacher/search"><i class="fas fa-search" id="userIcon"></i>Search</a>
     <a href="javascript:void(0);" class="burger" onclick="burgerNav()">&#9776;</a>
 </div>
 <br>
-<div class="search">
-    <input type="text" id="searchBox" placeholder="Search for student name...">
-    <input type="submit" value="Search">
-</div>
 
 <h2 class="welcome"></h2>
 <table>
@@ -69,7 +66,7 @@
 
     <!-- modal content -->
     <div class="popupContent">
-        <div class ="modal-top">
+        <div class="modal-top">
             <span class="exit">&times;</span>
             <h2>Remove Student</h2>
         </div>

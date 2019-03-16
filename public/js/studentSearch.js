@@ -90,7 +90,7 @@ $(document).ready(function(){
         let i;
         let quizRecord = $(".quizRecord");
         let quizTime = $("#time");
-        //let modal = document.getElementById('popup');
+        let inputQuizID = $("#quizID");
 
         for (i = 0; i < quizRecord.length; i++) {
 
@@ -100,6 +100,7 @@ $(document).ready(function(){
                 let modDur = duration % 60;
 
                 quizTime.text(((duration- modDur) / 60) + ":" + (modDur < 10 ? "0" + modDur : modDur)) ;
+                inputQuizID.val($(this).find(".quizIDs").val());
                 document.getElementById('popup').style.display = "block";
 
             });
@@ -116,7 +117,7 @@ $(document).ready(function(){
 
         // WHY DOES THIS WORK ?
         $(window).click(function(event){
-            if (event.target == popup) {
+            if (event.target === popup) {
                 popup.style.display = "none";
             }
          });
@@ -170,7 +171,7 @@ $(document).ready(function(){
 
         }).done(successFunc).fail(failFunc);
     }
- var exitSpan = document.getElementById("exit");
+ //let exitSpan = document.getElementById("exit");
 
     function ajaxFail(){
         alert("An error occurred");

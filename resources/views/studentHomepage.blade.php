@@ -24,34 +24,49 @@
         <div class="dropdownLinks">
             <a href="/student/profile"><i class="fas fa-user-graduate" id="userIcon"></i>Profile</a>
             <a href="/student/results"><i class="fas fa-poll" id="userIcon"></i>Results</a>
-            <a href="/student/logout"> <i class="fas fa-sign-out-alt" id="signOutIcon"></i>Logout</a>
+            <a href="/student/logout"> <i class="fas fa-sign-out-alt" id="userIcon"></i>Logout</a>
         </div>
     </div>
-    <a href="/contact"> <i class="fas fa-envelope" id="envelopeIcon"></i>Contact Us</a>
+    <a href="/student/search"><i class="fas fa-search" id="userIcon"></i>Search</a>
+    <a href="/contact"> <i class="fas fa-envelope" id="userIcon"></i>Contact Us</a>
     <a href="javascript:void(0);" class="burger" onclick="burgerNav()">&#9776;</a>
 </div>
 <br>
-<br>
 <h2 class="welcome"></h2>
-<table id="studentTable">
+<table>
     <caption class="tablecap">My Deadlines</caption>
     <tr>
         <th>Module Code</th>
         <th>Quiz Title</th>
         <th id="duedate">Due Date</th>
-        <th>Time Allocated</th>
         <th>Take Quiz</th>
     </tr>
+    <td>CO530</td>
+    <td>Introduction to Web Development</td>
+    <td>25/12/18</td>
+    <!-- Open popup -->
+    <td><button id="popupButton">Take Quiz</button></td>
 
-    <?php foreach($modules as $module):?>
     <tr>
-        <td><?php echo $module->moduleCode ?></td>
-        <td><?php echo $module->quizTitle ?></td>
-        <td><?php echo $module->quizEnd ?></td>
-        <td><?php echo $module->duration?> Minutes</td>
-        <td> <button id="takeQuizButton">Take Quiz</button></td>
+        <td>CO342</td>
+        <td>Introduction to Java</td>
+        <td>30/11/18</td>
+        <td><button id="popupButton">Take Quiz</button></td>
     </tr>
-    <?php endforeach; ?>
+
+    <tr>
+        <td>CO705</td>
+        <td>Database Systems</td>
+        <td>12/12/18</td>
+        <td><button id="popupButton">Take Quiz</button></td>
+    </tr>
+
+    <tr>
+        <td>CO364</td>
+        <td>Human Computer Interaction</td>
+        <td>15/12/18</td>
+        <td><button id="popupButton">Take Quiz</button></td>
+    </tr>
 </table>
 
 <!-- Modal -->
@@ -74,10 +89,9 @@
         <p>6: When you are ready, click the 'Start Quiz' button to begin and start the timer.</p>
         <br>
         <div class="quizButton" align="center">
-            <button id="modalButton">Start Quiz</button>
+            <button id="takeQuiz">Start Quiz</button>
         </div>
     </div>
 </div>
-
 </body>
 </html>

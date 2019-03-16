@@ -15,7 +15,14 @@ class InputQuestion extends Model
         DB::insert('insert into inputquestion(inputQuestion, inputAnswer, quizID) values (:inputQuestion, :inputAnswer, :quizID)',
             [':inputQuestion' => $inputQuestion, ':inputAnswer' => $inputAnswer, ':quizID' => $quizID]);
 
+    }
 
+    public static function compareAnswerInput($inputQuestionID, $inputAnswer){
+
+      $results =  DB::select('SELECT EXISTS (SELECT * FROM InputQuestion WHERE ( inputQuestionID = :inputQuestionID AND inputAnswer = :inputAnswer)) AS correct',
+            ['inputQuestionID' => $inputQuestionID, 'inputAnswer' => $inputAnswer]);
+
+      return $results;
     }
 
 

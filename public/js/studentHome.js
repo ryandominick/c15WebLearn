@@ -1,20 +1,20 @@
 document.addEventListener("DOMContentLoaded", function(event) {
-    //Get the popup
+    // Get element that opens the popup
     var popup = document.getElementById('popup');
-    // Button that opens the popup
-    var popupButton = document.getElementById("takeQuizButton");
-    // Span element that exits from the popup
-    var exitSpan = document.getElementById("exit");
-    // On click on popupButton open the popup
-    popupButton.onclick = function() {
+    // Get element that opens the popup
+    var openPopup = document.getElementById("popupButton");
+    // Get the <span> element that closes the popup
+    var exitButton = document.getElementsByClassName("exit")[0];
+    // When the user clicks openPopup, open the popup
+    openPopup.onclick = function () {
         popup.style.display = "block";
     }
-    // When the user clicks on <span> (X), exit the popup
-    exitSpan.onclick = function() {
+    // When the user clicks on <span> (x), close the popup
+    exitButton.onclick = function () {
         popup.style.display = "none";
     }
-    // If user clicks outside of the modal, exit from popup
-    window.onclick = function(event) {
+    // if the user clicks anywhere outside of the popup
+    window.onclick = function (event) {
         if (event.target == popup) {
             popup.style.display = "none";
         }

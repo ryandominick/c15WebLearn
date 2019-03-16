@@ -19,5 +19,13 @@ class MCQuestion extends Model
 
     }
 
+    public static function compareAnswerMC($mcID, $inputAnswer){
+
+       $results = DB::select('SELECT EXISTS (SELECT * FROM MCQuestion WHERE ( mcID = :mcID AND correctAns = :inputAnswer)) AS correct',
+            ['mcID' => $mcID, 'inputAnswer' => $inputAnswer]);
+
+       return $results;
+    }
+
 
 }
