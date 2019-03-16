@@ -80,7 +80,7 @@ class CreateQuizController extends Controller
         //----Multiple Choice Questions----//
         //retrieve arrays of question inputs, and set a count for the amount
         $mcCount = count(Input::get('mcQuestion'));
-        if($mcCount > 0) {
+
             $mcQuestion = Input::get('mcQuestion');
             $mcCorrectAns = Input::get('mcCorrectAnswer');
             $mcIncorrectAnswer1 = Input::get('mcIncorrectAnswer1');
@@ -92,21 +92,20 @@ class CreateQuizController extends Controller
                 MCQuestion::addQuestionMC($mcQuestion[$i], $mcCorrectAns[$i], $mcIncorrectAnswer1[$i], $mcIncorrectAnswer2[$i], $mcIncorrectAnswer3[$i], $newID);
 
             }
-        }
+
 
         //----Input Questions----//
 
         $inputCount = count(Input::get('inputQuestion'));
-        if($inputCount > 0) {
             $inputQuestion = Input::get('inputQuestion');
             $inputAnswer = Input::get('inputAnswer');
 
             for ($i = 0; $i < $inputCount; $i++) {
 
-                return InputQuestion::addQuestionInput($inputQuestion[$i], $inputAnswer[$i], $newID);
+                InputQuestion::addQuestionInput($inputQuestion[$i], $inputAnswer[$i], $newID);
 
             }
-        }
+
         return view('teacherHomepage');
     }
 
