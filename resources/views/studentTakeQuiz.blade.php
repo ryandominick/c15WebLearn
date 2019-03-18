@@ -15,18 +15,27 @@
 <div class="smallLogo">
     <img src="/images/GradiQuiz_Logo.png" style="height: 90px;" alt="logo"/>
 </div>
-<nav class="topnav">
-    <a id="leftNav" href="/teacher/home">Home</a>
-    <a id="leftNav" href="/student/results">My results</a>
-    <a id="leftNav" href="StudentProfile.html">My Profile</a>
-    <a id="rightNav" href="/contact">Contact Us</a>
-    <a id="rightNav" href="/html/">Log out</a>
-</nav>
+<div class="navigation" id="navBar">
+    <a href="/student/home"> <i class="fas fa-home" id="homeIcon"></i>Home</a>
+
+    <div class="profileDropdown">
+        <button class="dropDownButton"><i class="fas fa-user-tie" id="userIcon"></i> <?php echo Auth::user()->firstName?>
+            <i class="fa fa-caret-down" id="dropdwn"></i>
+        </button>
+        <div class="dropdownLinksTeacher">
+            <a href="/student/profile"><i class="fas fa-user-tie" id="userIcon"></i>Profile</a>
+            <a href="/student/logout"> <i class="fas fa-sign-out-alt" id="userIcon"></i>Logout</a>
+        </div>
+    </div>
+    <a href="/contact"> <i class="fas fa-envelope" id="userIcon"></i>Contact Us</a>
+    <a href="/student/search"><i class="fas fa-search" id="userIcon"></i>Search</a>
+    <a href="javascript:void(0);" class="burger" onclick="burgerNav()">&#9776;</a>
+</div>
 
 <h2 id="quizHeader">{{$quizTitle}}</h2>
 
 
-
+<!--USE BEN'S ID'S WHEN DOING CSS-->
 <form id ="takeQuizForm">
 
     <input type="hidden" name="quizID" value="{{$quizID}}">

@@ -742,6 +742,7 @@ width: 80%;
     text-align: center;
 }
 #quizHeader{
+    margin-top: 40px;
     text-align: center;
 }
 #center{
@@ -1092,10 +1093,6 @@ width: 80%;
     border-right: none;
 }
 
-.contactContainer {
-
-}
-
 #fullName, #contactEmail, #contactMessage, #subjectEmail{
     width: 100%;
     padding: 12px;
@@ -1131,6 +1128,75 @@ width: 80%;
 
 .contactCaptions{
     font-weight: bold;
+}
+
+#grade{
+    color: green;
+}
+
+#questionText{
+    font-weight: bold;
+    font-size: 18px;
+}
+
+#questionText2{
+    font-weight: bold;
+    font-size: 18px;
+    padding-left: 10px;
+}
+
+#mcOption{
+    font-size: 17px;
+    margin-right: 0px;
+}
+
+#quizSubmit{
+    margin:auto;
+    cursor: pointer;
+    color: white;
+    background-color: #237e07;
+    border-radius: 8px;
+    border-color: #298303;
+    padding: 5px 15px 5px 15px;
+    font-weight: bold;
+    font-size: 19px;
+    outline: none;
+    box-shadow: 0 10px 16px 2px rgba(0,0,0,0.18);
+    -webkit-transition-duration: 0.7s;
+    transition-duration: 0.4s;
+}
+#quizSubmit:hover{
+    background-color: #3cb43c;
+    border-radius: 8px;
+    border-color:  #a7ffb2;
+    font-size: 25px;
+    color: white;
+}
+#takeQuiz{
+    margin:auto;
+    cursor: pointer;
+    color: white;
+    background-color: #237e07;
+    border-radius: 8px;
+    border-color: #298303;
+    padding: 5px 15px 5px 15px;
+    font-weight: bold;
+    font-size: 18px;
+    outline: none;
+    box-shadow: 0 10px 16px 2px rgba(0,0,0,0.18);
+    -webkit-transition-duration: 0.7s;
+    transition-duration: 0.4s;
+}
+
+#takeQuiz:hover{
+    background-color: #3cb43c;
+    border-radius: 8px;
+    border-color:  #a7ffb2;
+    font-size: 22px;
+    color: white;
+}
+.meme{
+    color: red;
 }
 /*tr::hover {*/
 
