@@ -507,10 +507,10 @@ width: 80%;
     padding-top: 10px;
     padding-bottom: 20px;
 }
-#1{
+#correct{
     color: green;
 }
-#0{
+#incorrect{
     color: red;
 }
 /* For all input types that are radio, include this spacing*/
