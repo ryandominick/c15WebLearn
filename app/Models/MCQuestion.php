@@ -19,6 +19,13 @@ class MCQuestion extends Model
 
     }
 
+    public static function countQuestions($quizID){
+
+        $questionCount = DB::select('select count(mcQuestion) from MCQuestion where (quizID = :quizID)',['quizID' => $quizID]);
+
+        return $questionCount;
+    }
+
     public static function compareAnswerMC($mcID, $inputAnswer){
 
        $results = DB::select('SELECT EXISTS (SELECT * FROM MCQuestion WHERE ( mcID = :mcID AND correctAns = :inputAnswer)) AS correct',

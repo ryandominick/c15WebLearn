@@ -23,7 +23,7 @@ class TeacherQuiz extends Model
 
     public static function teacherSearch($searchText){
 
-        $results = DB::select('SELECT t.quizTitle, t.moduleCode, m.moduleNamgit e, t.quizEnd, t.quizID FROM TeacherQuiz AS t INNER JOIN Module AS m ON t.moduleCode = 
+        $results = DB::select('SELECT t.quizTitle, t.moduleCode, m.moduleName, t.quizEnd, t.quizID FROM TeacherQuiz AS t INNER JOIN Module AS m ON t.moduleCode = 
         m.moduleCode WHERE t.quizTitle LIKE :quizTitle OR t.moduleCode LIKE :moduleCode OR m.moduleName LIKE :moduleName  
        ORDER BY m.moduleCode, t.quizEnd, t.quizTitle;', ['quizTitle' => '%'.$searchText.'%', 'moduleCode' => '%'.$searchText.'%', 'moduleName' => '%'.$searchText.'%']);
 
@@ -71,6 +71,14 @@ class TeacherQuiz extends Model
         $results = DB::select('SELECT i.inputQuestionID, i.inputQuestion FROM InputQuestion AS i WHERE i.quizID = :quizID', ['quizID' => $quizID]);
 
         return $results;
+    }
+
+    public static function getJSQuestions($quizID){
+
+        $results = DB::select('SELECT i.jsID, i.jsQuestion FROM JSQuestion AS i WHERE i.quizID = :quizID', ['quizID' => $quizID]);
+
+        return $results;
+
     }
 
     public static function setupTimer($quizID, $studentID, $startTime){
