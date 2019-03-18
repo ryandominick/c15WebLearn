@@ -19,5 +19,12 @@ class JSQuestion extends Model
 
     }
 
+    public static function countQuestions($quizID){
+
+        $questionCount = DB::select('select count(jsQuestion) from JSQuestion where (quizID = :quizID)',['quizID' => $quizID]);
+
+        return $questionCount;
+    }
+
 
 }

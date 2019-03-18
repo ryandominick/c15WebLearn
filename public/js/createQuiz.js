@@ -2,8 +2,10 @@ document.addEventListener("DOMContentLoaded", function () {
     var count = 1;
     document.getElementById("addMCQuestions").addEventListener("click", addMCQuestion); //Make add MC question function
     document.getElementById("addInputQuestions").addEventListener("click", addInputQuestion); //Make add input question function
+    document.getElementById("addJavascriptQuestions").addEventListener("click", addJavascriptQuestion);
     document.getElementById("addMCQuestions").addEventListener("click", showSubmitQuiz);
     document.getElementById("addInputQuestions").addEventListener("click", showSubmitQuiz);
+    document.getElementById("addJavascriptQuestions").addEventListener("click", showSubmitQuiz);
     document.getElementById("quizTimerInput").addEventListener("keyup", timerLimit);
     document.getElementById("submitQuizButton").addEventListener("click", submitAll);
     document.addEventListener("click", function(e){
@@ -62,6 +64,34 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {  //else, alert user the max has been reached
             alert("Question limit has been reached (10 max)");
         }
+    }
+
+    function addJavascriptQuestion(){
+        if (count < limit){
+            document.getElementById('questionSection').insertAdjacentHTML
+            ('beforeend', '<div id ="QuestionContainer">' +
+                '<button type="button" id="deleteQuestion">Delete<i class="fa fa-trash"></i></button>' +
+                '<h3 class = "questionCaption">Javascript Question: <span id="countCaption">' + count + '</span></h3>' +
+                '<br>' +
+                '<input type="text" class="inputQuestion" name="jsQuestion[]" placeholder="Enter your question here"/> ' +
+                '<br><br> ' +
+                '<input type="text" class="inputQuestion" name="jsInput[]" placeholder="Enter input parameters here"/>' +
+                '<br><br>' +
+                '<input type="text" class="inputQuestion    " name="jsOutput[]" placeholder="Enter the expected output here"/> ' +
+                '<br><br> ' +
+                '<select name="type" class="inputAnswer" >\n' +
+                '<option value="" disabled selected>Select a datatype for the expected output</option>\n' +
+                '<option value="int">Int</option>\n' +
+                '<option value="string">String</option>\n' +
+                '<option value="array">Array</option>\n' +
+                '</select>' +
+                '<br><br> ' +
+                '</div>'); //Add two input fields for the input question on button click
+            count++;
+        } else {  //else, alert user the max has been reached
+            alert("Question limit has been reached (10 max)");
+        }
+
     }
 
     function showSubmitQuiz() {

@@ -33,6 +33,7 @@ class StudentTakeQuizController extends Controller
 
         $mQuestions = TeacherQuiz::getMCQuestions($quiz);
         $iQuestions = TeacherQuiz::getInputQuestions($quiz);
+        $jQuestions = TeacherQuiz::getJSQuestions($quiz);
         $quizDetails = array('quizID' => $quiz, 'quizTitle' => (TeacherQuiz::getQuizTitle($quiz))[0]->quizTitle);
 
         foreach($mQuestions as $mQuestion){
@@ -53,7 +54,7 @@ class StudentTakeQuizController extends Controller
 
             }
 
-        return view('studentTakeQuiz')->with('mQuestions',$mQuestionsRet)->with('iQuestions',$iQuestions)->with($quizDetails);
+        return view('studentTakeQuiz')->with('mQuestions',$mQuestionsRet)->with('iQuestions',$iQuestions)->with('jQuestions', $jQuestions)->with($quizDetails);
 
     }
 
@@ -72,7 +73,7 @@ class StudentTakeQuizController extends Controller
 
         $quizID = $request->input('quizID');
         $studentID = Auth::user()->id;
-
+        $mcCount = MCQuestion::countQuestions($quizID);
 
         // SECTION TO VERIFY QUIZ STARTED AND TIME LIMIT NOT REACHED USING ID AND QUIZID
 
@@ -106,7 +107,7 @@ class StudentTakeQuizController extends Controller
             }
 
             // the object conversion will fail if the question type is now input ending the loop with the value null so update the currentValue
-            $currentValue = $request->input($index);
+            //$currentValue = $request->input($index);
 
             //----------------------------------------------------------------------------------------------------------------------------------
 
@@ -119,21 +120,20 @@ class StudentTakeQuizController extends Controller
             while ($request->has($index)) {
 
 
-                $index++;
+
                 // gets the id of input question from hidden field
                 if ($request->has($index)) {
                     $currentValue1 = $request->input($index);
                 }
 
-
                 $index++;
+
                 // gets the text answer of the user
                 if ($request->has($index)) {
                     $currentValue = $request->input($index);
                 }
 
-                // ************* match this section of return array by incrementing id with 2 each loop *****************
-
+                $index++;
                 // increment the correct answer by the value 0 or 1 in addition to assigning the value to the ResultsArray and index of question ID
                 $correct += $resultsArray[$count] = (InputQuestion::compareAnswerInput($currentValue1, $currentValue))[0]->correct;
 

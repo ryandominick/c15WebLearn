@@ -25,5 +25,12 @@ class InputQuestion extends Model
       return $results;
     }
 
+    public static function countQuestions($quizID){
+
+        $questionCount = DB::select('select count(inputQuestion) from InputQuestion where (quizID = :quizID)',['quizID' => $quizID]);
+
+        return $questionCount;
+    }
+
 
 }

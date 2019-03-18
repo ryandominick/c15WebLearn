@@ -84,12 +84,12 @@
             <br><br>
             <input type="text" class="inputAnswer" name="output" placeholder="Enter expected output here"/>
             <br><br>
-            <select name="type" class="inputAnswer" >
-                <option value="" disabled selected>Select a datatype for the expected output</option>
-                <option value="int">Int</option>
-                <option value="string">String</option>
-                <option value="array">Array</option>
-            </select>
+                <select name="type" class="inputAnswer" >
+                    <option value="" disabled selected>Select a datatype for the expected output</option>
+                    <option value="int">Int</option>
+                    <option value="string">String</option>
+                    <option value="array">Array</option>
+                </select>
         </div>
     </div>
     <br>

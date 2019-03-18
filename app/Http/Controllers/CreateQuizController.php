@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\InputQuestion;
+use App\Models\JSQuestion;
 use App\Models\MCQuestion;
 use App\Models\TeacherQuiz;
 use Illuminate\Http\Request;
@@ -79,7 +80,9 @@ class CreateQuizController extends Controller
         //return $quizTitle;
         //----Multiple Choice Questions----//
         //retrieve arrays of question inputs, and set a count for the amount
-        $mcCount = count(Input::get('mcQuestion'));
+
+        if(Input::get('mcQuestion') != null) {
+            $mcCount = count(Input::get('mcQuestion'));
 
             $mcQuestion = Input::get('mcQuestion');
             $mcCorrectAns = Input::get('mcCorrectAnswer');
@@ -92,11 +95,11 @@ class CreateQuizController extends Controller
                 MCQuestion::addQuestionMC($mcQuestion[$i], $mcCorrectAns[$i], $mcIncorrectAnswer1[$i], $mcIncorrectAnswer2[$i], $mcIncorrectAnswer3[$i], $newID);
 
             }
-
+        }
 
         //----Input Questions----//
-
-        $inputCount = count(Input::get('inputQuestion'));
+        if(Input::get('inputQuestion') != null) {
+            $inputCount = count(Input::get('inputQuestion'));
             $inputQuestion = Input::get('inputQuestion');
             $inputAnswer = Input::get('inputAnswer');
 
@@ -105,8 +108,21 @@ class CreateQuizController extends Controller
                 InputQuestion::addQuestionInput($inputQuestion[$i], $inputAnswer[$i], $newID);
 
             }
+        }
+        if(Input::get('jsQuestion') != null) {
+            $jsCount = count(Input::get('jsQuestion'));
+            $jsQuestion = Input::get('jsQuestion');
+            $jsInput = Input::get('jsInput');
+            $jsOutput = Input::get('jsOutput');
+            $jsType = Input::get('jsOutput');
 
-        return view('teacherHomepage');
+            for ($i = 0; $i < $jsCount; $i++) {
+
+                JSQuestion::addQuestionJS($jsQuestion, $jsInput, $jsOutput, $jsType, $newID);
+            }
+        }
+
+        return redirect('teacher/home')->with('created', 'Quiz created successfully');
     }
 
 

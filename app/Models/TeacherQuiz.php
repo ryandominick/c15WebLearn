@@ -73,6 +73,14 @@ class TeacherQuiz extends Model
         return $results;
     }
 
+    public static function getJSQuestions($quizID){
+
+        $results = DB::select('SELECT i.jsID, i.jsQuestion FROM JSQuestion AS i WHERE i.quizID = :quizID', ['quizID' => $quizID]);
+
+        return $results;
+
+    }
+
     public static function setupTimer($quizID, $studentID, $startTime){
 
         DB::insert("INSERT INTO QuizTimer (quizID, studentID, startTime) VALUES (:quizID, :studentID, :startTime);", ['quizID' => $quizID, 'studentID' => $studentID, 'startTime' => $startTime ]);
