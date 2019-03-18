@@ -38,7 +38,6 @@
 <h2 id="quizHeader">{{$quizTitle}}</h2>
 
 
-<!--USE BEN'S ID'S WHEN DOING CSS-->
 <form id ="takeQuizForm">
 
     <input type="hidden" name="quizID" value="{{$quizID}}">

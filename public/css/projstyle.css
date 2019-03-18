@@ -499,19 +499,15 @@ width: 80%;
 }
 
 .takeQuestionContainer {
+    display: inline-block;
     border-style: inset;
-    border-color: #9cadff;
+    border-color: #5f6da5;
     border-radius: 25px;
     border-width: 3px;
-    background-color: #3555D4;
+    background-color: #e0f0ff;
     padding-top: 10px;
     padding-bottom: 20px;
-}
-#correct{
-    color: green;
-}
-#incorrect{
-    color: red;
+    width: 99%;
 }
 /* For all input types that are radio, include this spacing*/
 #radioSpace{
@@ -768,7 +764,8 @@ width: 80%;
     text-align: center;
 }
 #quizHeader{
-    margin-top: 40px;
+    font-size: 28px;
+    margin-top: 45px;
     text-align: center;
 }
 #center{
@@ -1158,6 +1155,8 @@ width: 80%;
 
 #grade{
     color: green;
+    text-align: center;
+    font-size: 21px;
 }
 
 #questionText{
@@ -1168,8 +1167,14 @@ width: 80%;
 .questionText{
     font-weight: bold;
     font-size: 18px;
+    padding: 0px 10px 0px 20px;
 }
-
+.radiogroup {
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
+    padding: 10px 10px 0px 20px;
+}
 #mcOption{
     font-size: 17px;
     margin-right: 0px;
@@ -1220,9 +1225,11 @@ width: 80%;
     font-size: 22px;
     color: white;
 }
-.meme{
-    color: red;
+.pages{
+    border-style: solid;
+    border-color: #1B2F7E;
 }
+
 /*tr::hover {*/
 
     /*background-color: #C2E1FF;*/
