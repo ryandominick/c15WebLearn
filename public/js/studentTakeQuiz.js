@@ -18,7 +18,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
             while(results.results[cnt] != null){
 
-                $('#'+ cnt).text((results.results[cnt]) == 1? "correct":"incorrect");
+                if(results.results[cnt] == 1){
+                    $('#'+ cnt).text("correct").addClass("correct");
+                }else{
+                    $('#'+ cnt).text("incorrect").addClass("incorrect");
+                }
+
+
+               // $('#'+ cnt).text((results.results[cnt]) == 1? ("correct",this.className= "correct"):("incorrect" , this.className= "incorrect"));
                cnt++;
             }
        }else{

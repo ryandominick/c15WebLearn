@@ -118,7 +118,7 @@ class CreateQuizController extends Controller
 
             for ($i = 0; $i < $jsCount; $i++) {
 
-                JSQuestion::addQuestionJS($jsQuestion, $jsInput, $jsOutput, $jsType, $newID);
+                JSQuestion::addQuestionJS($jsQuestion[$i], $jsInput[$i], $jsOutput[$i], $jsType[$i], $newID);
             }
         }
 
