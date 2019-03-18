@@ -59,24 +59,42 @@
 
     @endforeach
 
-        @foreach( $iQuestions as $iQuestion)
+    @foreach( $iQuestions as $iQuestion)
 
-            <br>
-            <br>
+        <br>
+        <br>
 
-            <div class = "takeQuestionContainer">
+        <div class = "takeQuestionContainer">
 
-                <p class="questionText">{{$iQuestion->inputQuestion}}</p>
-                <input type="hidden" name={{$i}} class="inputQuestionIDs" value={{$iQuestion->inputQuestionID}}>
+            <p class="questionText">{{$iQuestion->inputQuestion}}</p>
+            <input type="hidden" name={{$i}} class="inputQuestionIDs" value={{$iQuestion->inputQuestionID}}>
 
-                <?php $i++ ?>
+            <?php $i++ ?>
 
-                <input type="text" class="inputQuestion" name={{$i}}><br>  <span id={{$q}}></span> </div>
+            <input type="text" class="inputQuestion" name={{$i}}><br>  <span id={{$q}}></span> </div>
 
-            <?php $i++;
+        <?php $i++;
                   $q++;?>
 
-        @endforeach
+    @endforeach
+
+    @foreach($jQuestions as $jQuestion)
+
+        <br>
+        <br>
+
+        <div class = "takeQuestionContainer">
+            <p class="questionText">{{$jQuestion->jsQuestion}}</p>
+            <input type="hidden" name={{$i}} class="javascriptQuestionIDs" value={{$jQuestion->jsID}}>
+
+            <?php $i++ ?>
+
+            <textarea name="{{$i}}" form="takeQuizForm">Write your Javascript function here</textarea>
+        </div>
+
+        <?php $i++;
+        $q++;?>
+    @endforeach
 
         <br>
         <br>
