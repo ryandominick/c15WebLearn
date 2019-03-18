@@ -73,7 +73,6 @@ class StudentTakeQuizController extends Controller
 
         $quizID = $request->input('quizID');
         $studentID = Auth::user()->id;
-        $mcCount = MCQuestion::countQuestions($quizID);
 
         // SECTION TO VERIFY QUIZ STARTED AND TIME LIMIT NOT REACHED USING ID AND QUIZID
 
@@ -97,11 +96,14 @@ class StudentTakeQuizController extends Controller
 
                 // increment index for finding next question
                 $index++;
+                $count++;
                 // if question exists increment count and attempt to convert its value to object
                 if ($request->has($index)) {
 
-                    $count++;
+
                     $currentValue = json_decode($request->input($index));
+                } else{
+                    break;
                 }
 
             }

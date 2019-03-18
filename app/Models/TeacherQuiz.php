@@ -23,7 +23,7 @@ class TeacherQuiz extends Model
 
     public static function teacherSearch($searchText){
 
-        $results = DB::select('SELECT t.quizTitle, t.moduleCode, m.moduleNamgit e, t.quizEnd, t.quizID FROM TeacherQuiz AS t INNER JOIN Module AS m ON t.moduleCode = 
+        $results = DB::select('SELECT t.quizTitle, t.moduleCode, m.moduleName, t.quizEnd, t.quizID FROM TeacherQuiz AS t INNER JOIN Module AS m ON t.moduleCode = 
         m.moduleCode WHERE t.quizTitle LIKE :quizTitle OR t.moduleCode LIKE :moduleCode OR m.moduleName LIKE :moduleName  
        ORDER BY m.moduleCode, t.quizEnd, t.quizTitle;', ['quizTitle' => '%'.$searchText.'%', 'moduleCode' => '%'.$searchText.'%', 'moduleName' => '%'.$searchText.'%']);
 
