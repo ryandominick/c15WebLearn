@@ -503,9 +503,19 @@ width: 80%;
     border-color: #9cadff;
     border-radius: 25px;
     border-width: 3px;
-    background-color: rgb(194, 208, 255);
+    background-color: #3555D4;
     padding-top: 10px;
     padding-bottom: 20px;
+}
+#1{
+    color: green;
+}
+#0{
+    color: red;
+}
+/* For all input types that are radio, include this spacing*/
+#radioSpace{
+    margin: 10px 10px;
 }
 
 /*Type of question caption*/
@@ -1152,13 +1162,12 @@ width: 80%;
 
 #questionText{
     font-weight: bold;
-    font-size: 18px;
+    font-size: 19px;
 }
 
-#questionText2{
+.questionText{
     font-weight: bold;
     font-size: 18px;
-    padding-left: 10px;
 }
 
 #mcOption{

@@ -7,6 +7,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}" >
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript" src="/js/studentTakeQuiz.js"></script>
+    <script type="text/javascript" src="/js/navBar.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 
@@ -24,11 +25,13 @@
         </button>
         <div class="dropdownLinksTeacher">
             <a href="/student/profile"><i class="fas fa-user-tie" id="userIcon"></i>Profile</a>
+            <a href="/student/results"><i class="fas fa-poll" id="userIcon"></i>Results</a>
+
             <a href="/student/logout"> <i class="fas fa-sign-out-alt" id="userIcon"></i>Logout</a>
         </div>
     </div>
-    <a href="/contact"> <i class="fas fa-envelope" id="userIcon"></i>Contact Us</a>
     <a href="/student/search"><i class="fas fa-search" id="userIcon"></i>Search</a>
+    <a href="/contact"> <i class="fas fa-envelope" id="userIcon"></i>Contact Us</a>
     <a href="javascript:void(0);" class="burger" onclick="burgerNav()">&#9776;</a>
 </div>
 
@@ -51,13 +54,13 @@
 
         <div class = "takeQuestionContainer">
             <br>
-                 <fieldset class="radiogroup">
+                 <fieldset class="radiogroup" >
 
-                     <legend>{{$mQuestion[0]}}</legend>
-                <label ><input type="radio" name={{$i}} class="mcOption" value='{ "mcID" : "{{$mQuestion[1]}}" ,"text" : "{{$mQuestion[2]}}" }' >{{$mQuestion[2]}}</label> <br>
-                <label ><input type="radio" name={{$i}} class="mcOption" value='{ "mcID" : "{{$mQuestion[1]}}" ,"text" : "{{$mQuestion[3]}}" }' >{{$mQuestion[3]}}</label> <br>
-                <label ><input type="radio" name={{$i}} class="mcOption" value='{ "mcID" : "{{$mQuestion[1]}}" ,"text" : "{{$mQuestion[4]}}" }' >{{$mQuestion[4]}}</label> <br>
-                <label ><input type="radio" name={{$i}} class="mcOption" value='{ "mcID" : "{{$mQuestion[1]}}" ,"text" : "{{$mQuestion[5]}}" }' >{{$mQuestion[5]}}</label> <br>
+                     <legend id="questionText">{{$mQuestion[0]}}</legend>
+                <label ><input type="radio" id ="radioSpace" name={{$i}} class="mcOption" value='{ "mcID" : "{{$mQuestion[1]}}" ,"text" : "{{$mQuestion[2]}}" }' >{{$mQuestion[2]}}</label> <br>
+                <label ><input type="radio" id ="radioSpace" name={{$i}} class="mcOption" value='{ "mcID" : "{{$mQuestion[1]}}" ,"text" : "{{$mQuestion[3]}}" }' >{{$mQuestion[3]}}</label> <br>
+                <label ><input type="radio" id ="radioSpace" name={{$i}} class="mcOption" value='{ "mcID" : "{{$mQuestion[1]}}" ,"text" : "{{$mQuestion[4]}}" }' >{{$mQuestion[4]}}</label> <br>
+                <label ><input type="radio" id ="radioSpace" name={{$i}} class="mcOption" value='{ "mcID" : "{{$mQuestion[1]}}" ,"text" : "{{$mQuestion[5]}}" }' >{{$mQuestion[5]}}</label> <br>
 
                  </fieldset>
             <span id={{$q}}></span>
