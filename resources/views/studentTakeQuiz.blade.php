@@ -62,7 +62,7 @@
                 <label ><input type="radio" id ="radioSpace" name={{$i}} class="mcOption" value='{ "mcID" : "{{$mQuestion[1]}}" ,"text" : "{{$mQuestion[5]}}" }' >{{$mQuestion[5]}}</label> <br>
 
                  </fieldset>
-            <span id={{$q}}></span>
+            <div id={{$q}}></div>
         </div>
 
         <?php $i++;
@@ -82,7 +82,7 @@
 
             <?php $i++ ?>
 
-            <input type="text" class="inputQuestion" name={{$i}}><br>  <span id={{$q}}></span> </div>
+            <input type="text" class="inputQuestion" name={{$i}}><br>  <div id={{$q}}></div> </div>
 
         <?php $i++;
                   $q++;?>
@@ -100,7 +100,7 @@
 
             <?php $i++ ?>
 
-            <textarea name="{{$i}}" form="takeQuizForm">Write your Javascript function here</textarea>
+            <textarea name="{{$i}}" form="takeQuizForm">Write your Javascript function here</textarea> <br> <div id={{$q}}></div>
         </div>
 
         <?php $i++;
