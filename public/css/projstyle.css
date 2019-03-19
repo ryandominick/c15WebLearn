@@ -1229,7 +1229,21 @@ width: 80%;
     border-style: solid;
     border-color: #1B2F7E;
 }
+#firstname{
+    font-size: 17px;
+    font-weight: bold;
+    margin-left: 33px;
+}
+#surname{
+    font-size: 17px;
+    font-weight: bold;
+    margin-left: 41px;
 
+}
+#email{
+    font-size: 17px;
+    font-weight: bold;
+}
 /*tr::hover {*/
 
     /*background-color: #C2E1FF;*/

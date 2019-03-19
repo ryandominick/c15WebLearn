@@ -49,11 +49,17 @@ Route::resource('/createquiz', 'CreateQuizController');
 //Display the results view whilst using the StudentController
 Route::get('/student/results', 'Auth\StudentController@results');
 
+
+Route::get('/student/profile', 'Auth\StudentController@profile');
+
 //Display contact us page for student
 Route::get('/contact', 'Auth\StudentController@contactUs');
 
 //display manage student page
 Route::get('/teacher/manageStudents', 'Auth\TeacherController@manage');
+
+//display manage student page
+Route::get('/teacher/profile', 'Auth\TeacherController@profile');
 
 //Display createquiz page
 Route::get('/teacher/createquiz', 'Auth\TeacherController@create');

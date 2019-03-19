@@ -39,4 +39,9 @@ class TeacherController extends Controller
     {
         return view('createQuiz');
     }
+
+    public function profile()
+    {
+        return view('teacherProfile');
+    }
 }

@@ -33,12 +33,10 @@ class Teacher extends Authenticatable
         //}
     }
 
-    public static function getID ($email){
+    public static function getID ($email)
+    {
 
         return DB::select('select id from Teacher where email= :email', [':email' => $email]);
 
     }
-
-
-
 }
