@@ -703,6 +703,7 @@ width: 80%;
     background-color: rgba(0,0,0,0.8); /* Changes background opacity (darkens background) */
 }
 
+
 /* Add Animation */
 @-webkit-keyframes modalanimation {
     from {top:-400px; opacity:0}
