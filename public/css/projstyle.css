@@ -1245,6 +1245,17 @@ width: 80%;
     font-size: 17px;
     font-weight: bold;
 }
+.incorrect{
+    color: red;
+    font-size: 18px;
+    font-weight: bold;
+}
+.correct{
+    color: green;
+    font-size: 18px;
+    font-weight: bold;
+
+}
 /*tr::hover {*/
 
     /*background-color: #C2E1FF;*/
