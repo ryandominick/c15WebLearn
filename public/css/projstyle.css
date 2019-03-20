@@ -501,7 +501,7 @@ width: 80%;
 .takeQuestionContainer {
     display: inline-block;
     border-style: inset;
-    border-color: #5f6da5;
+    border-color: #8FCDFF;
     border-radius: 25px;
     border-width: 3px;
     background-color: #e0f0ff;
@@ -1096,6 +1096,7 @@ width: 80%;
     height: 100px;
     font-size: 19px;
     display: none;
+    color: red;
 
 }
 
@@ -1157,7 +1158,8 @@ width: 80%;
 #grade{
     color: green;
     text-align: center;
-    font-size: 21px;
+    font-size: 26px;
+    font-weight: bold;
 }
 
 #questionText{
@@ -1241,18 +1243,18 @@ width: 80%;
     margin-left: 41px;
 
 }
-#email{
+#emailProfile{
     font-size: 17px;
     font-weight: bold;
 }
 .incorrect{
     color: red;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: bold;
 }
 .correct{
     color: green;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: bold;
 
 }
