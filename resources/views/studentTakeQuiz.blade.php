@@ -100,7 +100,7 @@
 
             <?php $i++ ?>
 
-            <textarea name="{{$i}}" form="takeQuizForm">Write your Javascript function here</textarea> <br> <div id={{$q}}></div>
+            <textarea name="{{$i}}" id="jsQuestion" size="50" form="takeQuizForm" placeholder="Write your javascript function here..."></textarea> <br> <div id={{$q}}></div>
         </div>
 
         <?php $i++;
