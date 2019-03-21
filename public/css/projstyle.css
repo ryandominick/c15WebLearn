@@ -1043,7 +1043,7 @@ width: 80%;
     font-weight: bold;
 }
 
-#popupButton{
+#takeQuizButton{
     margin:auto;
     cursor: pointer;
     color: white;
@@ -1059,7 +1059,7 @@ width: 80%;
     transition-duration: 0.4s;
 }
 
-#popupButton:hover{
+#takeQuizButton:hover{
     background-color: #3cb43c;
     border-radius: 8px;
     border-color:  #a7ffb2;
@@ -1265,6 +1265,13 @@ width: 80%;
     resize: none;
     width: 400px;
     height: 75px;
+}
+#courseName{
+    font-size: 17px;
+    font-weight: bold;
+    margin-left: 14px;
+
+
 }
 /*tr::hover {*/
 

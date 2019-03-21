@@ -27,15 +27,12 @@
             <a href="/student/logout"> <i class="fas fa-sign-out-alt" id="userIcon"></i>Logout</a>
         </div>
     </div>
-    <a href="/student/search"><i class="fas fa-search" id="userIcon"></i>Search</a>
+    <a href="/student/search"><i class="fas fa-check" id="userIcon"></i>Your Quizzes</a>
     <a href="/contact"> <i class="fas fa-envelope" id="userIcon"></i>Contact Us</a>
     <a href="javascript:void(0);" class="burger" onclick="burgerNav()">&#9776;</a>
 </div>
 <br>
-<div id="center">
-    <label for="searchInput"><input type="search" id="searchText" name="searchInput"></label>
-    <input type="button" id="searchButton" class="buttons" value="search">
-</div>
+
 <table>
     <caption class="tablecap">Results</caption>
     <tr>
@@ -45,18 +42,15 @@
         <th>Grade</th>
 
     </tr>
-    <td>CO530</td>
-    <td>Introduction to Web Development</td>
-    <td>Week 1 assessment</td>
-    <td>62%</td>
 
-
+    <?php foreach($grades as $grade):?>
     <tr>
-        <td>CO213</td>
-        <td>Theory of Computing</td>
-        <td>week 2 assessment</td>
-        <td>55%</td>
+        <td><?php echo $grade->moduleCode ?></td>
+        <td><?php echo $grade->moduleName ?></td>
+        <td><?php echo $grade->quizTitle ?></td>
+        <td><?php echo $grade->grade?>%</td>
     </tr>
+    <?php endforeach; ?>
 
 </table>
 </body>

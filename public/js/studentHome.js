@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     // Get element that opens the popup
     var popup = document.getElementById('popup');
     // Get element that opens the popup
-    var openPopup = document.getElementById("popupButton");
+    var openPopup = document.getElementById("takeQuizButton");
     // Get the <span> element that closes the popup
     var exitButton = document.getElementsByClassName("exit")[0];
     // When the user clicks openPopup, open the popup

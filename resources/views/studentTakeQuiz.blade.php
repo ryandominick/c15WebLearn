@@ -30,7 +30,7 @@
             <a href="/student/logout"> <i class="fas fa-sign-out-alt" id="userIcon"></i>Logout</a>
         </div>
     </div>
-    <a href="/student/search"><i class="fas fa-search" id="userIcon"></i>Search</a>
+    <a href="/student/search"><i class="fas fa-check" id="userIcon"></i>Your Quizzes</a>
     <a href="/contact"> <i class="fas fa-envelope" id="userIcon"></i>Contact Us</a>
     <a href="javascript:void(0);" class="burger" onclick="burgerNav()">&#9776;</a>
 </div>

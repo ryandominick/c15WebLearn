@@ -40,6 +40,6 @@
 <h1>Account Details</h1>
 Firstname: <input type="text" name="foo" id="firstname" value="<?php echo Auth::user()->firstName?>" disabled><br>
 Surname: <input type="text" name="foo" id="surname" value="<?php echo Auth::user()->lastName?>" disabled><br>
-Email Address: <input type="text" id="email" name="foo" value="<?php echo Auth::user()->email?>" disabled>
+Email Address: <input type="text" id="emailProfile" name="foo" value="<?php echo Auth::user()->email?>" disabled>
 </body>
 </html>
