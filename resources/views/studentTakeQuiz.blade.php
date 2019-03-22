@@ -15,16 +15,26 @@
 <div class="smallLogo">
     <img src="/images/GradiQuiz_Logo.png" style="height: 90px;" alt="logo"/>
 </div>
-<nav class="topnav">
-    <a id="leftNav" href="/teacher/home">Home</a>
-    <a id="leftNav" href="/student/results">My results</a>
-    <a id="leftNav" href="StudentProfile.html">My Profile</a>
-    <a id="rightNav" href="/contact">Contact Us</a>
-    <a id="rightNav" href="/html/">Log out</a>
-</nav>
+<div class="navigation" id="navBar">
+    <a href="/student/home"> <i class="fas fa-home" id="homeIcon"></i>Home</a>
+
+    <div class="profileDropdown">
+        <button class="dropDownButton"><i class="fas fa-user-tie" id="userIcon"></i> <?php echo Auth::user()->firstName?>
+            <i class="fa fa-caret-down" id="dropdwn"></i>
+        </button>
+        <div class="dropdownLinksTeacher">
+            <a href="/student/profile"><i class="fas fa-user-tie" id="userIcon"></i>Profile</a>
+            <a href="/student/results"><i class="fas fa-poll" id="userIcon"></i>Results</a>
+
+            <a href="/student/logout"> <i class="fas fa-sign-out-alt" id="userIcon"></i>Logout</a>
+        </div>
+    </div>
+    <a href="/student/search"><i class="fas fa-check" id="userIcon"></i>Your Quizzes</a>
+    <a href="/contact"> <i class="fas fa-envelope" id="userIcon"></i>Contact Us</a>
+    <a href="javascript:void(0);" class="burger" onclick="burgerNav()">&#9776;</a>
+</div>
 
 <h2 id="quizHeader">{{$quizTitle}}</h2>
-
 
 
 <form id ="takeQuizForm">
@@ -42,13 +52,13 @@
 
         <div class = "takeQuestionContainer">
             <br>
-                 <fieldset class="radiogroup">
+                 <fieldset class="radiogroup" >
 
-                     <legend>{{$mQuestion[0]}}</legend>
-                <label ><input type="radio" name={{$i}} class="mcOption" value='{ "mcID" : "{{$mQuestion[1]}}" ,"text" : "{{$mQuestion[2]}}" }' >{{$mQuestion[2]}}</label> <br>
-                <label ><input type="radio" name={{$i}} class="mcOption" value='{ "mcID" : "{{$mQuestion[1]}}" ,"text" : "{{$mQuestion[3]}}" }' >{{$mQuestion[3]}}</label> <br>
-                <label ><input type="radio" name={{$i}} class="mcOption" value='{ "mcID" : "{{$mQuestion[1]}}" ,"text" : "{{$mQuestion[4]}}" }' >{{$mQuestion[4]}}</label> <br>
-                <label ><input type="radio" name={{$i}} class="mcOption" value='{ "mcID" : "{{$mQuestion[1]}}" ,"text" : "{{$mQuestion[5]}}" }' >{{$mQuestion[5]}}</label> <br>
+                     <legend id="questionText">{{$mQuestion[0]}}</legend>
+                <label ><input type="radio" id ="radioSpace" name={{$i}} class="mcOption" value='{ "mcID" : "{{$mQuestion[1]}}" ,"text" : "{{$mQuestion[2]}}" }' >{{$mQuestion[2]}}</label> <br>
+                <label ><input type="radio" id ="radioSpace" name={{$i}} class="mcOption" value='{ "mcID" : "{{$mQuestion[1]}}" ,"text" : "{{$mQuestion[3]}}" }' >{{$mQuestion[3]}}</label> <br>
+                <label ><input type="radio" id ="radioSpace" name={{$i}} class="mcOption" value='{ "mcID" : "{{$mQuestion[1]}}" ,"text" : "{{$mQuestion[4]}}" }' >{{$mQuestion[4]}}</label> <br>
+                <label ><input type="radio" id ="radioSpace" name={{$i}} class="mcOption" value='{ "mcID" : "{{$mQuestion[1]}}" ,"text" : "{{$mQuestion[5]}}" }' >{{$mQuestion[5]}}</label> <br>
 
                  </fieldset>
             <div id={{$q}}></div>
@@ -98,6 +108,7 @@
             <input type="hidden" name={{$i}} class="javascriptAnswer" value="" id="studentAnswer">
 
             </div>
+            <textarea name="{{$i}}" id="jsQuestion" size="50" form="takeQuizForm" placeholder="Write your javascript function here..."></textarea> <br> <div id={{$q}}></div>
         </div>
 
         <?php $i++;

@@ -5,8 +5,6 @@
     <title>Student Homepage</title>
     <link rel="stylesheet" type="text/css" href="/css/projstyle.css">
     <script type="text/javascript" src="/js/studentHome.js"></script>
-    <script type="text/javascript" src="/js/studentSearch.js"></script>
-
     <script type="text/javascript" src="/js/navBar.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
@@ -24,7 +22,6 @@
             <i class="fa fa-caret-down" id="dropdwn"></i>
         </button>
         <div class="dropdownLinks">
-            <a href="/student/profile"><i class="fas fa-user-graduate" id="userIcon"></i>Profile</a>
             <a href="/student/results"><i class="fas fa-poll" id="userIcon"></i>Results</a>
             <a href="/student/logout"> <i class="fas fa-sign-out-alt" id="userIcon"></i>Logout</a>
         </div>
@@ -34,23 +31,14 @@
     <a href="javascript:void(0);" class="burger" onclick="burgerNav()">&#9776;</a>
 </div>
 <br>
-<h2 class="welcome"></h2>
-<table id="studentTable">
-<caption class="tablecap">My Deadlines</caption>
-<tr>
-    <th>Module Code</th>
-    <th>Quiz Title</th>
-    <th id="duedate">Due Date</th>
-    <th>Time Allocated</th>
-</tr>
+<h1>Account Details</h1>
+                                                        <!--Get current logged in user's firstName-->
+Firstname: <input type="text" name="foo" id="firstname" value="<?php echo Auth::user()->firstName?>" disabled><br>
+                                                        <!--Get current logged in user's lastName-->
+Surname: <input type="text" name="foo" id="surname" value="<?php echo Auth::user()->lastName?>" disabled><br>
+                                                        <!--Get current logged in user's email address-->
+Email Address: <input type="text" size="35" id="emailProfile" name="foo" value="<?php echo Auth::user()->email?>" disabled><br>
 
-<?php foreach($modules as $module):?>
-<tr>
-    <td><?php echo $module->moduleCode ?></td>
-    <td><?php echo $module->quizTitle ?></td>
-    <td><?php echo $module->quizEnd ?></td>
-    <td><?php echo $module->duration?> Minutes</td>
-</tr>
-<?php endforeach; ?>
-</table>
+Course name: <input type="text" size="25" id="courseName" name="foo" value="<?php echo $courseName->courseName ?>" disabled>
+</body>
 </html>

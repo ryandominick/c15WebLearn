@@ -24,4 +24,13 @@ class Result extends Model
 
 
     }
+
+    public static function getGradesByStudentID($studentID)
+    {
+        return DB::select("SELECT Module.moduleName, Module.moduleCode, TeacherQuiz.quizTitle, Result.grade
+FROM Module 
+INNER JOIN TeacherQuiz ON TeacherQuiz.moduleCode = Module.moduleCode 
+INNER JOIN Result ON Result.quizID = TeacherQuiz.quizID 
+WHERE Result.studentID = :studentID", ['studentID' => $studentID]);
+    }
 }

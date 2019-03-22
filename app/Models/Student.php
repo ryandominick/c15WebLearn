@@ -56,8 +56,8 @@ class Student extends Authenticatable
 
     }
 
-
-
-
-
+    public static function getCourseNameByStudentID ($studentID)
+    {
+        return DB::select("SELECT `courseName` FROM `Course` INNER JOIN Student ON Student.courseID = Course.courseID WHERE Student.id = :studentID", ['studentID' => $studentID]);
+    }
 }

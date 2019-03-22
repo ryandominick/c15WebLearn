@@ -499,13 +499,19 @@ width: 80%;
 }
 
 .takeQuestionContainer {
+    display: inline-block;
     border-style: inset;
-    border-color: #9cadff;
+    border-color: #8FCDFF;
     border-radius: 25px;
     border-width: 3px;
-    background-color: rgb(194, 208, 255);
+    background-color: #e0f0ff;
     padding-top: 10px;
     padding-bottom: 20px;
+    width: 99%;
+}
+/* For all input types that are radio, include this spacing*/
+#radioSpace{
+    margin: 10px 10px;
 }
 
 /*Type of question caption*/
@@ -759,6 +765,8 @@ width: 80%;
     text-align: center;
 }
 #quizHeader{
+    font-size: 28px;
+    margin-top: 45px;
     text-align: center;
 }
 #center{
@@ -1035,7 +1043,7 @@ width: 80%;
     font-weight: bold;
 }
 
-#popupButton{
+#takeQuizButton{
     margin:auto;
     cursor: pointer;
     color: white;
@@ -1051,7 +1059,7 @@ width: 80%;
     transition-duration: 0.4s;
 }
 
-#popupButton:hover{
+#takeQuizButton:hover{
     background-color: #3cb43c;
     border-radius: 8px;
     border-color:  #a7ffb2;
@@ -1088,6 +1096,7 @@ width: 80%;
     height: 100px;
     font-size: 19px;
     display: none;
+    color: red;
 
 }
 
@@ -1107,10 +1116,6 @@ width: 80%;
     border-bottom: none;
     border-left: none;
     border-right: none;
-}
-
-.contactContainer {
-
 }
 
 #fullName, #contactEmail, #contactMessage, #subjectEmail{
@@ -1148,6 +1153,125 @@ width: 80%;
 
 .contactCaptions{
     font-weight: bold;
+}
+
+#grade{
+    color: green;
+    text-align: center;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+#questionText{
+    font-weight: bold;
+    font-size: 19px;
+}
+
+.questionText{
+    font-weight: bold;
+    font-size: 18px;
+    padding: 0px 10px 0px 20px;
+}
+.radiogroup {
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
+    padding: 10px 10px 0px 20px;
+}
+#mcOption{
+    font-size: 17px;
+    margin-right: 0px;
+}
+
+#quizSubmit{
+    margin:auto;
+    cursor: pointer;
+    color: white;
+    background-color: #237e07;
+    border-radius: 8px;
+    border-color: #298303;
+    padding: 5px 15px 5px 15px;
+    font-weight: bold;
+    font-size: 19px;
+    outline: none;
+    box-shadow: 0 10px 16px 2px rgba(0,0,0,0.18);
+    -webkit-transition-duration: 0.7s;
+    transition-duration: 0.4s;
+}
+#quizSubmit:hover{
+    background-color: #3cb43c;
+    border-radius: 8px;
+    border-color:  #a7ffb2;
+    font-size: 25px;
+    color: white;
+}
+#takeQuiz{
+    margin:auto;
+    cursor: pointer;
+    color: white;
+    background-color: #237e07;
+    border-radius: 8px;
+    border-color: #298303;
+    padding: 5px 15px 5px 15px;
+    font-weight: bold;
+    font-size: 18px;
+    outline: none;
+    box-shadow: 0 10px 16px 2px rgba(0,0,0,0.18);
+    -webkit-transition-duration: 0.7s;
+    transition-duration: 0.4s;
+}
+
+#takeQuiz:hover{
+    background-color: #3cb43c;
+    border-radius: 8px;
+    border-color:  #a7ffb2;
+    font-size: 22px;
+    color: white;
+}
+.pages{
+    border-style: solid;
+    border-color: #1B2F7E;
+}
+#firstname{
+    font-size: 17px;
+    font-weight: bold;
+    margin-left: 33px;
+}
+#surname{
+    font-size: 17px;
+    font-weight: bold;
+    margin-left: 41px;
+
+}
+#emailProfile{
+    font-size: 17px;
+    font-weight: bold;
+}
+.incorrect{
+    color: red;
+    font-size: 20px;
+    font-weight: bold;
+}
+.correct{
+    color: green;
+    font-size: 20px;
+    font-weight: bold;
+
+}
+#jsQuestion{
+    font-weight: bold;
+    font-size: 18px;
+    margin-left: 60px;
+    resize: none;
+    width: 400px;
+    height: 75px;
+}
+#courseName{
+    font-size: 17px;
+    font-weight: bold;
+    margin-left: 14px;
+
+
 }
 /*tr::hover {*/
 

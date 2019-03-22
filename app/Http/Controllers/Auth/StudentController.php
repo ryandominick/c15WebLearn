@@ -3,7 +3,10 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Models\Module;
+use App\Models\Quiz;
+use App\Models\Student;
+use App\Models\Result;
+use Auth;
 
 class StudentController extends Controller
 {
@@ -26,19 +29,25 @@ class StudentController extends Controller
      */
     public function index()
     {
-
-        $modules = Module::getQuizInfo();
+        $modules = Quiz::getQuizzesByStudentID(Auth::user()->id);
         return view('studentHomepage', array('modules' => $modules));
     }
 
 
     public function results()
     {
-        return view('myResults');
+        $grades = Result::getGradesByStudentID(Auth::user()->id);
+        return view('myResults', array('grades' => $grades));
     }
 
     public function contactUs()
     {
         return view('contact');
+    }
+
+    public function profile()
+    {
+        $courseName = Student::getCourseNameByStudentID(Auth::user()->id)[0];
+        return view('studentProfile', array('courseName' => $courseName));
     }
 }

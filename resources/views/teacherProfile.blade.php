@@ -2,19 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Manage Students</title>
-    <link rel="stylesheet" type="text/css" href="/css/projstyle.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script type="text/javascript" src="/js/navBar.js"></script>
+    <title>TeacherHomepage</title>
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/css/projstyle.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-    <script type="text/javascript" src="/js/manageStudents.js"></script>
+    <script type="text/javascript" src="/js/navBar.js"></script>
+
 </head>
 <body>
-
 <div class="smallLogo">
     <img src="/images/GradiQuiz_Logo.png" style="height: 90px;" alt="logo"/>
 </div>
+
 <div class="navigation" id="navBar">
     <a href="/teacher/home"> <i class="fas fa-home" id="homeIcon"></i>Home</a>
 
@@ -24,6 +25,7 @@
         </button>
         <div class="dropdownLinksTeacher">
             <a href="/teacher/profile"><i class="fas fa-user-tie" id="userIcon"></i>Profile</a>
+            <a href="/teacher/manageStudents"><i class="fas fa-user-graduate" id="userIcon"></i>Manage Students</a>
             <a href="/teacher/logout"> <i class="fas fa-sign-out-alt" id="userIcon"></i>Logout</a>
         </div>
     </div>
@@ -31,50 +33,13 @@
     <a href="/teacher/createquiz"> <i class="fas fa-edit" id="userIcon"></i> Create a quiz</a>
     <a href="javascript:void(0);" class="burger" onclick="burgerNav()">&#9776;</a>
 </div>
+
+<!--<a id="rightNav" href="/contact">Contact Us</a> DISABLE until fixed-->
 <br>
-
 <h2 class="welcome"></h2>
-<table>
-    <caption class="tablecap">Your students</caption>
-
-    <tr>
-        <th>Student Name</th>
-        <th>Degree Title</th>
-        <th>Remove Student</th>
-    </tr>
-
-    <tr>
-        <td>Cole Hart</td>
-        <td>Computer Science</td>
-        <td><button class="removeStudentButton">Remove</button></td>
-    </tr>
-
-    <tr>
-        <td>Harry Bennett</td>
-        <td>Computer Science</td>
-        <td><button class="removeStudentButton">Remove</button></td>
-    </tr>
-
-    <tr>
-        <td>Tim Grey</td>
-        <td>Computer Science</td>
-        <td><button class="removeStudentButton">Remove</button></td>
-    </tr>
-</table>
-<!-- modal container -->
-<div id="popup" class="modal">
-
-    <!-- modal content -->
-    <div class="popupContent">
-        <div class="modal-top">
-            <span class="exit">&times;</span>
-            <h2>Remove Student</h2>
-        </div>
-        <div class="modal-body">
-            <h3 id="removeStudentPopup">Are you sure you want to remove this student?</h3>
-            <button type="button" id="deleteStudentConfirm">Delete<i id="studentTrash" class="fa fa-trash"></i></button>
-        </div>
-    </div>
-</div>
+<h1>Account Details</h1>
+Firstname: <input type="text" name="foo" id="firstname" value="<?php echo Auth::user()->firstName?>" disabled><br>
+Surname: <input type="text" name="foo" id="surname" value="<?php echo Auth::user()->lastName?>" disabled><br>
+Email Address: <input type="text" id="emailProfile" name="foo" value="<?php echo Auth::user()->email?>" disabled>
 </body>
 </html>
