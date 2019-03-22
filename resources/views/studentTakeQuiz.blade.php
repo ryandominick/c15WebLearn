@@ -29,7 +29,7 @@
 
 <form id ="takeQuizForm">
 
-    <input type="hidden" name="quizID" value="{{$quizID}}">
+    <input id="quizID" type="hidden" name="quizID" value="{{$quizID}}">
 
     <?php $i = 0;
           $q = 0;?>
@@ -74,7 +74,7 @@
             <input type="text" class="inputQuestion" name={{$i}}><br>  <div id={{$q}}></div> </div>
 
         <?php $i++;
-                  $q++;?>
+                $q++;?>
 
     @endforeach
 
@@ -84,12 +84,20 @@
         <br>
 
         <div class = "takeQuestionContainer">
+            <div class = "jsQuestionContainer" id ="{{$jQuestion->jsType}}">
             <p class="questionText">{{$jQuestion->jsQuestion}}</p>
-            <input type="hidden" name={{$i}} class="javascriptQuestionIDs" value={{$jQuestion->jsID}}>
+            <input type="hidden" name={{$i}} class="javascriptQuestionIDs" value="{{$jQuestion->jsID}}">
 
             <?php $i++ ?>
 
-            <textarea name="{{$i}}" form="takeQuizForm">Write your Javascript function here</textarea> <br> <div id={{$q}}></div>
+            <textarea type="string" id="codeArea" form="takeQuizForm">Write your Javascript function here</textarea> <br> <div id={{$q}}></div>
+
+            <?php $i++ ?>
+            <input type="hidden" class="jsParam" value="{{$jQuestion->jsInput}}" id="jsParameter">
+            <?php $i++ ?>
+            <input type="hidden" name={{$i}} class="javascriptAnswer" value="" id="studentAnswer">
+
+            </div>
         </div>
 
         <?php $i++;

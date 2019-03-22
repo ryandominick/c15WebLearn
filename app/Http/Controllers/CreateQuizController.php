@@ -114,7 +114,7 @@ class CreateQuizController extends Controller
             $jsQuestion = Input::get('jsQuestion');
             $jsInput = Input::get('jsInput');
             $jsOutput = Input::get('jsOutput');
-            $jsType = Input::get('jsOutput');
+            $jsType = Input::get('jsType');
 
             for ($i = 0; $i < $jsCount; $i++) {
 

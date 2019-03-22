@@ -27,4 +27,13 @@ class JSQuestion extends Model
     }
 
 
+    public static function retrieveParameters($quizID){
+
+        $parameters = DB::select('select jsInput from JSQuestion where (quizID = :quizID)', ['quizID' => $quizID]);
+        return $parameters;
+    }
+
+
+
+
 }

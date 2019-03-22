@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\JSQuestion;
 use App\Models\TeacherQuiz;
 use App\Models\MCQuestion;
 use App\Models\InputQuestion;
@@ -182,6 +183,23 @@ class StudentTakeQuizController extends Controller
 
 
 
+    }
+
+    public function getParameters(Request $request){
+
+        $quiz = $request->input('quizID');
+        $results = JSQuestion::retrieveParameters($quiz);
+        $count = count($results);
+        $paramArray = array();
+        for($i = 0; $i < $count; $i++){
+            $extractparam = get_object_vars($results[$i]);
+            $paramArray[$i] = $extractparam['jsInput'];
+            $paramCount = count($paramArray);
+            for($j = 0; $j < $paramCount; $j++){
+                $questionParams = explode("," , $paramArray[$j]);
+            }
+        }
+        return Response()->json(['parameter'=>$questionParams]);
     }
 
 }

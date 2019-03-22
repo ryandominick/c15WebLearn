@@ -75,7 +75,7 @@ class TeacherQuiz extends Model
 
     public static function getJSQuestions($quizID){
 
-        $results = DB::select('SELECT i.jsID, i.jsQuestion FROM JSQuestion AS i WHERE i.quizID = :quizID', ['quizID' => $quizID]);
+        $results = DB::select('SELECT i.jsID, i.jsQuestion, i.jsInput, i.jsOutput, i.jsType FROM JSQuestion AS i WHERE i.quizID = :quizID', ['quizID' => $quizID]);
 
         return $results;
 

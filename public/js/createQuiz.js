@@ -81,7 +81,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 '<br><br> ' +
                 '<select name="type" class="inputAnswer" >\n' +
                 '<option value="" disabled selected>Select a datatype for the expected output</option>\n' +
-                '<option value="int">Int</option>\n' +
                 '<option value="string">String</option>\n' +
                 '<option value="array">Array</option>\n' +
                 '</select>' +
