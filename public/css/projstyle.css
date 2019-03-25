@@ -1268,12 +1268,12 @@ width: 80%;
 #firstname{
     font-size: 17px;
     font-weight: bold;
-    margin-left: 33px;
+    margin-left: 37px;
 }
 #surname{
     font-size: 17px;
     font-weight: bold;
-    margin-left: 41px;
+    margin-left: 44px;
 
 }
 #emailProfile{
@@ -1302,11 +1302,13 @@ width: 80%;
 #courseName{
     font-size: 17px;
     font-weight: bold;
-    margin-left: 14px;
-
-
+    margin-left: 8px;
 }
-
+#accountInfo{
+    font-size: 17px;
+    font-weight: bold;
+    margin-left: 33px;
+}
 
 /* Ben's hidden fields for table data */
 
