@@ -95,7 +95,7 @@
     <button class="addQuestions" id="addJavascriptQuestions">Add Javascript Question</button>
     <br>
     <br>
-    <button id="submitQuizButton" type="submit" value="Submit">Submit Quiz!</button>
+    <button id="submitQuizButton" type="submit" form="quizInfo" value="Submit">Submit Quiz!</button>
 </div>
 </div>
 

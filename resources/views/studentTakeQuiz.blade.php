@@ -69,6 +69,27 @@
 
     @endforeach
 
+    @foreach($jQuestions as $jQuestion)
+
+        <br>
+        <br>
+
+        <div class = "takeQuestionContainer">
+            <div class = "jsQuestionContainer">
+                <p class="questionText">{{$jQuestion->jsQuestion}}</p>
+                <input type="hidden" name={{$i}} class="javascriptQuestionIDs" value="{{$jQuestion->jsID}}">
+
+                <?php $i++ ?>
+                <input type="hidden" name={{$i}} class="javascriptAnswer" value="" id="studentAnswer">
+
+                <textarea id="jsQuestion" size="50" form="takeQuizForm" placeholder="Write your javascript function here..."></textarea> <br> <div id={{$q}}></div>
+            </div>
+        </div>
+
+        <?php $i++;
+        $q++;?>
+    @endforeach
+
     @foreach( $iQuestions as $iQuestion)
 
         <br>
@@ -88,32 +109,7 @@
 
     @endforeach
 
-    @foreach($jQuestions as $jQuestion)
 
-        <br>
-        <br>
-
-        <div class = "takeQuestionContainer">
-            <div class = "jsQuestionContainer" id ="{{$jQuestion->jsType}}">
-            <p class="questionText">{{$jQuestion->jsQuestion}}</p>
-            <input type="hidden" name={{$i}} class="javascriptQuestionIDs" value="{{$jQuestion->jsID}}">
-
-            <?php $i++ ?>
-
-            <textarea type="string" id="codeArea" form="takeQuizForm">Write your Javascript function here</textarea> <br> <div id={{$q}}></div>
-
-            <?php $i++ ?>
-            <input type="hidden" class="jsParam" value="{{$jQuestion->jsInput}}" id="jsParameter">
-            <?php $i++ ?>
-            <input type="hidden" name={{$i}} class="javascriptAnswer" value="" id="studentAnswer">
-
-            </div>
-            <textarea name="{{$i}}" id="jsQuestion" size="50" form="takeQuizForm" placeholder="Write your javascript function here..."></textarea> <br> <div id={{$q}}></div>
-        </div>
-
-        <?php $i++;
-        $q++;?>
-    @endforeach
 
         <br>
         <br>

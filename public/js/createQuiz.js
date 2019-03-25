@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("addInputQuestions").addEventListener("click", showSubmitQuiz);
     document.getElementById("addJavascriptQuestions").addEventListener("click", showSubmitQuiz);
     document.getElementById("quizTimerInput").addEventListener("keyup", timerLimit);
-    document.getElementById("submitQuizButton").addEventListener("click", submitAll);
+    document.getElementById("submitQuizButton").addEventListener("click", submit);
     document.addEventListener("click", function(e){
         if(e.target && e.target.id === 'deleteQuestion'){
             e.preventDefault();
@@ -31,15 +31,15 @@ document.addEventListener("DOMContentLoaded", function () {
                 '<button type="button" id="deleteQuestion">Delete<i class="fa fa-trash"></i></button>' +
                 '<h3 class = "questionCaption">Multiple Choice Question: <span id="countCaption">' + count + '</span></h3>' +
                 '<br>' +
-                '<input type="text" size = "200" class="mcQuestion" name="mcQuestion[]" placeholder="Enter your question here"/>' +
+                '<input type="text" size = "200" class="mcQuestion" name="mcQuestion[]" placeholder="Enter your question here" required/>' +
                 ' <br><br> ' +
-                '<input type="text" size = "100"  class="mcCorrectAnswer" name="mcCorrectAnswer[]" placeholder="Enter the correct answer"/>' +
+                '<input type="text" size = "100"  class="mcCorrectAnswer" name="mcCorrectAnswer[]" placeholder="Enter the correct answer" required/>' +
                 '<br><br>' +
-                ' <input type="text" size = "100" class="mcIncorrectAnswer" name="mcIncorrectAnswer1[]" placeholder="Enter the incorrect answer here"/>' +
+                ' <input type="text" size = "100" class="mcIncorrectAnswer" name="mcIncorrectAnswer1[]" placeholder="Enter the incorrect answer here" required/>' +
                 '<br> ' +
-                '<input type="text" size = "100" class="mcIncorrectAnswer" name="mcIncorrectAnswer2[]" placeholder="Enter the incorrect answer here"/>' +
+                '<input type="text" size = "100" class="mcIncorrectAnswer" name="mcIncorrectAnswer2[]" placeholder="Enter the incorrect answer here" required/>' +
                 '<br>' +
-                '<input type="text" size = "100"  class="mcIncorrectAnswer" name="mcIncorrectAnswer3[]" placeholder="Enter the incorrect answer here"/>' +
+                '<input type="text" size = "100"  class="mcIncorrectAnswer" name="mcIncorrectAnswer3[]" placeholder="Enter the incorrect answer here" required/>' +
                 '</div>'); //Add 4 inputs for the question, correct ans and incorrect ans on button click.
             count++;
         } else { //else, alert user the max has been reached
@@ -55,9 +55,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 '<button type="button" id="deleteQuestion">Delete<i class="fa fa-trash"></i></button>' +
                 '<h3 class = "questionCaption">Input Question: <span id="countCaption">' + count + '</span></h3>' +
                 '<br>' +
-                '<input type="text" class="inputQuestion" name="inputQuestion[]" placeholder="Enter your question here"/> ' +
+                '<input type="text" class="inputQuestion" name="inputQuestion[]" placeholder="Enter your question here" required/> ' +
                 '<br><br> ' +
-                '<input type="text" class="inputAnswer" name="inputAnswer[]" placeholder="Enter answer here"/>' +
+                '<input type="text" class="inputAnswer" name="inputAnswer[]" placeholder="Enter answer here" required/>' +
                 '<br><br>' +
                 '</div>'); //Add two input fields for the input question on button click
             count++;
@@ -73,17 +73,54 @@ document.addEventListener("DOMContentLoaded", function () {
                 '<button type="button" id="deleteQuestion">Delete<i class="fa fa-trash"></i></button>' +
                 '<h3 class = "questionCaption">Javascript Question: <span id="countCaption">' + count + '</span></h3>' +
                 '<br>' +
-                '<input type="text" class="inputQuestion" name="jsQuestion[]" placeholder="Enter your question here"/> ' +
+                '<input type="text" class="inputQuestion" name="jsQuestion[]" placeholder="Enter your question here" required/> ' +
                 '<br><br> ' +
-                '<input type="text" class="inputQuestion" name="jsInput[]" placeholder="Enter input parameters here"/>' +
+                '<select class="inputQuestion" name="jsInputType1[]"/>' +
+                '<option value = "null" disabled selected>Select a data type</option>' +
+                '<option value = "string">String</option>' +
+                '<option value = "number">Number</option>' +
+                '<option value = "array">Array</option>' +
+                '<option value = "boolean">Boolean</option>'+
+                '</select>'+
+                '<input type="text" class="inputQuestion" name="jsInput1[]" placeholder="input parameters eg: hello" required/>' +
                 '<br><br>' +
-                '<input type="text" class="inputQuestion    " name="jsOutput[]" placeholder="Enter the expected output here"/> ' +
-                '<br><br> ' +
-                '<select name="type" class="inputAnswer" >\n' +
-                '<option value="" disabled selected>Select a datatype for the expected output</option>\n' +
-                '<option value="string">String</option>\n' +
-                '<option value="array">Array</option>\n' +
-                '</select>' +
+                '<select class="inputQuestion" name="jsInputType2[]"/>' +
+                '<option value = "null" disabled selected>Select a data type</option>' +
+                '<option value = "string">String</option>' +
+                '<option value = "number">Number</option>' +
+                '<option value = "array">Array</option>' +
+                '<option value = "boolean">Boolean</option>'+
+                '</select>'+
+                '<input type="text" class="inputQuestion" name="jsInput2[]" placeholder="optional input parameters eg: 3"/>' +
+                '<br><br>' +
+                '<select class="inputQuestion" name="jsInputType3[]"/>' +
+                '<option value = "null" disabled selected>Select a data type</option>' +
+                '<option value = "string">String</option>' +
+                '<option value = "number">Number</option>' +
+                '<option value = "array">Array</option>' +
+                '<option value = "boolean">Boolean</option>'+
+                '</select>'+
+                '<input type="text" class="inputQuestion" name="jsInput3[]" placeholder="optional input parameters eg: [3,2,1]" />' +
+                '<br><br>' +
+                '<select class="inputQuestion" name="jsInputType4[]"/>' +
+                '<option value = "null" disabled selected>Select a data type</option>' +
+                '<option value = "string">String</option>' +
+                '<option value = "number">Number</option>' +
+                '<option value = "array">Array</option>' +
+                '<option value = "boolean">Boolean</option>'+
+                '</select>'+
+                '<input type="text" class="inputQuestion" name="jsInput4[]" placeholder="optional input parameters eg: true"/>' +
+                '<br><br>' +
+                '<select class="inputQuestion" name="jsInputType5[]"/>' +
+                '<option value = "null" disabled selected>Select a data type</option>' +
+                '<option value = "string">String</option>' +
+                '<option value = "number">Number</option>' +
+                '<option value = "array">Array</option>' +
+                '<option value = "boolean">Boolean</option>'+
+                '</select>'+
+                '<input type="text" class="inputQuestion" name="jsInput5[]" placeholder="optional input parameters"/>' +
+                '<br><br>' +
+                '<input type="text" class="inputQuestion" name="jsOutput[]" placeholder="Enter the expected output here" required/> ' +
                 '<br><br> ' +
                 '</div>'); //Add two input fields for the input question on button click
             count++;
@@ -113,9 +150,11 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    function submit(){
 
-    function submitAll(){
-        document.getElementById("quizInfo").submit();
+        var inputTime = document.getElementById("quizTimerInput").value;
+        document.getElementById("quizTimerInput").value = inputTime * 60;
     }
+
 
 });

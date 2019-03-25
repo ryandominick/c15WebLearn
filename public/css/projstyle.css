@@ -505,9 +505,10 @@ width: 80%;
     border-radius: 25px;
     border-width: 3px;
     background-color: #e0f0ff;
+    transform: translateX(20%);
     padding-top: 10px;
     padding-bottom: 20px;
-    width: 99%;
+    width: 70%;
 }
 /* For all input types that are radio, include this spacing*/
 #radioSpace{

@@ -112,13 +112,24 @@ class CreateQuizController extends Controller
         if(Input::get('jsQuestion') != null) {
             $jsCount = count(Input::get('jsQuestion'));
             $jsQuestion = Input::get('jsQuestion');
-            $jsInput = Input::get('jsInput');
+            $jsInput1 = Input::get('jsInput1');
+            $jsInput1Type = Input::get('jsInputType1');
+            $jsInput2 = Input::get('jsInput2');
+            $jsInput2Type = Input::get('jsInputType2');
+            $jsInput3 = Input::get('jsInput3');
+            $jsInput3Type = Input::get('jsInputType3');
+            $jsInput4 = Input::get('jsInput4');
+            $jsInput4Type = Input::get('jsInputType4');
+            $jsInput5 = Input::get('jsInput5');
+            $jsInput5Type = Input::get('jsInputType5');
             $jsOutput = Input::get('jsOutput');
-            $jsType = Input::get('jsType');
 
             for ($i = 0; $i < $jsCount; $i++) {
+                //concatenate inputs so they can be stored in 1 field in the database. Separated with ",+-+," to allow
+                //separation when retrieving. Separator is used so that arrays seperated with "," are unaffected.
+                $jsInput = $jsInput1Type[$i].$jsInput1[$i].",+-+,".$jsInput2Type[$i].$jsInput2[$i].",+-+,".$jsInput3Type[$i].$jsInput3[$i].",+-+,".$jsInput4Type[$i].$jsInput4[$i].",+-+,".$jsInput5Type[$i].$jsInput5[$i];
 
-                JSQuestion::addQuestionJS($jsQuestion[$i], $jsInput[$i], $jsOutput[$i], $jsType[$i], $newID);
+                JSQuestion::addQuestionJS($jsQuestion[$i], $jsInput, $jsOutput[$i], $newID);
             }
         }
 

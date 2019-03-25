@@ -75,7 +75,7 @@ class TeacherQuiz extends Model
 
     public static function getJSQuestions($quizID){
 
-        $results = DB::select('SELECT i.jsID, i.jsQuestion, i.jsInput, i.jsOutput, i.jsType FROM JSQuestion AS i WHERE i.quizID = :quizID', ['quizID' => $quizID]);
+        $results = DB::select('SELECT i.jsID, i.jsQuestion, i.jsInput, i.jsOutput FROM JSQuestion AS i WHERE i.quizID = :quizID', ['quizID' => $quizID]);
 
         return $results;
 
@@ -99,7 +99,7 @@ class TeacherQuiz extends Model
     public static function confirmQuestionCount($quizID){
 
        $result = DB::select("SELECT SUM(c) AS qcount FROM (SELECT COUNT(*) AS c FROM MCQuestion WHERE quizID = :quizID UNION ALL SELECT 
-                          COUNT(*) AS c FROM InputQuestion WHERE quizID = :quizID1) AS a1;", ["quizID" => $quizID, "quizID1" => $quizID]);
+                          COUNT(*) AS c FROM InputQuestion WHERE quizID = :quizID1 UNION ALL SELECT COUNT(*) AS c FROM JSQuestion WHERE quizID = :quizID2) AS a1;", ["quizID" => $quizID, "quizID1" => $quizID, "quizID2" => $quizID]);
 
        return $result;
 

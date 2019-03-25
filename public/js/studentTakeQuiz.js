@@ -9,82 +9,93 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
-    $('#quizSubmit').click(function(){ajaxCall('/student/quiz/getparam', 'POST',$("#quizID").serialize(), "json", function(results){
+    $('#quizSubmit').click(function(){ajaxCall('/student/quiz/getparam', 'POST',$("#quizID").serialize(), "json", function(results) {
 
-        if(results.parameter != null){
-        let i = 0;
-            $('.jsQuestionContainer').each(function() {
+        if (results.parameter != null) {
+            let i = 0;
+            $('.jsQuestionContainer').each(function () {
 
+                if($(this).find('#jsQuestion').val() != null) {
+                    //  if ($(this).attr("id") === "string") {
 
-                  //  if ($(this).attr("id") === "string") {
-
-                        code = $("#codeArea").val();
-                        let result = results.parameter[i];
-                        let params = result.split(",");
-
-                        var func = new Function('params'){}
-
-                        if(params[1] !== undefined){
-                            let x = params[0];
-                            let y = params[1];
-                            var sum2 = new Function('x', 'y', code);
-                            sum2(x, y);
-                            i++;
-                            alert(x);
-                            alert(y);
+                    //assign the code from the student's text input
+                    code = $(this).find('#jsQuestion').val();
+                    //code = $("#jsQuestion").val();
+                    //retrieve parameters from ajax call relating to this question
+                    let result = results.parameter[i];
+                    //split the parameters by comma to convert to an array
+                    let params = result.split(",+-+,");
+                    //assign types to each parameter
+                    let parameters = [];
+                    for (j = 0; j < params.length; j++) {
+                        if (params[j].includes("string")) {
+                            let cutSParam = params[j].substring(6);
+                            parameters.push(cutSParam);
                         }
-                    else {
-                            let x = params[0];
-                            var sum1 = new Function('x', code);
-                            sum1(x);
-                            i++;
-                            alert("success");
+                        else if (params[j].includes("number")) {
+                            let cutNParam = params[j].substring(6);
+                            let numberParam = Number(cutNParam);
+                            parameters.push(numberParam);
+                            //alert("num");
+                        }
+                        else if (params[j].includes("array")) {
+                            let cutAParam = params[j].substring(5);
+                            let tagRemove = cutAParam.slice(1, cutAParam.length - 1);
+                            let separate = tagRemove.split(",");
+                            parameters.push(separate);
+                            //alert("array");
+                        }
+                        else if (params[j].includes("boolean")) {
+                            let cutBParam = params[j].substring(7);
+                            let boolParam = (cutBParam === "true");
+                            parameters.push(boolParam);
+                            //alert("bool");
                         }
 
-                //    }
+                    }
 
+                    let sum2 = new Function('x', code);
+                    answer = sum2(parameters);
 
-
-
-
+                    if (answer != null) {
+                        $(this).find('#studentAnswer').val(answer);
+                    }
+                    i++;
+                } else{
+                    $(this).find('#studentAnswer').val("--incorrect--");
+                }
             });
 
 
         }
+        submit();
+
+    })});
+    function submit() {
+        ajaxCall('/student/quiz/submit', 'POST', $("#takeQuizForm").serialize(), "json", function (results) {
+
+            if (results.grade != null) {
+                let cnt = '0';
+                $('#grade').text("You scored: " + results.grade + "%");
+
+                while (results.results[cnt] != null) {
+
+                    if (results.results[cnt] == 1) {
+                        $('#' + cnt).text("correct").addClass("correct");
+                    } else {
+                        $('#' + cnt).text("incorrect").addClass("incorrect");
+                    }
 
 
+                    // $('#'+ cnt).text((results.results[cnt]) == 1? ("correct",this.className= "correct"):("incorrect" , this.className= "incorrect"));
+                    cnt++;
+                }
+            } else {
+                alert(results.alert);
+            }
 
-
-
-
-
-        /*  $('#quizSubmit').click(function(){ajaxCall('/student/quiz/submit', 'POST', $("#takeQuizForm").serialize(), "json", function(results){
-
-             if(results.grade != null){
-                  let cnt = '0';
-                  $('#grade').text("You scored: " + results.grade + "%");
-
-                  while(results.results[cnt] != null){
-
-                      if(results.results[cnt] == 1){
-                          $('#'+ cnt).text("correct").addClass("correct");
-                      }else{
-                          $('#'+ cnt).text("incorrect").addClass("incorrect");
-                      }
-
-
-                     // $('#'+ cnt).text((results.results[cnt]) == 1? ("correct",this.className= "correct"):("incorrect" , this.className= "incorrect"));
-                     cnt++;
-                  }
-             }else{
-                 alert(results.alert);
-             }
-          // alert(results);
-      */
-    }, ajaxFail)});
-
-
-
+        });
+    }
     function ajaxCall(url, type, data, returnType, successFunc, failFunc) {
 
         $.ajax({

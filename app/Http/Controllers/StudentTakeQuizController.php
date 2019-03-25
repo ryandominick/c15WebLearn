@@ -115,6 +115,26 @@ class StudentTakeQuizController extends Controller
             //----------------------------------------------------------------------------------------------------------------------------------
 
             // SECTION TO IMPLEMENT JS INTERPRETER QUESTIONS
+                $jscounter = (JSQuestion::countQuestions($quizID))[0]->jsQuestionC;
+                $z = 0;
+                while ($z < $jscounter){
+                    // gets the id of input question from hidden field
+                    if ($request->has($index)) {
+                        $currentValue1 = $request->input($index);
+                    }
+                    $index++;
+
+                    // gets the text answer of the user
+                    if ($request->has($index)) {
+                        $currentValue = $request->input($index);
+                    }
+
+                    $index++;
+                    $correct += $resultsArray[$count] = (JSQuestion::compareAnswerJS($currentValue1, $currentValue))[0]->correct;
+
+                    $count++;
+                    $z++;
+                }
 
             //----------------------------------------------------------------------------------------------------------------------------------
 
@@ -191,15 +211,12 @@ class StudentTakeQuizController extends Controller
         $results = JSQuestion::retrieveParameters($quiz);
         $count = count($results);
         $paramArray = array();
+
         for($i = 0; $i < $count; $i++){
             $extractparam = get_object_vars($results[$i]);
             $paramArray[$i] = $extractparam['jsInput'];
-            $paramCount = count($paramArray);
-            for($j = 0; $j < $paramCount; $j++){
-                $questionParams = explode("," , $paramArray[$j]);
-            }
         }
-        return Response()->json(['parameter'=>$questionParams]);
+        return Response()->json(['parameter'=>$paramArray]);
     }
 
 }

@@ -153,7 +153,7 @@ $(document).ready(function(){
 
         for (let i = 1; i <= pages; i++) {
 
-            pageTable.append('<td>' + '<p class="pages"  >' + i + '</p>' + 'pageT</td>');
+            pageTable.append('<td>' + '<p class="pages"  >' + i + '</p>' + '</td>');
         }
 
 
