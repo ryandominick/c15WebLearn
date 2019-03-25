@@ -73,52 +73,52 @@ document.addEventListener("DOMContentLoaded", function () {
                 '<button type="button" id="deleteQuestion">Delete<i class="fa fa-trash"></i></button>' +
                 '<h3 class = "questionCaption">Javascript Question: <span id="countCaption">' + count + '</span></h3>' +
                 '<br>' +
-                '<input type="text" class="inputQuestion" name="jsQuestion[]" placeholder="Enter your question here" required/> ' +
+                '<input type="text" class="jsQuestion" name="jsQuestion[]" placeholder="Enter your question here" required/> ' +
                 '<br><br> ' +
-                '<select class="inputQuestion" name="jsInputType1[]"/>' +
+                '<select class="jsType" name="jsInputType1[]"/>' +
                 '<option value = "null" disabled selected>Select a data type</option>' +
                 '<option value = "string">String</option>' +
                 '<option value = "number">Number</option>' +
                 '<option value = "array">Array</option>' +
                 '<option value = "boolean">Boolean</option>'+
                 '</select>'+
-                '<input type="text" class="inputQuestion" name="jsInput1[]" placeholder="input parameters eg: hello" required/>' +
+                '<input type="text" class="jsParameter" name="jsInput1[]" placeholder="input parameters eg: hello" required/>' +
                 '<br><br>' +
-                '<select class="inputQuestion" name="jsInputType2[]"/>' +
+                '<select class="jsType" name="jsInputType2[]"/>' +
                 '<option value = "null" disabled selected>Select a data type</option>' +
                 '<option value = "string">String</option>' +
                 '<option value = "number">Number</option>' +
                 '<option value = "array">Array</option>' +
                 '<option value = "boolean">Boolean</option>'+
                 '</select>'+
-                '<input type="text" class="inputQuestion" name="jsInput2[]" placeholder="optional input parameters eg: 3"/>' +
+                '<input type="text" class="jsParameter" name="jsInput2[]" placeholder="optional input parameters eg: 3"/>' +
                 '<br><br>' +
-                '<select class="inputQuestion" name="jsInputType3[]"/>' +
+                '<select class="jsType" name="jsInputType3[]"/>' +
                 '<option value = "null" disabled selected>Select a data type</option>' +
                 '<option value = "string">String</option>' +
                 '<option value = "number">Number</option>' +
                 '<option value = "array">Array</option>' +
                 '<option value = "boolean">Boolean</option>'+
                 '</select>'+
-                '<input type="text" class="inputQuestion" name="jsInput3[]" placeholder="optional input parameters eg: [3,2,1]" />' +
+                '<input type="text" class="jsParameter" name="jsInput3[]" placeholder="optional input parameters eg: [3,2,1]" />' +
                 '<br><br>' +
-                '<select class="inputQuestion" name="jsInputType4[]"/>' +
+                '<select class="jsType" name="jsInputType4[]"/>' +
                 '<option value = "null" disabled selected>Select a data type</option>' +
                 '<option value = "string">String</option>' +
                 '<option value = "number">Number</option>' +
                 '<option value = "array">Array</option>' +
                 '<option value = "boolean">Boolean</option>'+
                 '</select>'+
-                '<input type="text" class="inputQuestion" name="jsInput4[]" placeholder="optional input parameters eg: true"/>' +
+                '<input type="text" class="jsParameter" name="jsInput4[]" placeholder="optional input parameters eg: true"/>' +
                 '<br><br>' +
-                '<select class="inputQuestion" name="jsInputType5[]"/>' +
+                '<select class="jsType" name="jsInputType5[]"/>' +
                 '<option value = "null" disabled selected>Select a data type</option>' +
                 '<option value = "string">String</option>' +
                 '<option value = "number">Number</option>' +
                 '<option value = "array">Array</option>' +
                 '<option value = "boolean">Boolean</option>'+
                 '</select>'+
-                '<input type="text" class="inputQuestion" name="jsInput5[]" placeholder="optional input parameters"/>' +
+                '<input type="text" class="jsParameter" name="jsInput5[]" placeholder="optional input parameters"/>' +
                 '<br><br>' +
                 '<input type="text" class="inputQuestion" name="jsOutput[]" placeholder="Enter the expected output here" required/> ' +
                 '<br><br> ' +
