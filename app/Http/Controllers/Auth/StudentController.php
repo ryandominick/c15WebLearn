@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Quiz;
 use App\Models\Student;
 use App\Models\Result;
-use Auth;
+use Illuminate\Support\Facades\Auth;
 
 class StudentController extends Controller
 {

@@ -34,7 +34,7 @@ Route::post('/student/search/query', 'StudentSearchController@query');
 
 Route::get('/student/quiz', 'StudentTakeQuizController@index')->middleware('assertQuizNotTaken','assertQuizExists');
 Route::post('/student/quiz/submit', 'StudentTakeQuizController@processAttempt')->middleware('assertQuizNotTaken','assertQuizExists');
-
+Route::post('/student/quiz/getparam','StudentTakeQuizController@getParameters');
 
 Route::get('/teacher/search', 'TeacherSearchController@index');
 Route::post('/teacher/search/query', 'TeacherSearchController@query');

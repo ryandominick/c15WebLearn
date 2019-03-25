@@ -7,7 +7,6 @@
     <meta name="csrf-token" content="{{ csrf_token() }}" >
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript" src="/js/studentTakeQuiz.js"></script>
-    <script type="text/javascript" src="/js/navBar.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 
@@ -40,7 +39,7 @@
 
 <form id ="takeQuizForm">
 
-    <input type="hidden" name="quizID" value="{{$quizID}}">
+    <input id="quizID" type="hidden" name="quizID" value="{{$quizID}}">
 
     <?php $i = 0;
           $q = 0;?>
@@ -70,6 +69,27 @@
 
     @endforeach
 
+    @foreach($jQuestions as $jQuestion)
+
+        <br>
+        <br>
+
+        <div class = "takeQuestionContainer">
+            <div class = "jsQuestionContainer">
+                <p class="questionText">{{$jQuestion->jsQuestion}}</p>
+                <input type="hidden" name={{$i}} class="javascriptQuestionIDs" value="{{$jQuestion->jsID}}">
+
+                <?php $i++ ?>
+                <input type="hidden" name={{$i}} class="javascriptAnswer" value="" id="studentAnswer">
+
+                <textarea id="jsQuestion" size="50" form="takeQuizForm" placeholder="Write your javascript function here..."></textarea> <br> <div id={{$q}}></div>
+            </div>
+        </div>
+
+        <?php $i++;
+        $q++;?>
+    @endforeach
+
     @foreach( $iQuestions as $iQuestion)
 
         <br>
@@ -85,27 +105,11 @@
             <input type="text" class="inputQuestion" name={{$i}}><br>  <div id={{$q}}></div> </div>
 
         <?php $i++;
-                  $q++;?>
+                $q++;?>
 
     @endforeach
 
-    @foreach($jQuestions as $jQuestion)
 
-        <br>
-        <br>
-
-        <div class = "takeQuestionContainer">
-            <p class="questionText">{{$jQuestion->jsQuestion}}</p>
-            <input type="hidden" name={{$i}} class="javascriptQuestionIDs" value={{$jQuestion->jsID}}>
-
-            <?php $i++ ?>
-
-            <textarea name="{{$i}}" id="jsQuestion" size="50" form="takeQuizForm" placeholder="Write your javascript function here..."></textarea> <br> <div id={{$q}}></div>
-        </div>
-
-        <?php $i++;
-        $q++;?>
-    @endforeach
 
         <br>
         <br>
