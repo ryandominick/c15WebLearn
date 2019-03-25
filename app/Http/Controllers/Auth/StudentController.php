@@ -3,9 +3,9 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Models\Quiz;
 use App\Models\Student;
 use App\Models\Result;
+use App\Models\TeacherQuiz;
 use Illuminate\Support\Facades\Auth;
 
 class StudentController extends Controller
@@ -29,7 +29,7 @@ class StudentController extends Controller
      */
     public function index()
     {
-        $modules = Quiz::getQuizzesByStudentID(Auth::user()->id);
+        $modules = TeacherQuiz::getQuizzesByStudentID(Auth::user()->id);
         return view('studentHomepage', array('modules' => $modules));
     }
 
