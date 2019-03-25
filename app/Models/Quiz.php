@@ -15,6 +15,6 @@ class Quiz extends Model
           INNER JOIN Course ON Course.courseID = Student.courseID
           INNER JOIN Module ON Module.courseID = Course.courseID
           INNER JOIN TeacherQuiz ON TeacherQuiz.moduleCode = Module.moduleCode
-          WHERE Student.ID = :studentID",  ['studentID' => $studentID]);
+          WHERE Student.ID = :studentID LIMIT 20",  ['studentID' => $studentID]);
     }
 }

@@ -37,6 +37,7 @@
 <h2 class="welcome"></h2>
 <table id="studentTable">
 <caption class="tablecap">My Deadlines</caption>
+
 <tr>
     <th>Module Code</th>
     <th>Quiz Title</th>
@@ -49,8 +50,9 @@
     <td><?php echo $module->moduleCode ?></td>
     <td><?php echo $module->quizTitle ?></td>
     <td><?php echo $module->quizEnd ?></td>
-    <td><?php echo $module->duration?> Minutes</td>
+    <td><?php echo ($module->duration) / 60?> Minutes</td>
 </tr>
 <?php endforeach; ?>
 </table>
+</body>
 </html>
