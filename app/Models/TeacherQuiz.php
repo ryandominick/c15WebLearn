@@ -108,7 +108,7 @@ class TeacherQuiz extends Model
     public static function getQuizzesByStudentID($studentID)
     {
         return DB::select("
-          SELECT m.moduleCode, t.quizTitle, t.quizEnd, t.duration FROM Student AS s
+          SELECT t.quizID, m.moduleCode, t.quizTitle, t.quizEnd, t.duration FROM Student AS s
           INNER JOIN Course AS c ON c.courseID = s.courseID
           INNER JOIN Module AS m ON m.courseID = c.courseID
           INNER JOIN TeacherQuiz AS t ON t.moduleCode = m.moduleCode
