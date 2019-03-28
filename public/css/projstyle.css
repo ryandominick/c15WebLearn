@@ -1279,15 +1279,71 @@ width: 80%;
 /* Ben's hidden fields for table data */
 
 td.hidden {display: none;}
-/*tr::hover {*/
 
-    /*background-color: #C2E1FF;*/
+/* Ben's message page css*/
 
-/*}*/
+#msg-container {
+
+    display : table;
+    width: 100%;
+
+}
+
+#sidebar{
 
 
-/*.StudentResults1 tr:hover td {*/
+    display: table-cell;
+    width: 15%;
+    vertical-align: top;
+}
 
-    /*background-color: #C2E1FF;*/
+#contents {
 
-/*}*/
+    display: table-cell;
+    width: 85%;
+    background-color: white;
+    vertical-align: top;
+}
+
+div#resultsBox {
+    background-color: white;
+    height:800px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    margin-right: 5%;
+    margin-top:5%;
+
+
+}
+#refSearch {
+    width: 95%;
+    margin-bottom: 5%;
+    margin-right: 5%;
+    margin-top:5%;
+}
+
+#messages {
+
+    height:800px;
+    background-color: white;
+
+    overflow-y: scroll;
+    overflow-x: hidden;
+    margin-right: 2%;
+    margin-bottom:2%;
+    margin-left :2%;
+
+
+
+
+}
+
+#teacherName {
+    text-align: center;
+    font-size: 30px;
+    /*margin-right: 5%;*/
+    /*margin-top:5%;*/
+    /*margin-left :5%;*/
+
+     margin: 1.5%;
+}
