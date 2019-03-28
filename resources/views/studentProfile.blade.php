@@ -31,14 +31,16 @@
     <a href="javascript:void(0);" class="burger" onclick="burgerNav()">&#9776;</a>
 </div>
 <br>
-<h1>Account Details</h1>
-                                                        <!--Get current logged in user's firstName-->
-Firstname: <input type="text" name="foo" id="firstname" value="<?php echo Auth::user()->firstName?>" disabled><br>
-                                                        <!--Get current logged in user's lastName-->
-Surname: <input type="text" name="foo" id="surname" value="<?php echo Auth::user()->lastName?>" disabled><br>
-                                                        <!--Get current logged in user's email address-->
-Email Address: <input type="text" size="35" id="emailProfile" name="foo" value="<?php echo Auth::user()->email?>" disabled><br>
-
-Course name: <input type="text" size="25" id="courseName" name="foo" value="<?php echo $courseName->courseName ?>" disabled>
+    <div id="accountInfo">
+            <h1>Account Details</h1>
+                <!--Get current logged in user's firstName-->
+            Firstname: <input type="text" name="foo" id="firstname" value="<?php echo Auth::user()->firstName?>" disabled><br>
+                <!--Get current logged in user's lastName-->
+            Surname: <input type="text" name="foo" id="surname" value="<?php echo Auth::user()->lastName?>" disabled><br>
+                <!--Get current logged in user's email address-->
+            Email Address: <input type="text" size="35" id="emailProfile" name="foo" value="<?php echo Auth::user()->email?>" disabled><br>
+                <!--Get current logged in user's course name-->
+            Course name: <input type="text" size="25" id="courseName" name="foo" value="<?php echo $courseName->courseName ?>" disabled>
+    </div>
 </body>
 </html>

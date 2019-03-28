@@ -540,6 +540,38 @@ width: 80%;
     width: 80%;
     height: 80%;
 }
+
+.jsQuestion {
+    margin-left: 60px;
+    border-radius: 6px;
+    border: 2px solid   rgb(145, 145, 145);
+    outline:none;
+    width: 80%;
+    height: 80%;
+    display: inline;
+}
+
+.jsParameter {
+    margin-left: 50px;
+    border-radius: 6px;
+    border: 2px solid rgb(145, 145, 145);
+    outline: none;
+    width: 66%;
+    height: 80%;
+    display: inline;
+}
+.jsType{
+    margin-left: 60px;
+    border-radius: 6px;
+    border: 2px solid   rgb(145, 145, 145);
+    outline:none;
+    width: 11%;
+    height: 80%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: inline;
+}
+
 .inputAnswer {
     margin-left: 60px;
     border-radius: 6px;
@@ -1236,12 +1268,12 @@ width: 80%;
 #firstname{
     font-size: 17px;
     font-weight: bold;
-    margin-left: 33px;
+    margin-left: 37px;
 }
 #surname{
     font-size: 17px;
     font-weight: bold;
-    margin-left: 41px;
+    margin-left: 44px;
 
 }
 #emailProfile{
@@ -1270,11 +1302,13 @@ width: 80%;
 #courseName{
     font-size: 17px;
     font-weight: bold;
-    margin-left: 14px;
-
-
+    margin-left: 8px;
 }
-
+#accountInfo{
+    font-size: 17px;
+    font-weight: bold;
+    margin-left: 33px;
+}
 
 /* Ben's hidden fields for table data */
 
