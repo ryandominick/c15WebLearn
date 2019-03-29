@@ -26,7 +26,9 @@
         <div class="dropdownLinks">
             <a href="/student/profile"><i class="fas fa-user-graduate" id="userIcon"></i>Profile</a>
             <a href="/student/results"><i class="fas fa-poll" id="userIcon"></i>Results</a>
+            <a href="/student/messages"><i class="fas fa-poll" id="userIcon"></i>Messages</a>
             <a href="/student/logout"> <i class="fas fa-sign-out-alt" id="userIcon"></i>Logout</a>
+
         </div>
     </div>
     <a href="/student/search"><i class="fas fa-check" id="userIcon"></i>Your Quizzes</a>

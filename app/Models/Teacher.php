@@ -39,4 +39,14 @@ class Teacher extends Authenticatable
         return DB::select('select id from Teacher where email= :email', [':email' => $email]);
 
     }
+
+    public static function messageDetails($courseID){
+
+        return DB::select("SELECT t.firstName, t.lastName, t.id, m.moduleName, tq.moduleCode FROM Teacher AS t 
+                                  INNER JOIN TeacherQuiz AS tq ON t.id = tq.teacherID INNER JOIN Module AS m on tq.moduleCode = m.moduleCode 
+                                  INNER JOIN Course AS c ON c.courseID = m.courseID INNER JOIN Student AS s ON s.courseID = c.courseID 
+                                  LEFT JOIN Chats AS ch ON ch.studentID = s.id LEFT JOIN Messages AS me ON ch.chatID = me.chatID  WHERE c.courseID = :courseID 
+                                  GROUP BY t.id, tq.moduleCode;", ['courseID' => $courseID]);
+    }
+
 }

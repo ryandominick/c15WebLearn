@@ -61,6 +61,7 @@ class Student extends Authenticatable
         return DB::select("SELECT `courseName` FROM `Course` INNER JOIN Student ON Student.courseID = Course.courseID WHERE Student.id = :studentID", ['studentID' => $studentID]);
     }
 
+<<<<<<< HEAD
     public static function getStudentDetails(){
 
         return DB::select('SELECT id, firstName, lastName, email FROM Student');
@@ -73,4 +74,13 @@ class Student extends Authenticatable
         DB::delete('DELETE FROM result WHERE studentID = :studentID', ['studentID' => $id]);
     }
 
+=======
+
+    //B function to get courseID of a student for use in filtering the messenger lecturer selection query
+    public static function getCourseID($studentID){
+
+        return DB::select("SELECT courseID FROM Student WHERE id = :studentID", ['studentID' => $studentID]);
+
+    }
+>>>>>>> 3cc735349f6d814f34ed1bcd4486849788d089cd
 }

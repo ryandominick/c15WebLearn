@@ -17,7 +17,9 @@ Route::resource('reg', 'RegController');
 Route::get('/student/search', 'StudentSearchController@index')->name('student.search');
 Route::post('/student/search/query', 'StudentSearchController@query');
 
-
+Route::get('/student/messages/status', 'StudentMessageController@getChatStatus');
+Route::get('/student/messages/init', 'StudentMessageController@getTeachers');
+Route::get('/student/messages', 'StudentMessageController@index');
 
 Route::get('/student/quiz', 'StudentTakeQuizController@index')->middleware('assertQuizNotTaken','assertQuizExists');
 Route::post('/student/quiz/submit', 'StudentTakeQuizController@processAttempt')->middleware('assertQuizNotTaken','assertQuizExists');

@@ -37,9 +37,14 @@
 <!--<a id="rightNav" href="/contact">Contact Us</a> DISABLE until fixed-->
 <br>
 <h2 class="welcome"></h2>
-<h1>Account Details</h1>
-Firstname: <input type="text" name="foo" id="firstname" value="<?php echo Auth::user()->firstName?>" disabled><br>
-Surname: <input type="text" name="foo" id="surname" value="<?php echo Auth::user()->lastName?>" disabled><br>
-Email Address: <input type="text" id="emailProfile" name="foo" value="<?php echo Auth::user()->email?>" disabled>
+<div id="accountInfo">
+    <h1>Account Details</h1>
+    <!--Get current logged in user's firstName-->
+    Firstname: <input type="text" name="foo" id="firstname" value="<?php echo Auth::user()->firstName?>" disabled><br>
+    <!--Get current logged in user's lastName-->
+    Surname: <input type="text" name="foo" id="surname" value="<?php echo Auth::user()->lastName?>" disabled><br>
+    <!--Get current logged in user's email address-->
+    Email Address: <input type="text" size="35" id="emailProfile" name="foo" value="<?php echo Auth::user()->email?>" disabled><br>
+</div>
 </body>
 </html>
