@@ -12,7 +12,7 @@
 <body>
 <div class="startContainer">
     <div class="bigLogo">
-        <img src="/images/GradiQuiz_Logo.png" width="600px" height="180px" alt="logo"/>
+        <img src="/images/GradiQuiz_Logo.png" width="700px" height="130px" alt="logo"/>
     </div>
     <div class="loginContainer">
         <label class="userType">

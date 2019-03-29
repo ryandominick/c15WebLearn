@@ -35,7 +35,7 @@
 </div>
 
 <h2 id="quizHeader">{{$quizTitle}}</h2>
-
+<p id = "timer">{{$duration/60}}</p>
 
 <form id ="takeQuizForm">
 

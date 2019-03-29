@@ -6,6 +6,8 @@
     <link rel="stylesheet" type="text/css" href="/css/projstyle.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script type="text/javascript" src="/js/navBar.js"></script>
+    <meta name="csrf-token" content="{{ csrf_token() }}" >
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     <script type="text/javascript" src="/js/manageStudents.js"></script>
@@ -38,28 +40,22 @@
     <caption class="tablecap">Your students</caption>
 
     <tr>
-        <th>Student Name</th>
-        <th>Degree Title</th>
+        <th id = "idTableHeader">Student ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email Address</th>
         <th>Remove Student</th>
     </tr>
 
-    <tr>
-        <td>Cole Hart</td>
-        <td>Computer Science</td>
+    <?php foreach($students as $student):?>
+    <tr class = 'studentRow'>
+        <td id = 'studentID'><?php echo $student->id ?></td>
+        <td><?php echo $student->firstName ?></td>
+        <td><?php echo $student->lastName ?></td>
+        <td><?php echo $student->email ?></td>
         <td><button class="removeStudentButton">Remove</button></td>
     </tr>
-
-    <tr>
-        <td>Harry Bennett</td>
-        <td>Computer Science</td>
-        <td><button class="removeStudentButton">Remove</button></td>
-    </tr>
-
-    <tr>
-        <td>Tim Grey</td>
-        <td>Computer Science</td>
-        <td><button class="removeStudentButton">Remove</button></td>
-    </tr>
+    <?php endforeach; ?>
 </table>
 <!-- modal container -->
 <div id="popup" class="modal">
@@ -72,7 +68,7 @@
         </div>
         <div class="modal-body">
             <h3 id="removeStudentPopup">Are you sure you want to remove this student?</h3>
-            <button type="button" id="deleteStudentConfirm">Delete<i id="studentTrash" class="fa fa-trash"></i></button>
+            <button type="button" class ="deleteStudentConfirm" id="deleteStudentConfirm">Delete<i id="studentTrash" class="fa fa-trash"></i></button>
         </div>
     </div>
 </div>

@@ -46,70 +46,58 @@ class CreateQuizController extends Controller
      */
     public function store(Request $request)
     {
-        //$mcCount = count(Input::get('mcQuestion'));
-        //echo $mcCount;
-
-        //return $request->all();
-
         //retrieve teacher ID from Session
         $teacherID = Session::get("id");
-        //ignore module code for now
 
-        //quiz ID
+        //gets the last quiz ID from the database
         $quizID = TeacherQuiz::findQuizID();
-
+        //uses this to create a new quizID
         $newID = $quizID["max(quizID)"] + 1;
 
-        //return $quizIDString;
-        //add quizTitle,quizstart,quizend,quizstatus,duration,module code,teacherID to teachquiz table
-
+        //assign request data to variables
         $quizTitle = $request ['quizTitle'];
         $quizDateStart = $request ['quizDateStart'];
         $quizDateEnd = $request ['quizDateEnd'];
         $quizDuration = $request ['timer'];
         $moduleCode = $request ['moduleCode'];
         $quizStatus = "active";
-
-        if($quizDateStart > time()){
-
-            $quizStatus = "queued";
-        };
-
+        //parses these details into an SQL query in the TeacherQuiz model.
         TeacherQuiz::addDetails($newID, $quizTitle, $quizDateStart, $quizDateEnd, $quizStatus, $quizDuration, $moduleCode, $teacherID);
 
-        //return $quizTitle;
-        //----Multiple Choice Questions----//
-        //retrieve arrays of question inputs, and set a count for the amount
-
+        //checks if any multiple choice questions have been entered
         if(Input::get('mcQuestion') != null) {
+            //gets the amount of multiple choice questions that need to be entered
             $mcCount = count(Input::get('mcQuestion'));
-
+            //assigns the inputs to array variables
             $mcQuestion = Input::get('mcQuestion');
             $mcCorrectAns = Input::get('mcCorrectAnswer');
             $mcIncorrectAnswer1 = Input::get('mcIncorrectAnswer1');
             $mcIncorrectAnswer2 = Input::get('mcIncorrectAnswer2');
             $mcIncorrectAnswer3 = Input::get('mcIncorrectAnswer3');
-
+            //adds each question to the database through a query in the MCQuestion model.
             for ($i = 0; $i < $mcCount; $i++) {
-
                 MCQuestion::addQuestionMC($mcQuestion[$i], $mcCorrectAns[$i], $mcIncorrectAnswer1[$i], $mcIncorrectAnswer2[$i], $mcIncorrectAnswer3[$i], $newID);
 
             }
         }
 
         //----Input Questions----//
+        //checks if any input questions have been entered
         if(Input::get('inputQuestion') != null) {
+            //assigns the inputs to array variables
             $inputCount = count(Input::get('inputQuestion'));
             $inputQuestion = Input::get('inputQuestion');
             $inputAnswer = Input::get('inputAnswer');
 
             for ($i = 0; $i < $inputCount; $i++) {
-
+                //adds each question to the database through a query in the InputQuestion model.
                 InputQuestion::addQuestionInput($inputQuestion[$i], $inputAnswer[$i], $newID);
 
             }
         }
+        //checks if any javascript questions have been entered
         if(Input::get('jsQuestion') != null) {
+            //assigns the inputs to array variables
             $jsCount = count(Input::get('jsQuestion'));
             $jsQuestion = Input::get('jsQuestion');
             $jsInput1 = Input::get('jsInput1');

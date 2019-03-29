@@ -1,6 +1,17 @@
 document.addEventListener("DOMContentLoaded", function () {
 
 
+    time = document.getElementById("timer").innerText * 60000;
+    let deadline = new Date().getTime()+time;
+    setInterval(function(){
+        document.getElementById("timer").style.display = "block";
+        timeLeft = deadline - new Date().getTime();
+        let minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+        let seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+        document.getElementById("timer").innerHTML ="Time left: " + minutes + "m " + seconds + "s ";
+        },1000);
+
     // The jquery ajax wrapper is set up with Laravels csrf protection to prevent failure
     $.ajaxSetup({
         headers: {
@@ -36,20 +47,17 @@ document.addEventListener("DOMContentLoaded", function () {
                             let cutNParam = params[j].substring(6);
                             let numberParam = Number(cutNParam);
                             parameters.push(numberParam);
-                            //alert("num");
                         }
                         else if (params[j].includes("array")) {
                             let cutAParam = params[j].substring(5);
                             let tagRemove = cutAParam.slice(1, cutAParam.length - 1);
                             let separate = tagRemove.split(",");
                             parameters.push(separate);
-                            //alert("array");
                         }
                         else if (params[j].includes("boolean")) {
                             let cutBParam = params[j].substring(7);
                             let boolParam = (cutBParam === "true");
                             parameters.push(boolParam);
-                            //alert("bool");
                         }
 
                     }

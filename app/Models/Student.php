@@ -60,4 +60,17 @@ class Student extends Authenticatable
     {
         return DB::select("SELECT `courseName` FROM `Course` INNER JOIN Student ON Student.courseID = Course.courseID WHERE Student.id = :studentID", ['studentID' => $studentID]);
     }
+
+    public static function getStudentDetails(){
+
+        return DB::select('SELECT id, firstName, lastName, email FROM Student');
+
+    }
+
+    public static function removeStudent($id){
+
+        DB::delete('DELETE FROM Student WHERE id = :studentID', ['studentID' => $id]);
+        DB::delete('DELETE FROM result WHERE studentID = :studentID', ['studentID' => $id]);
+    }
+
 }

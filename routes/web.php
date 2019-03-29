@@ -43,8 +43,8 @@ Route::get('/student/profile', 'Auth\StudentController@profile');
 Route::get('/contact', 'Auth\StudentController@contactUs');
 
 //display manage student page
-Route::get('/teacher/manageStudents', 'Auth\TeacherController@manage');
-
+Route::get('/teacher/manageStudents', 'ManageStudentsController@index');
+Route::post('/teacher/manageStudents/remove', 'ManageStudentsController@removeStudent');
 //display manage student page
 Route::get('/teacher/profile', 'Auth\TeacherController@profile');
 

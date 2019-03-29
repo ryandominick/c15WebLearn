@@ -3,6 +3,9 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\Teacher;
+use App\Models\TeacherQuiz;
+use Illuminate\Support\Facades\Auth;
 
 
 class TeacherController extends Controller
@@ -26,8 +29,18 @@ class TeacherController extends Controller
 
     public function index()
     {
+        //retrieves quizzes based on teacher ID
+       $quizzes = TeacherQuiz::teacherHomeQuizzes(Auth::user()->id);
+       $submissions = array();
+       //retrieves amount of submissions for each quiz
+       foreach($quizzes as $quiz){
+           $subAmount = (TeacherQuiz::teacherSubmissions($quiz->quizID))[0];
+            array_push($submissions, $subAmount);
 
-        return view('teacherHomepage');
+        }
+        //returns this data to the view
+        return view('teacherHomepage', array('quizzes' => $quizzes), array('submissions' => $submissions));
+
     }
 
     public function manage()

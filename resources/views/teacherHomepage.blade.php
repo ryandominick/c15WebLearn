@@ -40,38 +40,25 @@
 <!--<a id="rightNav" href="/contact">Contact Us</a> DISABLE until fixed-->
 <br>
 <h2 class="welcome"></h2>
-<table>
+<table id = "homeResults">
     <caption class="tablecap">Current Quizzes</caption>
 
     <tr>
         <th>Module Code</th>
         <th>Quiz Title</th>
+        <th>Quiz Deadline</th>
         <th>Submissions</th>
     </tr>
-
+    @php($i = 0)
+    <?php foreach($quizzes as $quiz):?>
     <tr>
-        <td>CO530</td>
-        <td>Introduction to Web Development</td>
-        <td>45</td>
+        <td><?php echo $quiz->moduleCode ?> </td>
+        <td><?php echo $quiz->quizTitle ?></td>
+        <td><?php echo $quiz->quizEnd ?></td>
+        <td><?php echo $submissions[$i]->sub ?></td>
     </tr>
-
-    <tr>
-        <td>CO342</td>
-        <td>Introduction to Java</td>
-        <td>7</td>
-    </tr>
-
-    <tr>
-        <td>CO705</td>
-        <td>Database Systems</td>
-        <td>40</td>
-    </tr>
-
-    <tr>
-        <td>CO364</td>
-        <td>Human Computer Interaction</td>
-        <td>25</td>
-    </tr>
+        @php($i++)
+    <?php endforeach; ?>
 </table>
 </body>
 </html>

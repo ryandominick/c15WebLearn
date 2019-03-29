@@ -9,10 +9,14 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("quizTimerInput").addEventListener("keyup", timerLimit);
     document.getElementById("submitQuizButton").addEventListener("click", submit);
     document.addEventListener("click", function(e){
+        //if deleteQuestion button is clicked
         if(e.target && e.target.id === 'deleteQuestion'){
             e.preventDefault();
+            //target closest QuestionContainer in the DOM and remove.
             $(e.target).closest("#QuestionContainer").remove();
+            //decrement count to new question amount
             count--;
+            //renumber remaining questions
             $("#countCaption").each(function (count){
                 $(this).text(count+1);
             })
@@ -24,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function addMCQuestion() {
         if (count < limit) { //If count is less than the limit, add an MC question
-
+            //add a new multiple choice question section, adds names to array
             document.getElementById('questionSection').insertAdjacentHTML
             ('beforeend', '' +
                 '<div id = "QuestionContainer">' +
@@ -50,6 +54,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function addInputQuestion() {
         if (count < limit) { //If count is less than the limit, add an input question
+            //add a new input question section, adds names to array
             document.getElementById('questionSection').insertAdjacentHTML
             ('beforeend', '<div id ="QuestionContainer">' +
                 '<button type="button" id="deleteQuestion">Delete<i class="fa fa-trash"></i></button>' +
@@ -65,7 +70,7 @@ document.addEventListener("DOMContentLoaded", function () {
             alert("Question limit has been reached (10 max)");
         }
     }
-
+            //add a new javascript question section, adds names to array
     function addJavascriptQuestion(){
         if (count < limit){
             document.getElementById('questionSection').insertAdjacentHTML
@@ -131,7 +136,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function showSubmitQuiz() {
-
+        //shows the submit button to prevent submission of empty quiz
         document.getElementById("submitQuizButton").style.display = "block";
 
     }
@@ -151,7 +156,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function submit(){
-
+        //multiplies user's quiz duration as it is stored in seconds in the database
         var inputTime = document.getElementById("quizTimerInput").value;
         document.getElementById("quizTimerInput").value = inputTime * 60;
     }

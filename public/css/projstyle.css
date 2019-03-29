@@ -68,11 +68,9 @@ th {
     color: white;
 }
 
-.bigLogo{
-    margin-left: 94px;
+.bigLogo {
 }
 /* Start of Nav bar styling*/
-
 
 
 /* Add a color to the active/current link */
@@ -387,6 +385,12 @@ input {
     margin-top: 0;
 }
 
+
+#idTableHeader{
+
+    width: 1%;
+}
+
 /*Positioning tooltip icon*/
 
 #faPassword{
@@ -510,6 +514,11 @@ width: 80%;
     padding-bottom: 20px;
     width: 70%;
 }
+
+#timer {
+display: none;
+}
+
 /* For all input types that are radio, include this spacing*/
 #radioSpace{
     margin: 10px 10px;

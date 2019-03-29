@@ -16,6 +16,7 @@ class RegController extends Controller
      */
     public function index()
     {
+        //returns the registration view
         return view('registration');
     }
 
@@ -37,8 +38,10 @@ class RegController extends Controller
      */
     public function store(Request $request)
     {
-
+        //static teacher key
         $correctKey = '123';
+
+        //assigns variables from the input
         $key = $request ['teacherKey'];
         $userType = $request['userType'];
         $firstName = $request['firstName'];
@@ -46,21 +49,27 @@ class RegController extends Controller
         $Email = $request['email'];
         $password = $request['password'];
         $courseName = $request['courseName'];
-
+        //detects which type of user is registering
         if($userType === "student") {
+            //retrieves the courseID of course name that the student entered on registration
             $courseIDHolder = Course::getCourseID($courseName);
+            //extracts data from retrieved result
             $extractCourseID = get_object_vars($courseIDHolder[0]);
             $courseID = $extractCourseID['courseID'];
+            //adds the student's details to the Student table through query in Student model
             Student::register($firstName, $lastName, $Email, $password, $courseID);
+            //redirects student to login page on successful registration
             return redirect('/login');
         }
         elseif ($userType === "teacher"){
+            //checks to ensure teacherKey entered is correct
             if ($key === $correctKey) {
+                //is correct, registers teacher through query in Teacher model
                 Teacher::register($firstName, $lastName, $Email, $password);
+                //redirects teacher to login page on successful registration
                 return redirect('/login');
             }
             else{
-
                 return "wrong key";
             }
 

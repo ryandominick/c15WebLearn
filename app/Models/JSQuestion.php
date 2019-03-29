@@ -11,7 +11,7 @@ class JSQuestion extends Model
 {
     public static function addQuestionJS($jsquestion, $input, $output, $quizID)
     {
-
+        //adds javascript question details to Jsquestion table
         DB::insert('insert into Jsquestion(jsQuestion, jsInput, jsOutput, quizID) values (:jsQuestion, :input, :output, :quizID)',
 
             [':jsQuestion' => $jsquestion, ':input' => $input, ':output' => $output, ':quizID' => $quizID]);
@@ -20,7 +20,7 @@ class JSQuestion extends Model
     }
 
     public static function countQuestions($quizID){
-
+        //counts the amount of Javascript questions are in the jsQuestion table
         $questionCount = DB::select('select count(jsQuestion) AS jsQuestionC from JSQuestion where (quizID = :quizID) ',['quizID' => $quizID]);
 
         return $questionCount;

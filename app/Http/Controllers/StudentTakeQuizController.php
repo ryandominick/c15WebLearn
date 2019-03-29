@@ -35,7 +35,7 @@ class StudentTakeQuizController extends Controller
         $mQuestions = TeacherQuiz::getMCQuestions($quiz);
         $iQuestions = TeacherQuiz::getInputQuestions($quiz);
         $jQuestions = TeacherQuiz::getJSQuestions($quiz);
-        $quizDetails = array('quizID' => $quiz, 'quizTitle' => (TeacherQuiz::getQuizTitle($quiz))[0]->quizTitle);
+        $quizDetails = array('quizID' => $quiz, 'quizTitle' => (TeacherQuiz::getQuizTitle($quiz))[0]->quizTitle, 'duration' => (TeacherQuiz::getQuizTitle($quiz))[0]->duration);
 
         foreach($mQuestions as $mQuestion){
 
@@ -116,23 +116,26 @@ class StudentTakeQuizController extends Controller
 
             // SECTION TO IMPLEMENT JS INTERPRETER QUESTIONS
                 $jscounter = (JSQuestion::countQuestions($quizID))[0]->jsQuestionC;
+                //count variable
                 $z = 0;
                 while ($z < $jscounter){
                     // gets the id of input question from hidden field
                     if ($request->has($index)) {
                         $currentValue1 = $request->input($index);
                     }
+                    //increment index to move to question answer
                     $index++;
 
                     // gets the text answer of the user
                     if ($request->has($index)) {
                         $currentValue = $request->input($index);
                     }
-
+                    //increment index to move to next question
                     $index++;
                     $correct += $resultsArray[$count] = (JSQuestion::compareAnswerJS($currentValue1, $currentValue))[0]->correct;
-
+                    //increase question counter
                     $count++;
+                    //increment count variable
                     $z++;
                 }
 
@@ -206,16 +209,22 @@ class StudentTakeQuizController extends Controller
     }
 
     public function getParameters(Request $request){
-
+        //retrieves quizID from request
         $quiz = $request->input('quizID');
+        //retrieves the parameters for all javascript questions in quiz based on quiz id, though query in JSquestion
+        //model
         $results = JSQuestion::retrieveParameters($quiz);
+        //counts the amount of results received
         $count = count($results);
+        //initialise array
         $paramArray = array();
-
+        //loop through every javascript question
         for($i = 0; $i < $count; $i++){
+            //extract parameters from retrieved object
             $extractparam = get_object_vars($results[$i]);
             $paramArray[$i] = $extractparam['jsInput'];
         }
+        //return the array back to AJAX call in JSON form.
         return Response()->json(['parameter'=>$paramArray]);
     }
 

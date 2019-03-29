@@ -30,6 +30,21 @@ class TeacherQuiz extends Model
         return $results;
     }
 
+    public static function teacherHomeQuizzes($teacherID){
+
+        $results = DB::select('SELECT quizID, quizTitle, moduleCode, quizEnd FROM TeacherQuiz WHERE teacherID = :teacherID AND 
+        (quizEnd BETWEEN NOW() AND DATE_ADD(NOW(),INTERVAL 7 DAY));', ['teacherID' => $teacherID]);
+
+        return $results;
+    }
+
+    public static function teacherSubmissions($quizID){
+
+        $results = DB::select('SELECT COUNT(quizID) AS sub FROM result WHERE quizID = :quizID;',['quizID' => $quizID]);
+
+        return $results;
+    }
+
     public static function teacherQuizExpand($quizID){
         $results = DB::select('SELECT s.firstName, s.lastName, r.grade FROM  Result AS r INNER JOIN  Student AS s ON r.studentID = s.id WHERE  r.quizID = :quizID;',
             ['quizID' => $quizID]);
@@ -88,7 +103,7 @@ class TeacherQuiz extends Model
 
     public static function getQuizTitle($quizID){
 
-        $result = DB::select("SELECT quizTitle FROM TeacherQuiz WHERE quizID = :quizID", ['quizID' => $quizID]);
+        $result = DB::select("SELECT quizTitle, duration FROM TeacherQuiz WHERE quizID = :quizID", ['quizID' => $quizID]);
 
         return $result;
     }
