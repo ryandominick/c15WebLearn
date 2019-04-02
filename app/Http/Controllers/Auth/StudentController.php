@@ -3,8 +3,9 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Models\Module;
 use App\Models\Quiz;
+use Auth;
+
 
 class StudentController extends Controller
 {
